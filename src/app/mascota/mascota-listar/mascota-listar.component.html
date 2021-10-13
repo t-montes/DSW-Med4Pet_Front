@@ -1,0 +1,17 @@
+<h1>Listado de mascotas</h1>
+<p> Este es el listado de mascotas de la aplicación</p>
+<ul>
+  <li *ngFor="let mascota of mascotas">{{mascota.nombre}} {{mascota.raza}} {{mascota.ubicacion}} {{mascota.edad}} {{mascota.duenio}} {{mascota.citasAtendidas}}</li>
+</ul>
+
+<div class="container-fluid">
+  <div class="row p-5">
+      <div class="col" *ngFor="let b of books">
+          <figure class="figure">
+              <img class="img-fluid" src='{{b.image}}'/>
+              <figcaption class="title-caption text-center">{{b.name}}. [{{b.editorial.name}}]</figcaption>
+          </figure>
+      </div>
+  </div>
+</div>
+

@@ -2,8 +2,13 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+const host = 'localhost';
+const port = '8080';
+const appName = 'frontstepbystep-api';
+const rootApi = 'api';
 export const environment = {
-  production: false
+  production: false,
+  baseUrl: `http://${host}:${port}/${appName}/${rootApi}/`
 };
 
 /*
