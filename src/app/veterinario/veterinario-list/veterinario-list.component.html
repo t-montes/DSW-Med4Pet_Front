@@ -1,2 +1,16 @@
 <h1>Listado de Veterinarios</h1>
 <p>Este es el listado de Veterinarios de la aplicación</p>
+<div class="container-fluid">
+  <div class="row p-5">
+      <div class="card" *ngFor="let v of veterinarios">
+        <div class = "card-header">
+          {{v.nombre}}
+        </div>
+        <ul class = "list-group">
+          <li class = "list-group-item">Calificacion: {{v.calificacion}}</li>
+          <li class = "list-group-item">Telefono: {{v.contacto.telefono}}</li>
+          <li class = "list-group-item">Correo: {{v.contacto.correo}}</li>
+        </ul>
+      </div>
+  </div>
+</div>

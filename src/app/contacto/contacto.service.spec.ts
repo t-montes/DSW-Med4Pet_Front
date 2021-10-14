@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject, getTestBed } from '@angular/core/testing';
-import { VeterinarioService } from './veterinario.service';
+import { ContactoService } from './contacto.service';
 
 import {
   HttpTestingController,
@@ -9,22 +9,22 @@ import {
 } from "@angular/common/http/testing";
 
 import faker from "faker";
-import { Veterinario } from "./veterinario";
+import { Contacto } from "./contacto";
 import { environment } from "../../environments/environment";
 
-describe('Service: Veterinario', () => {
+describe('Service: Contacto', () => {
   let injector: TestBed;
-  let service: VeterinarioService;
+  let service: ContactoService;
   let httpMock: HttpTestingController;
-  let apiUrl = environment.baseUrl + "veterinarios";
+  let apiUrl = environment.baseUrl + "contactos";
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [VeterinarioService],
+      providers: [ContactoService],
     });
     injector = getTestBed();
-    service = injector.get(VeterinarioService);
+    service = injector.get(ContactoService);
     httpMock = injector.get(HttpTestingController);
   });
 
@@ -33,22 +33,18 @@ describe('Service: Veterinario', () => {
   });
 
   it("getPost() should return 10 records", ()=>{
-    let mockPosts: Veterinario[] = [];
+    let mockPosts: Contacto[] = [];
     for(let i = 1; i<11; i++){
-      let veterinario = new Veterinario(
+      let contacto = new Contacto(
         i,
         faker.lorem.sentence(),
         faker.lorem.sentence(),
-        faker.lorem.sentence(),
-        faker.lorem.sentence(),
-        faker.datatype.number(),
-        null
       );
-    mockPosts.push(veterinario);
+    mockPosts.push(contacto);
     }
 
-    service.getVeterinarios().subscribe((veterinarios)=>{
-      expect(veterinarios.length).toBe(10);
+    service.getContactos().subscribe((contactos)=>{
+      expect(contactos.length).toBe(10);
     });
 
     const req = httpMock.expectOne(apiUrl);

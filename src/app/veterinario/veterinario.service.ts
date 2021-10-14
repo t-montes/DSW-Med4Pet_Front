@@ -15,5 +15,4 @@ constructor( private http: HttpClient) { }
 getVeterinarios(): Observable<Veterinario[]>{
   return this.http.get<Veterinario[]>(this.apiUrl);
 }
-
 }

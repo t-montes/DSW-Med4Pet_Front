@@ -7,6 +7,7 @@ import { VeterinarioListComponent} from './veterinario-list/veterinario-list.com
     CommonModule
   ],
   exports: [VeterinarioListComponent],
-  declarations: [VeterinarioListComponent]
+  declarations: [VeterinarioListComponent],
+  providers: []
 })
 export class VeterinarioModule { }
