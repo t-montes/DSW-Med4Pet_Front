@@ -1,20 +1,21 @@
 <testExecutions version="1">
-  <file path="src/app/contacto/contacto-list/contacto-list.component.spec.ts">
-    <testCase name="ContactoListComponent Should have an figcaption element " duration="246"/>
-    <testCase name="ContactoListComponent should create" duration="26"/>
+  <file path="src/app/veterinario/veterinario.service.spec.ts">
+    <testCase name="Service: Veterinario getPost() should return 10 records" duration="75"/>
   </file>
   <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="36"/>
-    <testCase name="AppComponent should have as title 'front'" duration="19"/>
+    <testCase name="AppComponent should render title" duration="104"/>
+    <testCase name="AppComponent should have as title 'front'" duration="30"/>
+    <testCase name="AppComponent should create the app" duration="22"/>
   </file>
   <file path="src/app/veterinario/veterinario-list/veterinario-list.component.spec.ts">
-    <testCase name="VeterinarioListComponent should create" duration="44"/>
-    <testCase name="VeterinarioListComponent Should have an figcaption element " duration="25"/>
-  </file>
-  <file path="src/app/veterinario/veterinario.service.spec.ts">
-    <testCase name="Service: Veterinario getPost() should return 10 records" duration="13"/>
+    <testCase name="VeterinarioListComponent Should have an figcaption element " duration="124"/>
+    <testCase name="VeterinarioListComponent should create" duration="20"/>
   </file>
   <file path="src/app/contacto/contacto.service.spec.ts">
-    <testCase name="Service: Contacto getPost() should return 10 records" duration="10"/>
+    <testCase name="Service: Contacto getPost() should return 10 records" duration="12"/>
+  </file>
+  <file path="src/app/contacto/contacto-list/contacto-list.component.spec.ts">
+    <testCase name="ContactoListComponent Should have an figcaption element " duration="38"/>
+    <testCase name="ContactoListComponent should create" duration="18"/>
   </file>
 </testExecutions>
