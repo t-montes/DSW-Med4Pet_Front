@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { AgendaListarComponent } from './agenda-listar.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('AgendaListarComponent', () => {
   let component: AgendaListarComponent;
@@ -11,7 +12,8 @@ describe('AgendaListarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AgendaListarComponent ]
+      declarations: [ AgendaListarComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   }));

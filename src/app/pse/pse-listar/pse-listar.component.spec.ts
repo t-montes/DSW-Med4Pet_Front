@@ -34,8 +34,8 @@ describe('PseListarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("Should have an figcaption element ", () => {
-    expect(debug.query(By.css("figcaption")).nativeElement.innerText).toContain(
+  it("Should have an li element", () => {
+    expect(debug.query(By.css("li")).nativeElement.innerText).toContain(
       component.pses[0].banco
     );
   });

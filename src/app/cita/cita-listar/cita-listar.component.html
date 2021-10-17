@@ -1,3 +1,10 @@
 <p>
   cita-listar works!
 </p>
+<div class="container-fluid">
+  <div class="row p-5">
+    <div class="col border" *ngFor="let c of citas">
+      Agenda: {{c.id}}
+    </div>
+  </div>
+</div>
