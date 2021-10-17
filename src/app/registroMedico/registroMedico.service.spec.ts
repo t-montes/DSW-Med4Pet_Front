@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject, getTestBed } from "@angular/core/testing";
-import { ServicioService } from "./servicio.service";
+import { RegistroMedicoService } from "./registroMedico.service";
 
 import {
  HttpTestingController,
@@ -9,22 +9,22 @@ import {
 } from "@angular/common/http/testing";
 
 import faker from "faker";
-import { Servicio } from "./servicio";
+import { RegistroMedico } from "./registroMedico";
 import { environment } from "../../environments/environment";
 
-describe("Service: Servicio", () => {
+describe("Service: RegistroMedico", () => {
  let injector: TestBed;
- let service: ServicioService;
+ let service: RegistroMedicoService;
  let httpMock: HttpTestingController;
- let apiUrl = environment.baseUrl + "servicios";
+ let apiUrl = environment.baseUrl + "registrosMedicos";
 
  beforeEach(() => {
    TestBed.configureTestingModule({
      imports: [HttpClientTestingModule],
-     providers: [ServicioService],
+     providers: [RegistroMedicoService],
    });
    injector = getTestBed();
-   service = injector.get(ServicioService);
+   service = injector.get(RegistroMedicoService);
    httpMock = injector.get(HttpTestingController);
  });
 
@@ -32,22 +32,21 @@ describe("Service: Servicio", () => {
    httpMock.verify();
  });
 
- it("getServicios() should return 10 records", () => {
-   let mockPosts: Servicio[] = [];
+ it("getPost() should return 10 records", () => {
+   let mockPosts: RegistroMedico[] = [];
 
    for (let i = 1; i < 11; i++) {
-     let servicio = new Servicio(
-       i,
+     let registroMedico = new RegistroMedico(
        faker.lorem.sentence(),
-       null,
-       null
+       faker.date.past(),
+       faker.image.imageUrl()
      );
 
-     mockPosts.push(servicio);
+     mockPosts.push(registroMedico);
    }
 
-   service.getServicios().subscribe((servicios) => {
-     expect(servicios.length).toBe(10);
+   service.getRegistrosMedicos().subscribe((registroMedico) => {
+     expect(registroMedico.length).toBe(10);
    });
 
    const req = httpMock.expectOne(apiUrl);

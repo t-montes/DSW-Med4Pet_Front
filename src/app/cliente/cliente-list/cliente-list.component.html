@@ -1,0 +1,12 @@
+<h1>Listado de clientes</h1>
+<p>Este es el listado de clientes de la aplicacion</p>
+<div class="container-fluid">
+  <div class="row p-5">
+    <div class="card" *ngFor="let c of clientes">
+      <ul class="list-group">
+        <li class="list-group-item">Nombre: {{c.nombre}}</li>
+        <li class="list-group-item">Calificacion: {{c.calificacion}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

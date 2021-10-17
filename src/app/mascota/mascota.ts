@@ -1,14 +1,14 @@
-/*import { Cita } from "../cita/cita";
+import { Cita } from "../cita/cita";
 import { Cliente } from "../cliente/cliente";
-*/
+
 export class Mascota {
   id: number;
   nombre: string;
   raza: string;
   ubicacion: string;
   edad: number;
- // duenio: Cliente;
- // citasAtendidas: Cita[];
+  duenio: Cliente;
+  citas: Cita[];
 
 
 constructor(
@@ -17,16 +17,16 @@ constructor(
     raza: string,
     ubicacion: string,
     edad: number,
-    //duenio : Cliente[];
-     // citas: Cita[];
+    duenio : Cliente,
+    citas: Cita[]
   ){
     this.id = id;
     this.nombre = nombre;
     this.raza = raza;
     this.ubicacion = ubicacion;
     this.edad = edad;
-    //this.duenio = duenio;
-    //this.citas = citas;
+    this.duenio = duenio;
+    this.citas = citas;
   }
 }
 

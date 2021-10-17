@@ -1,7 +1,6 @@
 /* tslint:disable:no-unused-variable */
-
 import { TestBed, async, inject, getTestBed } from "@angular/core/testing";
-import { ServicioService } from "./servicio.service";
+import { ClienteService } from './cliente.service';
 
 import {
  HttpTestingController,
@@ -9,22 +8,22 @@ import {
 } from "@angular/common/http/testing";
 
 import faker from "faker";
-import { Servicio } from "./servicio";
+import { Cliente } from "./cliente";
 import { environment } from "../../environments/environment";
 
-describe("Service: Servicio", () => {
+describe('Service: Cliente', () => {
  let injector: TestBed;
- let service: ServicioService;
+ let service: ClienteService;
  let httpMock: HttpTestingController;
- let apiUrl = environment.baseUrl + "servicios";
+ let apiUrl = environment.baseUrl + "Clientes";
 
  beforeEach(() => {
    TestBed.configureTestingModule({
      imports: [HttpClientTestingModule],
-     providers: [ServicioService],
+     providers: [ClienteService],
    });
    injector = getTestBed();
-   service = injector.get(ServicioService);
+   service = injector.get(ClienteService);
    httpMock = injector.get(HttpTestingController);
  });
 
@@ -32,22 +31,23 @@ describe("Service: Servicio", () => {
    httpMock.verify();
  });
 
- it("getServicios() should return 10 records", () => {
-   let mockPosts: Servicio[] = [];
+ it("getPost() should return 10 records", () => {
+   let mockPosts: Cliente[] = [];
 
    for (let i = 1; i < 11; i++) {
-     let servicio = new Servicio(
-       i,
+     let cliente = new Cliente(
        faker.lorem.sentence(),
-       null,
-       null
+       faker.random.number(),
+       //null
+       //null
+       //null
      );
 
-     mockPosts.push(servicio);
+     mockPosts.push(cliente);
    }
 
-   service.getServicios().subscribe((servicios) => {
-     expect(servicios.length).toBe(10);
+   service.getClientes().subscribe((clientes) => {
+     expect(clientes.length).toBe(10);
    });
 
    const req = httpMock.expectOne(apiUrl);

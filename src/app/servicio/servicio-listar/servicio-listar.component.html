@@ -3,9 +3,6 @@
 <div class="container-fluid">
   <div class="row p-5">
       <div class="card" *ngFor="let s of servicios">
-        <div class = "card-header">
-          {{s.nombre}}
-        </div>
         <ul class = "list-group">
           <li class = "list-group-item">Nombre: {{s.nombre}}</li>
           <li class = "list-group-item">Veterinario: {{s.veterinario.nombre}}</li>
