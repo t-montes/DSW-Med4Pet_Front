@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TarjetaCreditoModule } from './tarjetaCredito/tarjetaCredito.module'
+import { PseModule } from './pse/pse.module';
 
 
 import { VeterinarioModule } from './veterinario/veterinario.module'
@@ -19,10 +20,13 @@ import { AgendaModule } from './agenda/agenda.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    VeterinarioModule,
-    ContactoModule,
-    CitaModule,
-    AgendaModule
+    HttpClientModule,
+    TarjetaCreditoModule, //Gabriela
+    PseModule,            //Gabriela
+    VeterinarioModule,    //Juan Carlos
+    ContactoModule,       //Juan Carlos
+    CitaModule,           //Tony
+    AgendaModule          //Tony
   ],
   providers: [],
   bootstrap: [AppComponent]
