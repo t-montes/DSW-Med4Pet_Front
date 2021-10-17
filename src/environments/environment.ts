@@ -11,7 +11,7 @@ const rootApi = 'api';
 
 export const environment = {
   production: false,
-baseUrl:`http://${host}:${port}/${appName}/${rootApi}/`
+  baseUrl:`http://${host}:${port}/${rootApi}/`
 };
 
 /*
