@@ -11,6 +11,7 @@ import {
 import faker from "faker";
 import { Veterinario } from "./veterinario";
 import { environment } from "../../environments/environment";
+import { HttpClientModule } from '@angular/common/http';
 
 describe('Service: Veterinario', () => {
   let injector: TestBed;
