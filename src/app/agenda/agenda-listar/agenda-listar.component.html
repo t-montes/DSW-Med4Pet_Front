@@ -1,3 +1,10 @@
 <p>
   agenda-listar works!
 </p>
+<div class="container-fluid">
+  <div class="row p-5">
+    <div class="col border" *ngFor="let a of agendas">
+      Agenda: {{a.id}}
+    </div>
+  </div>
+</div>

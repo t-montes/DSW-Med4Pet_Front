@@ -5,7 +5,7 @@
 
 export class Cita{
   id: number;
-  fecha: any;
+  fecha: Date;
   estado: String;
   costo: number;
   disponible: boolean;
@@ -16,7 +16,7 @@ export class Cita{
 
   constructor(
     id: number,
-    fecha: any,
+    fecha: Date,
     estado: String,
     costo: number,
     disponible: boolean,
