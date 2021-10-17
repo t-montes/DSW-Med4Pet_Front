@@ -7,6 +7,7 @@ import { ServicioListarComponent} from './servicio-listar/servicio-listar.compon
     CommonModule
   ],
   declarations: [ServicioListarComponent],
-  exports: [ServicioListarComponent]
+  exports: [ServicioListarComponent],
+  providers: []
 })
 export class ServicioModule { }

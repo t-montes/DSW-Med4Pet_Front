@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { CitaListarComponent } from './cita-listar.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('CitaListarComponent', () => {
   let component: CitaListarComponent;
@@ -11,7 +12,8 @@ describe('CitaListarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CitaListarComponent ]
+      declarations: [ CitaListarComponent ],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   }));

@@ -7,8 +7,9 @@ import { ServicioListarComponent } from "./servicio-listar.component";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import faker from "faker";
 import { Servicio } from "../servicio";
-import { Cita } from "src/app/cita/cita";
-//import { Veterinario } from "src/app/veterinario/veterinario";
+//import { Cita } from "src/app/cita/cita";
+import { Veterinario } from "src/app/veterinario/veterinario";
+import { HttpClientModule } from '@angular/common/http';
 
 describe("BookListarComponent", () => {
  let component: ServicioListarComponent;
@@ -19,39 +20,22 @@ describe("BookListarComponent", () => {
    TestBed.configureTestingModule({
      declarations: [ServicioListarComponent],
      imports: [HttpClientTestingModule],
-   }).compileComponents();
+   })
+   .compileComponents();
  }));
 
  
  beforeEach(() => {
    fixture = TestBed.createComponent(ServicioListarComponent);
    component = fixture.componentInstance;
-   /*let cita = new Cita(
-     faker.random.number(),
-     faker.lorem.sentence()
-   );
-   let veterinario = new Veterinario(
-    faker.lorem.sentence(),
-    especialidad,
-    faker.lorem.sentence(),
-    faker.random.array(),
-    faker.random.number()
-  );
+
   
-  let cita = new Cita(
-    faker.lorem.sentence(),
-    especialidad,
-    faker.lorem.sentence(),
-    faker.random.array(),
-    faker.random.number()
-  );
-  */
    component.servicios = [
      new Servicio(
+      faker.datatype.number(),
       faker.lorem.sentence(),
-      faker.lorem.sentence()
-      //veterinario,
-      //cita
+      null,
+      null
      ),
    ];
    fixture.detectChanges();
@@ -68,8 +52,5 @@ describe("BookListarComponent", () => {
      component.servicios[0].nombre
    );
 
-  expect(debug.query(By.css("figcaption")).nativeElement.innerText).toContain(
-     component.servicios[0].nombre
-   );
  });
 });

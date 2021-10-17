@@ -11,6 +11,7 @@ import {
 import faker from "faker";
 import { Mascota } from "./mascota";
 import { environment } from "../../environments/environment";
+import { HttpClientModule } from '@angular/common/http';
 
 describe("Service: Mascota", () => {
  let injector: TestBed;
@@ -34,20 +35,16 @@ describe("Service: Mascota", () => {
 
  it("getPost() should return 10 records", () => {
    let mockPosts: Mascota[] = [];
-
    for (let i = 1; i < 11; i++) {
      let mascota = new Mascota(
        i,
-       faker.random.id(),
-       faker.lorem.nombre(),
-       faker.lorem.raza(),
-       faker.lorem.ubicacion(),
-       /*faker.random.edad(),
-       faker.random.duenio(),
-       faker.random.citasAtendidas(),
-       null*/
+       faker.lorem.sentence(),
+       faker.lorem.sentence(),
+       faker.lorem.sentence(),
+       faker.datatype.number(),
+       null,
+       null
      );
-
      mockPosts.push(mascota);
    }
 

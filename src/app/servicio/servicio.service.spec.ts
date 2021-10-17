@@ -38,8 +38,8 @@ describe("Service: Servicio", () => {
    for (let i = 1; i < 11; i++) {
      let servicio = new Servicio(
        i,
-       faker.random.nombre(),
-       
+       faker.lorem.sentence(),
+       null
      );
 
      mockPosts.push(servicio);

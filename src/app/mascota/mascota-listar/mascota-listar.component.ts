@@ -13,6 +13,7 @@ export class MascotaListarComponent implements OnInit {
   getMascotas(){
     this.mascotaService.getMascotas().subscribe((mascotas)=>{
       this.mascotas = mascotas;
+      console.log("Mascotas", mascotas);
     })
   }
   ngOnInit() {

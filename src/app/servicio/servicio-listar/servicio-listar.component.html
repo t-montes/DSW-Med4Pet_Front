@@ -1,16 +1,16 @@
 <h1>Listado de servicios</h1>
 <p> Este es el listado de servicios de la aplicación</p>
-<ul>
-  <li *ngFor="let servicio of servicios">{{servicio.nombre}}</li>
-</ul>
-
 <div class="container-fluid">
   <div class="row p-5">
-      <div class="col" *ngFor="let b of books">
-          <figure class="figure">
-              <img class="img-fluid" src='{{b.image}}'/>
-              <figcaption class="title-caption text-center">{{b.name}}. [{{b.editorial.name}}]</figcaption>
-          </figure>
+      <div class="card" *ngFor="let s of servicios">
+        <div class = "card-header">
+          {{s.nombre}}
+        </div>
+        <ul class = "list-group">
+          <li class = "list-group-item">Nombre: {{s.nombre}}</li>
+          <li class = "list-group-item">Veterinario: {{s.veterinario.nombre}}</li>
+          <li class = "list-group-item">Cita: {{s.cita.fecha}}</li>
+        </ul>
       </div>
   </div>
 </div>

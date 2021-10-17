@@ -1,17 +1,16 @@
 <h1>Listado de mascotas</h1>
 <p> Este es el listado de mascotas de la aplicación</p>
-<ul>
-  <li *ngFor="let mascota of mascotas">{{mascota.nombre}} {{mascota.raza}} {{mascota.ubicacion}} {{mascota.edad}} {{mascota.duenio}} {{mascota.citasAtendidas}}</li>
-</ul>
-
 <div class="container-fluid">
   <div class="row p-5">
-      <div class="col" *ngFor="let b of books">
-          <figure class="figure">
-              <img class="img-fluid" src='{{b.image}}'/>
-              <figcaption class="title-caption text-center">{{b.name}}. [{{b.editorial.name}}]</figcaption>
-          </figure>
+      <div class="card" *ngFor="let m of mascotas">
+        <div class = "card-header">
+          {{m.nombre}}
+        </div>
+        <ul class = "list-group">
+          <li class = "list-group-item">Nombre: {{m.nombre}}</li>
+          <li class = "list-group-item">Raza: {{m.raza}}</li>
+          <li class = "list-group-item">Dueño: {{m.Cliente.nombre}}</li>
+        </ul>
       </div>
   </div>
 </div>
-

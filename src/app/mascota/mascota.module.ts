@@ -6,6 +6,7 @@ import { MascotaListarComponent} from './mascota-listar/mascota-listar.component
     CommonModule
   ],
   declarations: [MascotaListarComponent],
-  exports: [MascotaListarComponent]
+  exports: [MascotaListarComponent],
+  providers: []
 })
 export class MascotaModule { }

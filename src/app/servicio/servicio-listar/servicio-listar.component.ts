@@ -14,6 +14,7 @@ export class ServicioListarComponent implements OnInit {
   getServicios(){
     this.servicioService.getServicios().subscribe((servicios)=>{
       this.servicios = servicios;
+      console.log("Servicios", servicios);
     })
   }
   ngOnInit() {

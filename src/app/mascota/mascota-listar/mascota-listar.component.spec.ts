@@ -9,6 +9,7 @@ import faker from "faker";
 import { Mascota } from "../mascota";
 import { Cita } from "src/app/cita/cita";
 //import { Cliente } from "src/app/cliente/cliente";
+import { HttpClientModule } from '@angular/common/http';
 
 describe("BookListarComponent", () => {
  let component: MascotaListarComponent;
@@ -25,40 +26,16 @@ describe("BookListarComponent", () => {
  beforeEach(() => {
    fixture = TestBed.createComponent(MascotaListarComponent);
    component = fixture.componentInstance;
-   let cita = new Cita(
-     faker.random.number(),
-     faker.lorem.sentence(),
-     faker.lorem.sentence(),
-     faker.random.number(),
-     faker.random.boolean(),
-     faker.random.number(),
-     //paciente,
-     //medioDePago,
-     //faker.lorem.array()
-   );
-
-
-
-  /* let cliente = new Cliente(
-    faker.lorem.sentence(),
-    faker.random.number(),
-     contacto,
-     agenda,
-     medioDePagoPredeterminado,
-     faker.lorem.array(),
-     faker.lorem.array()
-  );
-  */
+   
    component.mascotas = [
      new Mascota(
-       faker.random.number(),
-       faker.lorem.sentence(),
-       faker.random.number(),
-       faker.lorem.sentence(),
-       faker.image.imageUrl(),
-       //faker.date.past(),
-       //cita
-       //cliente
+      faker.datatype.number(),
+        faker.lorem.sentence(),
+        faker.lorem.sentence(),
+        faker.lorem.sentence(),
+        faker.datatype.number(),
+        null,
+        null
      ),
    ];
    fixture.detectChanges();
@@ -72,10 +49,6 @@ describe("BookListarComponent", () => {
  it("Should have an figcaption element ", () => {
    expect(debug.query(By.css("figcaption")).nativeElement.innerText).toContain(
      component.mascotas[0].nombre
-   );
-
-   expect(debug.query(By.css("figcaption")).nativeElement.innerText).toContain(
-    component.mascotas[0].nombre
    );
  });
 });
