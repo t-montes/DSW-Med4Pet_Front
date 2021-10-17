@@ -7,11 +7,16 @@ import { AppComponent } from './app.component';
 import { ServicioModule} from './servicio/servicio.module';
 import { MascotaModule} from './mascota/mascota.module';
 
+import { CitaModule } from './cita/cita.module';
+import { AgendaModule } from './agenda/agenda.module';
+
 @NgModule({
   declarations: [
     AppComponent
    ],
   imports: [
+    CitaModule,
+    AgendaModule,
     BrowserModule,
     AppRoutingModule,
     ServicioModule,

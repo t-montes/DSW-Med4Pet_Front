@@ -8,7 +8,7 @@ import {
  HttpClientTestingModule,
 } from "@angular/common/http/testing";
 
-//import faker from "faker";
+import faker from "faker";
 import { Servicio } from "./servicio";
 import { environment } from "../../environments/environment";
 
@@ -32,19 +32,19 @@ describe("Service: Servicio", () => {
    httpMock.verify();
  });
 
- it("getPost() should return 10 records", () => {
+ it("getServicios() should return 10 records", () => {
    let mockPosts: Servicio[] = [];
 
-   /*for (let i = 1; i < 11; i++) {
-     let book = new Servicio(
+   for (let i = 1; i < 11; i++) {
+     let servicio = new Servicio(
        i,
        faker.random.nombre(),
-       null
+       
      );
 
      mockPosts.push(servicio);
    }
-*/
+
    service.getServicios().subscribe((servicios) => {
      expect(servicios.length).toBe(10);
    });

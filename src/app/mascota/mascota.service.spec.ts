@@ -8,7 +8,7 @@ import {
  HttpClientTestingModule,
 } from "@angular/common/http/testing";
 
-//import faker from "faker";
+import faker from "faker";
 import { Mascota } from "./mascota";
 import { environment } from "../../environments/environment";
 
@@ -34,22 +34,23 @@ describe("Service: Mascota", () => {
 
  it("getPost() should return 10 records", () => {
    let mockPosts: Mascota[] = [];
-/*
+
    for (let i = 1; i < 11; i++) {
-     let book = new Mascota(
+     let mascota = new Mascota(
        i,
-       faker.random.nombre(),
-       faker.random.raza(),
-       faker.random.ubicacion(),
-       faker.random.edad(),
+       faker.random.id(),
+       faker.lorem.nombre(),
+       faker.lorem.raza(),
+       faker.lorem.ubicacion(),
+       /*faker.random.edad(),
        faker.random.duenio(),
-       faker.random.citasAtendidad(),
-       null
+       faker.random.citasAtendidas(),
+       null*/
      );
 
      mockPosts.push(mascota);
    }
-*/
+
    service.getMascotas().subscribe((mascotas) => {
      expect(mascotas.length).toBe(10);
    });

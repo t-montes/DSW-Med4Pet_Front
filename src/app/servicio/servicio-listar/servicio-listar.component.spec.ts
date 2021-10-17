@@ -6,8 +6,8 @@ import { DebugElement } from "@angular/core";
 import { ServicioListarComponent } from "./servicio-listar.component";
 import { HttpClientTestingModule } from "@angular/common/http/testing";
 import faker from "faker";
-//import { Mascota } from "../servicio";
-//import { Cita } from "src/app/cita/cita";
+import { Servicio } from "../servicio";
+import { Cita } from "src/app/cita/cita";
 //import { Veterinario } from "src/app/veterinario/veterinario";
 
 describe("BookListarComponent", () => {
@@ -22,34 +22,42 @@ describe("BookListarComponent", () => {
    }).compileComponents();
  }));
 
- /*
+ 
  beforeEach(() => {
    fixture = TestBed.createComponent(ServicioListarComponent);
    component = fixture.componentInstance;
-   let cita = new Cita(
+   /*let cita = new Cita(
      faker.random.number(),
      faker.lorem.sentence()
    );
    let veterinario = new Veterinario(
-   faker.random.number(),
-    faker.lorem.sentence()
+    faker.lorem.sentence(),
+    especialidad,
+    faker.lorem.sentence(),
+    faker.random.array(),
+    faker.random.number()
   );
+  
+  let cita = new Cita(
+    faker.lorem.sentence(),
+    especialidad,
+    faker.lorem.sentence(),
+    faker.random.array(),
+    faker.random.number()
+  );
+  */
    component.servicios = [
      new Servicio(
-      faker.random.number(),
       faker.lorem.sentence(),
-       faker.random.number(),
-       faker.lorem.sentence(),
-       faker.image.imageUrl(),
-       faker.date.past(),
-       veterinario,
-       cita
+      faker.lorem.sentence()
+      //veterinario,
+      //cita
      ),
    ];
    fixture.detectChanges();
    debug = fixture.debugElement;
  });
-*/
+
 
  it("should create", () => {
    expect(component).toBeTruthy();
@@ -60,8 +68,8 @@ describe("BookListarComponent", () => {
      component.servicios[0].nombre
    );
 
-   //expect(debug.query(By.css("figcaption")).nativeElement.innerText).toContain(
-     //component.servicios[0].prestadores.name
-   //);
+  expect(debug.query(By.css("figcaption")).nativeElement.innerText).toContain(
+     component.servicios[0].nombre
+   );
  });
 });
