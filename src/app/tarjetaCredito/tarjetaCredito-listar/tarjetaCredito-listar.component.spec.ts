@@ -27,7 +27,7 @@ describe('TarjetaCreditoListarComponent', () => {
     component = fixture.componentInstance;
     component.tarjetas = [new TarjetaCredito(faker.random.number(),faker.random.number(), faker.random.number(), faker.lorem.sentence())]
     fixture.detectChanges();
-    debug = fixture.DebugElement;
+    debug = fixture.debugElement;
   });
 
   it('should create', () => {

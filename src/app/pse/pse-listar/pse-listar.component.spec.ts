@@ -27,7 +27,7 @@ describe('PseListarComponent', () => {
     component = fixture.componentInstance;
     component.pses = [new Pse(faker.random.number(), faker.lorem.sentence(), faker.lorem.sentence())]
     fixture.detectChanges();
-    debug = fixture.DebugElement;
+    debug = fixture.debugElement;
   });
 
   it('should create', () => {

@@ -17,7 +17,7 @@ export class TarjetaCreditoListarComponent implements OnInit {
   }
 
   getTarjetas(): void {
-    this.tarjetaCreditoService.getTarjetas().suscribe(tarjetas => {
+    this.tarjetaCreditoService.getTarjetas().subscribe(tarjetas => {
       this.tarjetas = tarjetas;
     });
   }
