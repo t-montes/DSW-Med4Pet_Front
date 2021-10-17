@@ -31,11 +31,7 @@ describe('Service: Cita', () => {
   afterEach(() => {
     httpMock.verify();
   });
-/*
-  it('should create cita service', inject([CitaService], (service: CitaService) => {
-    expect(service).toBeTruthy();
-  }));
-*/
+
   it("getCitas() should return 10 records", () => {
     let mockCitas: Cita [] = [];
     for (let i = 1; i <= 10; i++) {

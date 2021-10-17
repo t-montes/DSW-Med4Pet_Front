@@ -39,8 +39,8 @@ describe('Service: TarjetaCredito', () => {
       mockPosts.push(tarjeta);
     }
 
-    service.getTarjetas().suscribe((tarjetas) =>{
-      expect(tarjetas.length.toBe(10));
+    service.getTarjetas().subscribe((tarjetas) =>{
+      expect(tarjetas.length).toBe(10);
     })
 
     const req = httpMock.expectOne(apiUrl);
