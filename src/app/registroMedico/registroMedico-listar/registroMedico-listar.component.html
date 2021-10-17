@@ -1,0 +1,13 @@
+<h1>Listado de Registros Medicos</h1>
+<p>Este es el listado de registros medicos de la aplicación</p>
+<div class="container-fluid">
+  <div class="row p-5">
+      <div class="card" *ngFor="let rm of registrosMedicos">
+        <ul class = "list-group">
+          <li class = "list-group-item">Id: {{rm.id}}</li>
+          <li class = "list-group-item">Fecha de expedicion: {{rm.fechaExpedicion}}</li>
+        </ul>
+        <img class="img-fluid" src='{{rm.image}}'/>
+      </div>
+  </div>
+</div>

@@ -6,6 +6,9 @@ import { DebugElement } from '@angular/core';
 import { AgendaListarComponent } from './agenda-listar.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import faker from 'faker';
+import { Mascota } from 'src/app/mascota/mascota';
+import { Servicio } from 'src/app/servicio/servicio';
+import { Pse } from 'src/app/pse/pse';
 import { Cita } from 'src/app/cita/cita';
 import { Agenda } from '../agenda';
 
@@ -24,29 +27,42 @@ describe('AgendaListarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AgendaListarComponent);
     component = fixture.componentInstance;
-    /*
-    let paciente = new Cliente(
+
+    let paciente = new Mascota(
       faker.random.number(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence(),
+      faker.random.number(),
+      null,
+      []
     );
-    let medioDePago = new MedioDePago(
+    let medioDePago = new Pse(
       faker.random.number(),
+      faker.random.number(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence()
     );
     let serviciosTomados = [new Servicio(
       faker.random.number(),
-    )];
-    */
-
-    let citas = [new Cita(
-      faker.random.number(),
-      faker.date.past(),
       faker.lorem.sentence(),
-      faker.random.number(),
-      faker.random.boolean(),
-      faker.random.number(),
-      //paciente,
-      //medioDePago,
-      //serviciosTomados
+      [],
+      []
     )];
+
+    let citas = [
+      new Cita(
+        faker.random.number(),
+        faker.date.past(),
+        faker.lorem.sentence(),
+        faker.random.number(),
+        faker.random.boolean(),
+        faker.random.number(),
+        paciente,
+        medioDePago,
+        serviciosTomados
+      )
+    ]
 
     component.agendas = [
       new Agenda(

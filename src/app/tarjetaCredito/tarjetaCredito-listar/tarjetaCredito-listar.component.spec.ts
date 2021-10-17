@@ -25,7 +25,13 @@ describe('TarjetaCreditoListarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(TarjetaCreditoListarComponent);
     component = fixture.componentInstance;
-    component.tarjetas = [new TarjetaCredito(faker.random.number(),faker.random.number(), faker.random.number(), faker.lorem.sentence())]
+    component.tarjetas = [new TarjetaCredito(
+      faker.random.number(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence(),
+      faker.date.past()
+    )]
     fixture.detectChanges();
     debug = fixture.debugElement;
   });

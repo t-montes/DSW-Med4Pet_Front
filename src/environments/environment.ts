@@ -9,11 +9,13 @@ const port = '8080';
 const appName = 'frontstepbystep-api';
 const rootApi = 'api';
 
+
 export const environment = {
   production: false,
-  baseUrl:`http://${host}:${port}/${rootApi}/`
-};
 
+  baseUrl:`http://${host}:${port}/${rootApi}/`
+
+};
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

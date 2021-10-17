@@ -1,15 +1,19 @@
-export class TarjetaCredito {
+import { MedioDePago } from '../medioDePago/medioDePago';
+
+export class TarjetaCredito extends MedioDePago{
   id: number;
-  numeroTarjeta: number;
-  codigoSeguridad: number;
-  fechaVencimiento: any;
+  numeroTarjeta: string;
+  codigoSeguridad: string;
+  fechaVencimiento: Date;
 
   constructor(
     id: number,
-    numeroTarjeta: number,
-    codigoSeguridad: number,
-    fechaVencimiento: any
+    nombre:string,
+    numeroTarjeta: string,
+    codigoSeguridad: string,
+    fechaVencimiento: Date
   ){
+    super(nombre);
     this.id = id;
     this.numeroTarjeta = numeroTarjeta;
     this.codigoSeguridad = codigoSeguridad;

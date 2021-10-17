@@ -39,6 +39,7 @@ describe('Service: Pse', () => {
       let pse = new Pse(
       i,
       faker.lorem.sentence(),
+      faker.lorem.sentence(),
       faker.lorem.sentence()
       );
       mockPosts.push(pse);

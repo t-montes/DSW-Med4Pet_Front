@@ -9,6 +9,7 @@ import {
 } from '@angular/common/http/testing';
 
 import { TarjetaCredito } from "./tarjetaCredito";
+import faker from 'faker';
 import { environment } from "../../environments/environment";
 
 describe('Service: TarjetaCredito', () => {
@@ -35,7 +36,13 @@ describe('Service: TarjetaCredito', () => {
     let mockPosts: TarjetaCredito[] = [];
 
     for(let i = 1; i < 11; i++){
-      let tarjeta = new TarjetaCredito(i,i,i+200,"01/01/2032")
+      let tarjeta = new TarjetaCredito(
+        i,
+        faker.lorem.sentence(),
+        faker.lorem.sentence(),
+        faker.lorem.sentence(),
+        faker.date.past()
+        )
       mockPosts.push(tarjeta);
     }
 

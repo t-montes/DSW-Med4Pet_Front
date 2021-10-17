@@ -41,7 +41,10 @@ describe('Service: Cita', () => {
         faker.lorem.sentence(),
         faker.random.number(),
         faker.random.boolean(),
-        faker.random.number()
+        faker.random.number(),
+        null,
+        null,
+        null
         );
 
       mockCitas.push(cita);

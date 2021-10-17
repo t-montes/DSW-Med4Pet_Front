@@ -1,0 +1,13 @@
+<h1>Listado de Servicios</h1>
+<p> Este es el listado de servicios de la aplicación</p>
+<div class="container-fluid">
+  <div class="row p-5">
+      <div class="card" *ngFor="let s of servicios">
+        <ul class = "list-group">
+          <li class = "list-group-item">Nombre: {{s.nombre}}</li>
+          <li class = "list-group-item">Veterinario: {{s.veterinario.nombre}}</li>
+          <li class = "list-group-item">Cita: {{s.cita.fecha}}</li>
+        </ul>
+      </div>
+  </div>
+</div>

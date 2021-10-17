@@ -25,7 +25,12 @@ describe('PseListarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PseListarComponent);
     component = fixture.componentInstance;
-    component.pses = [new Pse(faker.random.number(), faker.lorem.sentence(), faker.lorem.sentence())]
+    component.pses = [new Pse(
+      faker.random.number(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence()
+    )]
     fixture.detectChanges();
     debug = fixture.debugElement;
   });
