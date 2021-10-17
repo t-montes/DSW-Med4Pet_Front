@@ -1,10 +1,18 @@
-<p>
-  cita-listar works!
-</p>
+<h1>Listado de Agendas</h1>
+<p>Este es el listado de Agendas de la aplicación</p>
 <div class="container-fluid">
   <div class="row p-5">
-    <div class="col border" *ngFor="let c of citas">
-      Agenda: {{c.id}}
-    </div>
+      <div class="card" *ngFor="let c of citas">
+        <div class = "card-header">
+          Cita #{{c.id}}
+        </div>
+        <ul class = "list-group">
+          <li class = "list-group-item">Fecha: {{c.fecha}}</li>
+          <li class = "list-group-item">Estado: {{c.estado}}</li>
+          <li class = "list-group-item">Costo: {{c.costo}}</li>
+          <li class = "list-group-item">¿Disponibile para agendar?: {{c.disponible}}</li>
+          <li class = "list-group-item">Duración: {{c.duracion}}</li>
+        </ul>
+      </div>
   </div>
 </div>

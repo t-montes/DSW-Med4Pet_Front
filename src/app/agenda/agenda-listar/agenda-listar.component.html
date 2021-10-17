@@ -1,10 +1,17 @@
-<p>
-  agenda-listar works!
-</p>
+<h1>Listado de Agendas</h1>
+<p>Este es el listado de Agendas de la aplicación</p>
 <div class="container-fluid">
   <div class="row p-5">
-    <div class="col border" *ngFor="let a of agendas">
-      Agenda: {{a.id}}
-    </div>
+      <div class="card" *ngFor="let a of agendas">
+        <div class = "card-header">
+          Agenda #{{a.id}}
+        </div>
+        <ul class = "list-group">
+          Número de Citas de la Agenda
+          <li class = "list-group-item">Pendientes: {{a.numeroCitasPendientes}}</li>
+          <li class = "list-group-item">Realizadas: {{a.numeroCitasRealizadas}}</li>
+          <li class = "list-group-item">Canceladas: {{a.numeroCitasCanceladas}}</li>
+        </ul>
+      </div>
   </div>
 </div>
