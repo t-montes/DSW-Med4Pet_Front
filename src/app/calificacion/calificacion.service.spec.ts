@@ -39,7 +39,7 @@ describe("Service: Calificacion", () => {
      let calificacion = new Calificacion(
        faker.lorem.sentence(),
        faker.date.past(),
-       faker.random.number()
+       faker.datatype.number()
      );
 
      mockPosts.push(calificacion);

@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {CalificacionModule} from './calificacion/calificacion.module'
 import {RegistroMedicoModule} from './registroMedico/registroMedico.module'
+
+import { CitaModule } from './cita/cita.module';
+import { AgendaModule } from './agenda/agenda.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,6 +18,8 @@ import {RegistroMedicoModule} from './registroMedico/registroMedico.module'
     HttpClientModule,
     CalificacionModule,
     RegistroMedicoModule,
+    CitaModule,
+    AgendaModule,
     BrowserModule,
     AppRoutingModule
   ],
