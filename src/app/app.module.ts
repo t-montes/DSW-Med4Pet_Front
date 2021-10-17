@@ -5,6 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
+import { VeterinarioModule } from './veterinario/veterinario.module'
+import { ContactoModule } from './contacto/contacto.module'
 import { CitaModule } from './cita/cita.module';
 import { AgendaModule } from './agenda/agenda.module';
 
@@ -13,11 +16,13 @@ import { AgendaModule } from './agenda/agenda.module';
     AppComponent
   ],
   imports: [
-    CitaModule,
-    AgendaModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    VeterinarioModule,
+    ContactoModule,
+    CitaModule,
+    AgendaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

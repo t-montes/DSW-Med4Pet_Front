@@ -1,0 +1,12 @@
+<h1>Listado de Contactos</h1>
+<p>Este es el listado de Contactos de la aplicación</p>
+<div class="container-fluid">
+  <div class="row p-5">
+      <div class="card" *ngFor="let c of contactos">
+        <ul class = "list-group">
+          <li class = "list-group-item">Telefono: {{c.telefono}}</li>
+          <li class = "list-group-item">Correo: {{c.correo}}</li>
+        </ul>
+      </div>
+  </div>
+</div>
