@@ -1,0 +1,13 @@
+<h1>Listado de Empesas Convenio</h1>
+<p>Este es el listada de las empresas que tienen convenio con la aplicacion</p>
+<div class="container-fluid">
+  <div class="row p-5">
+    <div class="card" *ngFor="let c of empresaConvenio">
+      <ul class="list-group">
+        <li class="list-group-item">Nombre: {{c.nombre}}</li>
+        <li class="list-group-item">Nit: {{c.nit}}</li>
+        <li class="list-group-item">Servicio: {{c.servicio}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

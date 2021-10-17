@@ -11,6 +11,10 @@ import { VeterinarioModule } from './veterinario/veterinario.module'
 import { ContactoModule } from './contacto/contacto.module'
 import { CitaModule } from './cita/cita.module';
 import { AgendaModule } from './agenda/agenda.module';
+import { ClienteModule } from './cliente/cliente.module'
+import { EmpresaConvenioModule } from './empresaConvenio/empresaConvenio.module'
+import { Cliente } from './cliente/cliente';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { AgendaModule } from './agenda/agenda.module';
     VeterinarioModule,    //Juan Carlos
     ContactoModule,       //Juan Carlos
     CitaModule,           //Tony
-    AgendaModule          //Tony
+    AgendaModule,          //Tony
+    ClienteModule,        //Shadith
+    EmpresaConvenioModule //Shadith
   ],
   providers: [],
   bootstrap: [AppComponent]
