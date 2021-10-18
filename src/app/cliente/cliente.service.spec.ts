@@ -39,9 +39,9 @@ describe('Service: Cliente', () => {
        faker.random.number(),
        faker.lorem.sentence(),
        faker.random.number(),
-       //null
-       //null
-       //null
+       null,
+       null,
+       null
      );
 
      mockPosts.push(cliente);

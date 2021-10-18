@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 
 export class TarjetaCreditoService {
-  private apiUrl: string = environment.baseUrl + 'tarjetas';
+  private apiUrl: string = environment.baseUrl + 'tarjetasCredito';
 
   constructor(private http: HttpClient) { }
   getTarjetas(): Observable<TarjetaCredito[]>{

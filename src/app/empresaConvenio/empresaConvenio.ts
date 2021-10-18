@@ -1,21 +1,23 @@
+import { Contacto } from '../contacto/contacto';
+
 export class EmpresaConvenio {
   id: number;
   nombre: String;
   nit: String;
   servicio: String;
-  //contacto: Contacto
+  contacto: Contacto;
 
   constructor(
     id: number,
     nombre: String,
     nit: String,
     servicio: String,
-   //contacto: Contacto,
+     contacto: Contacto,
   ) {
     this.id = id;
     this.nombre = nombre;
     this.nit = nit;
     this.servicio = servicio;
-  //  this.contacto: Contacto,
+    this.contacto = contacto;
   }
 }

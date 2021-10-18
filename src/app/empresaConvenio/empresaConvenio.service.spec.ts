@@ -40,7 +40,7 @@ describe('Service: EmpresaConvenio', () => {
        faker.lorem.sentence(),
        faker.lorem.sentence(),
        faker.lorem.sentence(),
-       //null
+       null
      );
 
      mockPosts.push(empresaConvenio);
