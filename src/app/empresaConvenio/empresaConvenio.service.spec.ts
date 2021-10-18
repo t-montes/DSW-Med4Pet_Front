@@ -15,7 +15,7 @@ describe('Service: EmpresaConvenio', () => {
  let injector: TestBed;
  let service: EmpresaConvenioService;
  let httpMock: HttpTestingController;
- let apiUrl = environment.baseUrl + "EmpresaConvenio";
+ let apiUrl = environment.baseUrl + "empresasConvenio";
 
  beforeEach(() => {
    TestBed.configureTestingModule({
