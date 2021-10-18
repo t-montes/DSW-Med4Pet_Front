@@ -26,7 +26,7 @@ describe("MascotaListarComponent", () => {
  beforeEach(() => {
    fixture = TestBed.createComponent(MascotaListarComponent);
    component = fixture.componentInstance;
-   
+
    component.mascotas = [
      new Mascota(
       faker.datatype.number(),
@@ -50,6 +50,7 @@ describe("MascotaListarComponent", () => {
    expect(debug.query(By.css(".card-header")).nativeElement.innerText).toContain(
      component.mascotas[0].nombre
    );
-   */
+  });
+*/
  });
 
