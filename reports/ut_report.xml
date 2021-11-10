@@ -67,8 +67,8 @@
     <testCase name="TarjetaCreditoListarComponent should create" duration="25"/>
     <testCase name="TarjetaCreditoListarComponent Should have an card-header element" duration="15"/>
   </file>
-  <file path="src/app/servicio/servicio.service.spec.ts">
-    <testCase name="Service: Servicio getServicios() should return 10 records" duration="7"/>
+  <file path="src/app/empresaConvenio/empresaConvenio.service.spec.ts">
+    <testCase name="Service: EmpresaConvenio getPost() should return 10 records" duration="24"/>
   </file>
   <file path="src/app/pse/pse.service.spec.ts">
     <testCase name="Service: Pse GetPost() should return 10 records" duration="8"/>

@@ -41,7 +41,7 @@ describe("MascotaListarComponent", () => {
    fixture.detectChanges();
    debug = fixture.debugElement;
  });
-/*
+
  it("should create", () => {
    expect(component).toBeTruthy();
  });
@@ -51,6 +51,6 @@ describe("MascotaListarComponent", () => {
      component.mascotas[0].nombre
    );
   });
-*/
+
 });
 
