@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cita } from '../cita'
+import { CitaDetail } from '../citaDetail'
 import { CitaService } from '../cita.service';
 
 @Component({
@@ -9,7 +9,9 @@ import { CitaService } from '../cita.service';
 })
 export class CitaListarComponent implements OnInit {
 
-  citas: Array<Cita>;
+  citas: Array<CitaDetail>;
+  selected = false;
+  selectedCita: CitaDetail;
 
   constructor(private citaService: CitaService) { }
 
@@ -21,6 +23,11 @@ export class CitaListarComponent implements OnInit {
 
   ngOnInit() {
     this.getCitas();
+  }
+
+  onSelected(c: CitaDetail): void {
+    this.selected = true;
+    this.selectedCita = c;
   }
 
 }
