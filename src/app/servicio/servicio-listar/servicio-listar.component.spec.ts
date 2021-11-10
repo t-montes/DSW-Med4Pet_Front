@@ -40,7 +40,7 @@ describe('ServicioListarComponent', () => {
     debug = fixture.debugElement;
   });
 
-/*
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
@@ -49,6 +49,7 @@ describe('ServicioListarComponent', () => {
     expect(debug.queryAll(By.css(".list-group-item"))[0].nativeElement.innerText).toContain(
       component.servicios[0].nombre
     );
-    */
+    
   });
 
+});

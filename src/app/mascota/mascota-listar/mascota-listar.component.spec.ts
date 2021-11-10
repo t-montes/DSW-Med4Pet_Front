@@ -41,15 +41,15 @@ describe("MascotaListarComponent", () => {
    fixture.detectChanges();
    debug = fixture.debugElement;
  });
-/*
+
  it("should create", () => {
    expect(component).toBeTruthy();
  });
 
  it("Should have an figcaption element ", () => {
    expect(debug.query(By.css(".card-header")).nativeElement.innerText).toContain(
-     component.mascotas[0].nombre
+     component.mascotas[0].id
    );
-   */
+   
  });
-
+});
