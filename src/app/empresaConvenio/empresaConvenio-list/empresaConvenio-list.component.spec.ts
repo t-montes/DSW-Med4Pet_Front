@@ -31,6 +31,7 @@ describe('EmpresaConvenioListComponent', () => {
        faker.lorem.sentence(),
        faker.lorem.sentence(),
        faker.lorem.sentence(),
+       null
       ),
     ];
     fixture.detectChanges();

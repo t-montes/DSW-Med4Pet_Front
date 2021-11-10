@@ -26,7 +26,7 @@ describe("MascotaListarComponent", () => {
  beforeEach(() => {
    fixture = TestBed.createComponent(MascotaListarComponent);
    component = fixture.componentInstance;
-   
+
    component.mascotas = [
      new Mascota(
       faker.datatype.number(),
@@ -41,15 +41,16 @@ describe("MascotaListarComponent", () => {
    fixture.detectChanges();
    debug = fixture.debugElement;
  });
-/*
+
  it("should create", () => {
    expect(component).toBeTruthy();
  });
 
  it("Should have an figcaption element ", () => {
-   expect(debug.query(By.css(".card-header")).nativeElement.innerText).toContain(
+   expect(debug.query(By.css(".list-group-item"))[0].nativeElement.innerText).toContain(
      component.mascotas[0].nombre
    );
-   */
- });
+  });
+
+});
 

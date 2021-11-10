@@ -1,161 +1,112 @@
 <testExecutions version="1">
-  <file path="src/app/agenda/agenda.service.spec.ts">
-    <testCase name="Service: Agenda getAgendas() should return 10 records" duration="67"/>
-  </file>
-  <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should render title" duration="166"/>
-    <testCase name="AppComponent should have as title 'front'" duration="47"/>
-    <testCase name="AppComponent should create the app" duration="42"/>
-  </file>
-  <file path="src/app/calificacion/calificacion-listar/calificacion-listar.component.spec.ts">
-    <testCase name="CalificacionListarComponent should create" duration="88"/>
-    <testCase name="CalificacionListarComponent Should have an li element " duration="27"/>
-  </file>
-  <file path="src/app/calificacion/calificacion.service.spec.ts">
-    <testCase name="Service: Calificacion getPost() should return 10 records" duration="9"/>
-  </file>
-  <file path="src/app/registroMedico/registroMedico.service.spec.ts">
-    <testCase name="Service: RegistroMedico getPost() should return 10 records" duration="8"/>
-  </file>
-  <file path="src/app/cita/cita-listar/cita-listar.component.spec.ts">
-    <testCase name="CitaListarComponent Should have a card header element" duration="55"/>
-    <testCase name="CitaListarComponent should create" duration="24"/>
-  </file>
-  <file path="src/app/servicio/servicio.service.spec.ts">
-    <testCase name="Service: Servicio getServicios() should return 10 records" duration="9"/>
-  </file>
   <file path="src/app/cliente/cliente-list/cliente-list.component.spec.ts">
-    <testCase name="ClienteListarComponent should create" duration="30"/>
-    <testCase name="ClienteListarComponent Should have an list-group-item element " duration="27"/>
-  </file>
-  <file path="src/app/pse/pse.service.spec.ts">
-    <testCase name="Service: Pse GetPost() should return 10 records" duration="11"/>
-  </file>
-  <file path="src/app/cita/cita.service.spec.ts">
-    <testCase name="Service: Cita getCitas() should return 10 records" duration="11"/>
-  </file>
-  <file path="src/app/cliente/cliente.service.spec.ts">
-    <testCase name="Service: Cliente getPost() should return 10 records" duration="13"/>
-  </file>
-  <file path="src/app/tarjetaCredito/tarjetaCredito-listar/tarjetaCredito-listar.component.spec.ts">
-    <testCase name="TarjetaCreditoListarComponent Should have an li element " duration="295">
-      <failure message="Error">TypeError: Cannot read properties of undefined (reading 'nombre')
-    at &lt;Jasmine&gt;
-    at TarjetaCreditoListarComponent_div_6_Template (ng:///TarjetaCreditoListarComponent.js:24:43)
-    at executeTemplate (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7303:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7172:1)
-    at refreshEmbeddedViews (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8280:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7196:1)
-    at refreshComponent (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8326:1)
-    at refreshChildComponents (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:6965:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7222:1)
-    at renderComponentOrTemplate (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7286:1)
-    at tickRootContext (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8498:1)
-
-TypeError: Cannot read properties of undefined (reading 'query')
-    at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/tarjetaCredito/tarjetaCredito-listar/tarjetaCredito-listar.component.spec.ts:44:18)
-    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:1)
-    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:363:1)
-    at Zone.run (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:123:1)
-    at runInTestZone (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:545:1)
-    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:560:1)
-    at &lt;Jasmine&gt;
-</failure>
-    </testCase>
-    <testCase name="TarjetaCreditoListarComponent should create" duration="33">
-      <failure message="Error">TypeError: Cannot read properties of undefined (reading 'nombre')
-    at &lt;Jasmine&gt;
-    at TarjetaCreditoListarComponent_div_6_Template (ng:///TarjetaCreditoListarComponent.js:24:43)
-    at executeTemplate (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7303:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7172:1)
-    at refreshEmbeddedViews (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8280:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7196:1)
-    at refreshComponent (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8326:1)
-    at refreshChildComponents (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:6965:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7222:1)
-    at renderComponentOrTemplate (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7286:1)
-    at tickRootContext (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8498:1)
-</failure>
-    </testCase>
-  </file>
-  <file path="src/app/registroMedico/registroMedico-listar/registroMedico-listar.component.spec.ts">
-    <testCase name="RegistroMedicoListarComponent should create" duration="46"/>
-    <testCase name="RegistroMedicoListarComponent Should have an li element " duration="21"/>
-  </file>
-  <file path="src/app/tarjetaCredito/tarjetaCredito.service.spec.ts">
-    <testCase name="Service: TarjetaCredito getPost() should return 10 records" duration="7"/>
-  </file>
-  <file path="src/app/empresaConvenio/empresaConvenio-list/empresaConvenio-list.component.spec.ts">
-    <testCase name="EmpresaConvenioListComponent should create" duration="26"/>
-    <testCase name="EmpresaConvenioListComponent Should have an list-group-item element " duration="22"/>
-  </file>
-  <file path="src/app/contacto/contacto-list/contacto-list.component.spec.ts">
-    <testCase name="ContactoListComponent Should have an figcaption element " duration="42"/>
-    <testCase name="ContactoListComponent should create" duration="11"/>
-  </file>
-  <file path="src/app/contacto/contacto.service.spec.ts">
-    <testCase name="Service: Contacto getPost() should return 10 records" duration="8"/>
-  </file>
-  <file path="src/app/agenda/agenda-listar/agenda-listar.component.spec.ts">
-    <testCase name="AgendaListarComponent Should have a card header element " duration="44"/>
-    <testCase name="AgendaListarComponent should create" duration="30"/>
+    <testCase name="ClienteListarComponent Should have an list-group-item element " duration="265"/>
+    <testCase name="ClienteListarComponent should create" duration="23"/>
   </file>
   <file path="src/app/veterinario/veterinario-list/veterinario-list.component.spec.ts">
-    <testCase name="VeterinarioListComponent Should have an figcaption element " duration="37"/>
-    <testCase name="VeterinarioListComponent should create" duration="16"/>
+    <testCase name="VeterinarioListComponent Should have an figcaption element " duration="63"/>
+    <testCase name="VeterinarioListComponent should create" duration="21"/>
+  </file>
+  <file path="src/app/calificacion/calificacion-detail/calificacion-detail.component.spec.ts">
+    <testCase name="CalificacionDetailComponent should create" duration="37"/>
+  </file>
+  <file path="src/app/cliente/cliente.service.spec.ts">
+    <testCase name="Service: Cliente getPost() should return 10 records" duration="17"/>
+  </file>
+  <file path="src/app/app.component.spec.ts">
+    <testCase name="AppComponent should create the app" duration="47"/>
+    <testCase name="AppComponent should have as title 'front'" duration="21"/>
+    <testCase name="AppComponent should render title" duration="19"/>
+  </file>
+  <file path="src/app/agenda/agenda-listar/agenda-listar.component.spec.ts">
+    <testCase name="AgendaListarComponent should create" duration="66"/>
+    <testCase name="AgendaListarComponent Should have a card header element " duration="47"/>
+  </file>
+  <file path="src/app/tarjetaCredito/tarjetaCredito.service.spec.ts">
+    <testCase name="Service: TarjetaCredito getPost() should return 10 records" duration="15"/>
+  </file>
+  <file path="src/app/servicio/servicio-listar/servicio-listar.component.spec.ts">
+    <testCase name="ServicioListarComponent Should have an figcaption element " duration="34"/>
+    <testCase name="ServicioListarComponent should create" duration="15"/>
+  </file>
+  <file path="src/app/cita/cita-listar/cita-listar.component.spec.ts">
+    <testCase name="CitaListarComponent Should have a card header element" duration="70"/>
+    <testCase name="CitaListarComponent should create" duration="29"/>
+  </file>
+  <file path="src/app/registroMedico/registroMedico.service.spec.ts">
+    <testCase name="Service: RegistroMedico getPost() should return 10 records" duration="14"/>
+  </file>
+  <file path="src/app/veterinario/veterinario.service.spec.ts">
+    <testCase name="Service: Veterinario getPost() should return 10 records" duration="11"/>
+  </file>
+  <file path="src/app/tarjetaCredito/tarjetaCredito-listar/tarjetaCredito-listar.component.spec.ts">
+    <testCase name="TarjetaCreditoListarComponent Should have an card-header element" duration="42"/>
+    <testCase name="TarjetaCreditoListarComponent should create" duration="14"/>
+  </file>
+  <file path="src/app/cita/cita-detail/cita-detail.component.spec.ts">
+    <testCase name="CitaDetailComponent should create" duration="39"/>
+  </file>
+  <file path="src/app/calificacion/calificacion.service.spec.ts">
+    <testCase name="Service: Calificacion getPost() should return 10 records" duration="7"/>
+  </file>
+  <file path="src/app/servicio/servicio.service.spec.ts">
+    <testCase name="Service: Servicio getServicios() should return 10 records" duration="5"/>
+  </file>
+  <file path="src/app/cita/cita.service.spec.ts">
+    <testCase name="Service: Cita getCitas() should return 10 records" duration="10"/>
+  </file>
+  <file path="src/app/calificacion/calificacion-listar/calificacion-listar.component.spec.ts">
+    <testCase name="CalificacionListarComponent should create" duration="38"/>
+    <testCase name="CalificacionListarComponent Should have an li element " duration="19"/>
   </file>
   <file path="src/app/mascota/mascota.service.spec.ts">
     <testCase name="Service: Mascota getPost() should return 10 records" duration="10"/>
   </file>
-  <file path="src/app/veterinario/veterinario.service.spec.ts">
-    <testCase name="Service: Veterinario getPost() should return 10 records" duration="10"/>
-  </file>
   <file path="src/app/pse/pse-listar/pse-listar.component.spec.ts">
-    <testCase name="PseListarComponent Should have an li element" duration="37">
-      <failure message="Error">TypeError: Cannot read properties of undefined (reading 'nombre')
+    <testCase name="PseListarComponent Should have an card-header element" duration="35"/>
+    <testCase name="PseListarComponent should create" duration="11"/>
+  </file>
+  <file path="src/app/registroMedico/registroMedico-listar/registroMedico-listar.component.spec.ts">
+    <testCase name="RegistroMedicoListarComponent Should have an li element " duration="44"/>
+    <testCase name="RegistroMedicoListarComponent should create" duration="30"/>
+  </file>
+  <file path="src/app/pse/pse.service.spec.ts">
+    <testCase name="Service: Pse GetPost() should return 10 records" duration="5"/>
+  </file>
+  <file path="src/app/mascota/mascota-detail/mascota-detail.component.spec.ts">
+    <testCase name="MascotaDetailComponent should create" duration="17"/>
+  </file>
+  <file path="src/app/empresaConvenio/empresaConvenio-list/empresaConvenio-list.component.spec.ts">
+    <testCase name="EmpresaConvenioListComponent should create" duration="20"/>
+    <testCase name="EmpresaConvenioListComponent Should have an list-group-item element " duration="15"/>
+  </file>
+  <file path="src/app/mascota/mascota-listar/mascota-listar.component.spec.ts">
+    <testCase name="MascotaListarComponent should create" duration="23"/>
+    <testCase name="MascotaListarComponent Should have an figcaption element " duration="192">
+      <failure message="Error">TypeError: Cannot read properties of undefined (reading 'nativeElement')
     at &lt;Jasmine&gt;
-    at PseListarComponent_div_6_Template (ng:///PseListarComponent.js:24:43)
-    at executeTemplate (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7303:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7172:1)
-    at refreshEmbeddedViews (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8280:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7196:1)
-    at refreshComponent (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8326:1)
-    at refreshChildComponents (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:6965:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7222:1)
-    at renderComponentOrTemplate (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7286:1)
-    at tickRootContext (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8498:1)
-
-TypeError: Cannot read properties of undefined (reading 'query')
+    at UserContext.&lt;anonymous&gt; (http://localhost:9877/_karma_webpack_/src/app/mascota/mascota-listar/mascota-listar.component.spec.ts:50:53)
+    at ZoneDelegate.invoke (http://localhost:9877/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:364:1)
+    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9877/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:1)
+    at ZoneDelegate.invoke (http://localhost:9877/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:363:1)
+    at Zone.run (http://localhost:9877/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:123:1)
+    at runInTestZone (http://localhost:9877/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:545:1)
+    at UserContext.&lt;anonymous&gt; (http://localhost:9877/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:560:1)
     at &lt;Jasmine&gt;
-    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/src/app/pse/pse-listar/pse-listar.component.spec.ts:43:18)
-    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:364:1)
-    at ProxyZoneSpec.push../node_modules/zone.js/dist/zone-testing.js.ProxyZoneSpec.onInvoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:292:1)
-    at ZoneDelegate.invoke (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:363:1)
-    at Zone.run (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-evergreen.js:123:1)
-    at runInTestZone (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:545:1)
-    at UserContext.&lt;anonymous&gt; (http://localhost:9876/_karma_webpack_/node_modules/zone.js/dist/zone-testing.js:560:1)
-    at &lt;Jasmine&gt;
-</failure>
-    </testCase>
-    <testCase name="PseListarComponent should create" duration="34">
-      <failure message="Error">TypeError: Cannot read properties of undefined (reading 'nombre')
-    at &lt;Jasmine&gt;
-    at PseListarComponent_div_6_Template (ng:///PseListarComponent.js:24:43)
-    at executeTemplate (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7303:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7172:1)
-    at refreshEmbeddedViews (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8280:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7196:1)
-    at refreshComponent (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8326:1)
-    at refreshChildComponents (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:6965:1)
-    at refreshView (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7222:1)
-    at renderComponentOrTemplate (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:7286:1)
-    at tickRootContext (http://localhost:9876/_karma_webpack_/node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:8498:1)
 </failure>
     </testCase>
   </file>
   <file path="src/app/empresaConvenio/empresaConvenio.service.spec.ts">
-    <testCase name="Service: EmpresaConvenio getPost() should return 10 records" duration="14"/>
+    <testCase name="Service: EmpresaConvenio getPost() should return 10 records" duration="15"/>
+  </file>
+  <file path="src/app/agenda/agenda.service.spec.ts">
+    <testCase name="Service: Agenda getAgendas() should return 10 records" duration="12"/>
+  </file>
+  <file path="src/app/contacto/contacto-list/contacto-list.component.spec.ts">
+    <testCase name="ContactoListComponent should create" duration="19"/>
+    <testCase name="ContactoListComponent Should have an figcaption element " duration="26"/>
+  </file>
+  <file path="src/app/contacto/contacto.service.spec.ts">
+    <testCase name="Service: Contacto getPost() should return 10 records" duration="11"/>
   </file>
 </testExecutions>

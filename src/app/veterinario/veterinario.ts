@@ -1,4 +1,6 @@
 import { Contacto } from "../contacto/contacto";
+import { RegistroMedico } from "../registroMedico/registroMedico";
+import { Agenda } from "../agenda/agenda";
 
 export class Veterinario {
   //Atributos
@@ -10,8 +12,8 @@ export class Veterinario {
   calificacion: number;
   //Asociaciones
   contacto: Contacto;
-  //registroMedico: RegistroMedico;
-  //agenda: Agenda;
+  registroMedico: RegistroMedico;
+  agenda: Agenda;
   constructor(
     id: number,
     nombre: string,
@@ -19,7 +21,9 @@ export class Veterinario {
     certificadoEntrenamiento: string,
     experienciaPrevia: string,
     calificacion: number,
-    contacto: Contacto
+    contacto: Contacto,
+    registroMedico: RegistroMedico,
+    agenda: Agenda
     ){
       this.id = id;
       this.nombre = nombre;
@@ -28,5 +32,7 @@ export class Veterinario {
       this.experienciaPrevia = experienciaPrevia;
       this.calificacion = calificacion;
       this.contacto = contacto;
+      this.registroMedico = registroMedico;
+      this.agenda = agenda;
     }
 }

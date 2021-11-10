@@ -29,7 +29,8 @@ describe("CalificacionListarComponent", () => {
      new Calificacion(
       faker.lorem.sentence(),
        faker.date.past(),
-       faker.datatype.number()
+       faker.datatype.number(),
+       faker.lorem.sentence()
      ),
    ];
    fixture.detectChanges();

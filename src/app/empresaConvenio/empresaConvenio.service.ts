@@ -9,7 +9,7 @@ import { Observable } from 'rxjs'
 })
 export class EmpresaConvenioService {
 
-private apiUrl:string = environment.baseUrl + 'EmpresaConvenio';
+private apiUrl:string = environment.baseUrl + 'empresasConvenio';
 constructor(private http: HttpClient) { }
 
 getEmpresaConvenio(): Observable<EmpresaConvenio[]> {

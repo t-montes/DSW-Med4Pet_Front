@@ -11,7 +11,6 @@ export class Cita{
   duracion: number;
   paciente: Mascota;
   medioDePago: MedioDePago;
-  serviciosTomados : Servicio[];
 
   constructor(
     id: number,
@@ -21,8 +20,7 @@ export class Cita{
     disponible: boolean,
     duracion: number,
     paciente: Mascota,
-    medioDePago: MedioDePago,
-    serviciosTomados : Servicio[]
+    medioDePago: MedioDePago
   ){
     this.id = id;
     this.fecha = new Date(fecha);
@@ -32,6 +30,5 @@ export class Cita{
     this.duracion = duracion;
     this.paciente = paciente;
     this.medioDePago = medioDePago;
-    this.serviciosTomados = serviciosTomados;
   }
 }

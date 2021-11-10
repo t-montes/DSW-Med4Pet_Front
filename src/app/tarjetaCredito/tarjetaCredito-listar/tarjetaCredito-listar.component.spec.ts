@@ -40,9 +40,9 @@ describe('TarjetaCreditoListarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("Should have an li element ", () => {
-    expect(debug.query(By.css("li")).nativeElement.innerText).toContain(
-      component.tarjetas[0].numeroTarjeta
+  it("Should have an card-header element", () => {
+    expect(debug.query(By.css(".card-header")).nativeElement.innerText).toContain(
+      component.tarjetas[0].nombre
     );
   });
 });

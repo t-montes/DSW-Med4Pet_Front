@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ClienteService {
 
-private apiUrl:string = environment.baseUrl + 'Clientes';
+private apiUrl:string = environment.baseUrl + 'clientes';
 constructor(private http: HttpClient) { }
 
 getClientes(): Observable<Cliente[]> {
