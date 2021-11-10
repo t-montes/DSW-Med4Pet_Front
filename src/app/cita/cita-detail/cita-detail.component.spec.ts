@@ -6,6 +6,7 @@ import faker from 'faker';
 import { Mascota } from '../../mascota/mascota';
 import { Pse } from '../../pse/pse';
 import { Servicio } from '../../servicio/servicio';
+import { Cliente } from '../../cliente/cliente';
 import { CitaDetail } from '../citaDetail';
 import { CitaDetailComponent } from './cita-detail.component';
 
@@ -24,13 +25,22 @@ describe('CitaDetailComponent', () => {
     fixture = TestBed.createComponent(CitaDetailComponent);
     component = fixture.componentInstance;
 
+    let duenio = new Cliente(
+      faker.random.number(),
+      faker.lorem.sentence(),
+      faker.random.number(),
+      null,
+      null,
+      null
+    );
+
     let paciente = new Mascota(
       faker.random.number(),
       faker.lorem.sentence(),
       faker.lorem.sentence(),
       faker.lorem.sentence(),
       faker.random.number(),
-      null,
+      duenio,
       []
     );
     let medioDePago = new Pse(
