@@ -3,9 +3,12 @@
 <div class="container-fluid">
   <div class="row p-5">
       <div class="card" *ngFor="let m of mascotas">
+        <div class = "card-header">
+          {{m.nombre}}
+        </div>
         <ul class = "list-group" (click) = "onSelected(m)">
-          <li class = "list-group-item">Nombre: {{m.nombre}}</li>
-          <li class = "list-group-item">Raza: {{m.raza}}</li>
+          <li class = "list-group-item" >Nombre: {{m.nombre}}</li>
+          <li class = "list-group-item" >Raza: {{m.raza}}</li>
         </ul>
       </div>
   </div>
