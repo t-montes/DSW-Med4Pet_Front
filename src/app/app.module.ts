@@ -3,18 +3,15 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 import { ServicioModule } from './servicio/servicio.module';
 import { MascotaModule } from './mascota/mascota.module';
-
 import {CalificacionModule} from './calificacion/calificacion.module'
 import {RegistroMedicoModule} from './registroMedico/registroMedico.module'
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { TarjetaCreditoModule } from './tarjetaCredito/tarjetaCredito.module'
 import { PseModule } from './pse/pse.module';
-
 import { VeterinarioModule } from './veterinario/veterinario.module'
 import { ContactoModule } from './contacto/contacto.module'
 import { CitaModule } from './cita/cita.module';
@@ -37,8 +34,8 @@ import { EmpresaConvenioModule } from './empresaConvenio/empresaConvenio.module'
     RegistroMedicoModule, //Luccas
     TarjetaCreditoModule, //Gabriela
     PseModule,            //Gabriela
-    VeterinarioModule,    //Juan Carlos
-    ContactoModule,       //Juan Carlos
+    VeterinarioModule,    //Juan
+    ContactoModule,       //Juan
     CitaModule,           //Tony
     AgendaModule,         //Tony
     ClienteModule,        //Shadith

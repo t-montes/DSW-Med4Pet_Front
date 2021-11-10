@@ -43,6 +43,8 @@ describe('Service: Veterinario', () => {
         faker.lorem.sentence(),
         faker.lorem.sentence(),
         faker.datatype.number(),
+        null,
+        null,
         null
       );
     mockPosts.push(veterinario);

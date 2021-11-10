@@ -8,6 +8,8 @@ import { HttpClientTestingModule } from "@angular/common/http/testing";
 import faker from "faker";
 import { Veterinario } from "../veterinario";
 import { Contacto } from "src/app/contacto/contacto";
+import { RegistroMedico } from "src/app/registroMedico/registroMedico";
+import { Agenda } from "src/app/agenda/agenda";
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -34,6 +36,20 @@ describe('VeterinarioListComponent', () => {
       faker.lorem.sentence()
     );
 
+    let registroMedico = new RegistroMedico(
+      faker.datatype.number(),
+      faker.date.past(),
+      faker.lorem.sentence()
+    );
+
+    let agenda = new Agenda(
+      faker.datatype.number(),
+      faker.datatype.number(),
+      faker.datatype.number(),
+      faker.datatype.number(),
+      []
+    );
+
     component.veterinarios = [
       new Veterinario(
         faker.datatype.number(),
@@ -42,7 +58,9 @@ describe('VeterinarioListComponent', () => {
         faker.lorem.sentence(),
         faker.lorem.sentence(),
         faker.datatype.number(),
-        contacto
+        contacto,
+        registroMedico,
+        agenda
       )
     ];
     fixture.detectChanges();

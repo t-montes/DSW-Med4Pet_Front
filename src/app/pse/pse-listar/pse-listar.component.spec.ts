@@ -39,9 +39,9 @@ describe('PseListarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("Should have an li element", () => {
-    expect(debug.query(By.css("li")).nativeElement.innerText).toContain(
-      component.pses[0].banco
+  it("Should have an card-header element", () => {
+    expect(debug.query(By.css(".card-header")).nativeElement.innerText).toContain(
+      component.pses[0].nombre
     );
   });
 });

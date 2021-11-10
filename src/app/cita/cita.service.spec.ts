@@ -35,6 +35,7 @@ describe('Service: Cita', () => {
   it("getCitas() should return 10 records", () => {
     let mockCitas: Cita [] = [];
     for (let i = 1; i <= 10; i++) {
+      /*Not Detail*/
       let cita: Cita = new Cita(
         i,
         faker.date.past(),
@@ -42,7 +43,6 @@ describe('Service: Cita', () => {
         faker.random.number(),
         faker.random.boolean(),
         faker.random.number(),
-        null,
         null,
         null
         );

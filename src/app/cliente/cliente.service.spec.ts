@@ -15,7 +15,7 @@ describe('Service: Cliente', () => {
  let injector: TestBed;
  let service: ClienteService;
  let httpMock: HttpTestingController;
- let apiUrl = environment.baseUrl + "Clientes";
+ let apiUrl = environment.baseUrl + "clientes";
 
  beforeEach(() => {
    TestBed.configureTestingModule({
@@ -39,9 +39,9 @@ describe('Service: Cliente', () => {
        faker.random.number(),
        faker.lorem.sentence(),
        faker.random.number(),
-       //null
-       //null
-       //null
+       null,
+       null,
+       null
      );
 
      mockPosts.push(cliente);

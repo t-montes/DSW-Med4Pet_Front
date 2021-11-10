@@ -49,7 +49,6 @@ describe('ServicioListarComponent', () => {
     expect(debug.queryAll(By.css(".list-group-item"))[0].nativeElement.innerText).toContain(
       component.servicios[0].nombre
     );
-    
   });
-
 });
+

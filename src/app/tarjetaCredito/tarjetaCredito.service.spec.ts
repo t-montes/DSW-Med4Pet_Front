@@ -16,7 +16,7 @@ describe('Service: TarjetaCredito', () => {
   let injector: TestBed;
   let service: TarjetaCreditoService;
   let httpMock: HttpTestingController;
-  let apiUrl = environment.baseUrl + 'tarjetas';
+  let apiUrl = environment.baseUrl + 'tarjetasCredito';
 
   beforeEach(() => {
     TestBed.configureTestingModule({
