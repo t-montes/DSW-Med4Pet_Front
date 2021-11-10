@@ -4,14 +4,11 @@
   <div class="row p-5">
       <div class="card" *ngFor="let c of citas">
         <div class = "card-header">
-          Cita #{{c.id}}
+          <a (click) = citas.onselected(c)>Cita #{{c.id}}</a>
         </div>
         <ul class = "list-group">
           <li class = "list-group-item">Fecha: {{c.fecha}}</li>
-          <li class = "list-group-item">Estado: {{c.estado}}</li>
-          <li class = "list-group-item">Costo: {{c.costo}}</li>
-          <li class = "list-group-item">¿Disponibile para agendar?: {{c.disponible}}</li>
-          <li class = "list-group-item">Duración: {{c.duracion}}</li>
+          <li class = "list-group-item">Disponible: {{c.disponible ? "Disponible" : "Reservado"}}</li>
         </ul>
       </div>
   </div>
