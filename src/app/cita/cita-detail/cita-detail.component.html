@@ -13,10 +13,10 @@
         <!--Si está disponible no tiene sentido mostrar ningún cliente porque ninguno habrá reservado-->
         <div *ngIf="!citaDetail.disponible">
           <dt> Cliente</dt>
-          <dd>{{citaDetail.paciente.duenio.nombre}}</dd>
+          <!--<dd>{{citaDetail.paciente.duenio.nombre}}</dd>-->
           <hr>
           <dt> Mascota</dt>
-          <dd>{{citaDetail.paciente.nombre}}</dd>
+          <!--<dd>{{citaDetail.paciente.nombre}}</dd>-->
           <hr>
         </div>
         <dt>Costo</dt>
@@ -26,7 +26,7 @@
         <dd>{{citaDetail.duracion}} minutos</dd>
         <hr>
         <dt>Servicios de la Cita</dt>
-        <dd>{{citaDetail.serviciosTomados.join(', ')}}</dd>
+        <!--<dd>{{citaDetail.serviciosTomados.join(', ')}}</dd>-->
       </dl>
     </div>
   </div>
