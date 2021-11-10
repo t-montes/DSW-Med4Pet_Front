@@ -1,81 +1,33 @@
 <testExecutions version="1">
   <file path="src/app/servicio/servicio-listar/servicio-listar.component.spec.ts">
-    <testCase name="ServicioListarComponent should create" duration="70"/>
-    <testCase name="ServicioListarComponent Should have an figcaption element " duration="16"/>
-  </file>
-  <file path="src/app/empresaConvenio/empresaConvenio-list/empresaConvenio-list.component.spec.ts">
-    <testCase name="EmpresaConvenioListComponent should create" duration="27"/>
-    <testCase name="EmpresaConvenioListComponent Should have an list-group-item element " duration="15"/>
-  </file>
-  <file path="src/app/registroMedico/registroMedico.service.spec.ts">
-    <testCase name="Service: RegistroMedico getPost() should return 10 records" duration="6"/>
-  </file>
-  <file path="src/app/tarjetaCredito/tarjetaCredito-listar/tarjetaCredito-listar.component.spec.ts">
-    <testCase name="TarjetaCreditoListarComponent should create" duration="15"/>
-    <testCase name="TarjetaCreditoListarComponent Should have an card-header element" duration="12"/>
-  </file>
-  <file path="src/app/mascota/mascota.service.spec.ts">
-    <testCase name="Service: Mascota getPost() should return 10 records" duration="6"/>
-  </file>
-  <file path="src/app/calificacion/calificacion-detail/calificacion-detail.component.spec.ts">
-    <testCase name="CalificacionDetailComponent should create" duration="13"/>
-  </file>
-  <file path="src/app/pse/pse-listar/pse-listar.component.spec.ts">
-    <testCase name="PseListarComponent Should have an card-header element" duration="17"/>
-    <testCase name="PseListarComponent should create" duration="14"/>
-  </file>
-  <file path="src/app/empresaConvenio/empresaConvenio.service.spec.ts">
-    <testCase name="Service: EmpresaConvenio getPost() should return 10 records" duration="6"/>
+    <testCase name="ServicioListarComponent Should have an figcaption element " duration="88"/>
+    <testCase name="ServicioListarComponent should create" duration="10"/>
   </file>
   <file path="src/app/app.component.spec.ts">
-    <testCase name="AppComponent should create the app" duration="19"/>
-    <testCase name="AppComponent should render title" duration="7"/>
-    <testCase name="AppComponent should have as title 'front'" duration="9"/>
+    <testCase name="AppComponent should have as title 'front'" duration="16"/>
+    <testCase name="AppComponent should render title" duration="9"/>
+    <testCase name="AppComponent should create the app" duration="6"/>
   </file>
-  <file path="src/app/mascota/mascota-listar/mascota-listar.component.spec.ts">
-    <testCase name="MascotaListarComponent should create" duration="38"/>
-    <testCase name="MascotaListarComponent Should have an figcaption element " duration="7"/>
+  <file path="src/app/tarjetaCredito/tarjetaCredito-listar/tarjetaCredito-listar.component.spec.ts">
+    <testCase name="TarjetaCreditoListarComponent Should have an card-header element" duration="17"/>
+    <testCase name="TarjetaCreditoListarComponent should create" duration="9"/>
   </file>
   <file path="src/app/agenda/agenda.service.spec.ts">
-    <testCase name="Service: Agenda getAgendas() should return 10 records" duration="4"/>
-  </file>
-  <file path="src/app/registroMedico/registroMedico-listar/registroMedico-listar.component.spec.ts">
-    <testCase name="RegistroMedicoListarComponent Should have an li element " duration="21"/>
-    <testCase name="RegistroMedicoListarComponent should create" duration="8"/>
-  </file>
-  <file path="src/app/calificacion/calificacion-listar/calificacion-listar.component.spec.ts">
-    <testCase name="CalificacionListarComponent Should have an li element " duration="25"/>
-    <testCase name="CalificacionListarComponent should create" duration="9"/>
-  </file>
-  <file path="src/app/pse/pse.service.spec.ts">
-    <testCase name="Service: Pse GetPost() should return 10 records" duration="5"/>
-  </file>
-  <file path="src/app/contacto/contacto.service.spec.ts">
-    <testCase name="Service: Contacto getPost() should return 10 records" duration="4"/>
-  </file>
-  <file path="src/app/cita/cita-listar/cita-listar.component.spec.ts">
-    <testCase name="CitaListarComponent should create" duration="33"/>
-    <testCase name="CitaListarComponent Should have a card header element" duration="12"/>
-  </file>
-  <file path="src/app/cliente/cliente.service.spec.ts">
-    <testCase name="Service: Cliente getPost() should return 10 records" duration="4"/>
+    <testCase name="Service: Agenda getAgendas() should return 10 records" duration="9"/>
   </file>
   <file path="src/app/tarjetaCredito/tarjetaCredito.service.spec.ts">
     <testCase name="Service: TarjetaCredito getPost() should return 10 records" duration="3"/>
   </file>
-  <file path="src/app/cita/cita.service.spec.ts">
-    <testCase name="Service: Cita getCitas() should return 10 records" duration="5"/>
+  <file path="src/app/calificacion/calificacion-listar/calificacion-listar.component.spec.ts">
+    <testCase name="CalificacionListarComponent Should have an li element " duration="18"/>
+    <testCase name="CalificacionListarComponent should create" duration="7"/>
   </file>
-  <file path="src/app/agenda/agenda-listar/agenda-listar.component.spec.ts">
-    <testCase name="AgendaListarComponent should create" duration="14"/>
-    <testCase name="AgendaListarComponent Should have a card header element " duration="10"/>
+  <file path="src/app/veterinario/veterinario-list/veterinario-list.component.spec.ts">
+    <testCase name="VeterinarioListComponent Should have an figcaption element " duration="16"/>
+    <testCase name="VeterinarioListComponent should create" duration="7"/>
   </file>
-  <file path="src/app/contacto/contacto-list/contacto-list.component.spec.ts">
-    <testCase name="ContactoListComponent Should have an figcaption element " duration="13"/>
-    <testCase name="ContactoListComponent should create" duration="7"/>
-  </file>
-  <file path="src/app/calificacion/calificacion.service.spec.ts">
-    <testCase name="Service: Calificacion getPost() should return 10 records" duration="7"/>
+  <file path="src/app/calificacion/calificacion-detail/calificacion-detail.component.spec.ts">
+    <testCase name="CalificacionDetailComponent should create" duration="10"/>
   </file>
   <file path="src/app/veterinario/veterinario.service.spec.ts">
     <testCase name="Service: Veterinario getPost() should return 10 records" duration="3"/>
@@ -83,15 +35,63 @@
   <file path="src/app/cita/cita-detail/cita-detail.component.spec.ts">
     <testCase name="CitaDetailComponent should create" duration="17"/>
   </file>
-  <file path="src/app/cliente/cliente-list/cliente-list.component.spec.ts">
-    <testCase name="ClienteListarComponent Should have an list-group-item element " duration="12"/>
-    <testCase name="ClienteListarComponent should create" duration="6"/>
+  <file path="src/app/pse/pse-listar/pse-listar.component.spec.ts">
+    <testCase name="PseListarComponent Should have an card-header element" duration="11"/>
+    <testCase name="PseListarComponent should create" duration="7"/>
+  </file>
+  <file path="src/app/calificacion/calificacion.service.spec.ts">
+    <testCase name="Service: Calificacion getPost() should return 10 records" duration="5"/>
+  </file>
+  <file path="src/app/mascota/mascota-listar/mascota-listar.component.spec.ts">
+    <testCase name="MascotaListarComponent Should have an figcaption element " duration="14"/>
+    <testCase name="MascotaListarComponent should create" duration="5"/>
+  </file>
+  <file path="src/app/cita/cita-listar/cita-listar.component.spec.ts">
+    <testCase name="CitaListarComponent should create" duration="13"/>
+    <testCase name="CitaListarComponent Should have a card header element" duration="11"/>
+  </file>
+  <file path="src/app/pse/pse.service.spec.ts">
+    <testCase name="Service: Pse GetPost() should return 10 records" duration="3"/>
+  </file>
+  <file path="src/app/cita/cita.service.spec.ts">
+    <testCase name="Service: Cita getCitas() should return 10 records" duration="6"/>
+  </file>
+  <file path="src/app/mascota/mascota.service.spec.ts">
+    <testCase name="Service: Mascota getPost() should return 10 records" duration="2"/>
+  </file>
+  <file path="src/app/empresaConvenio/empresaConvenio.service.spec.ts">
+    <testCase name="Service: EmpresaConvenio getPost() should return 10 records" duration="3"/>
+  </file>
+  <file path="src/app/registroMedico/registroMedico.service.spec.ts">
+    <testCase name="Service: RegistroMedico getPost() should return 10 records" duration="3"/>
+  </file>
+  <file path="src/app/empresaConvenio/empresaConvenio-list/empresaConvenio-list.component.spec.ts">
+    <testCase name="EmpresaConvenioListComponent should create" duration="11"/>
+    <testCase name="EmpresaConvenioListComponent Should have an list-group-item element " duration="10"/>
   </file>
   <file path="src/app/servicio/servicio.service.spec.ts">
-    <testCase name="Service: Servicio getServicios() should return 10 records" duration="4"/>
+    <testCase name="Service: Servicio getServicios() should return 10 records" duration="3"/>
   </file>
-  <file path="src/app/veterinario/veterinario-list/veterinario-list.component.spec.ts">
-    <testCase name="VeterinarioListComponent should create" duration="12"/>
-    <testCase name="VeterinarioListComponent Should have an figcaption element " duration="9"/>
+  <file path="src/app/registroMedico/registroMedico-listar/registroMedico-listar.component.spec.ts">
+    <testCase name="RegistroMedicoListarComponent should create" duration="12"/>
+    <testCase name="RegistroMedicoListarComponent Should have an li element " duration="7"/>
+  </file>
+  <file path="src/app/contacto/contacto.service.spec.ts">
+    <testCase name="Service: Contacto getPost() should return 10 records" duration="4"/>
+  </file>
+  <file path="src/app/cliente/cliente.service.spec.ts">
+    <testCase name="Service: Cliente getPost() should return 10 records" duration="4"/>
+  </file>
+  <file path="src/app/agenda/agenda-listar/agenda-listar.component.spec.ts">
+    <testCase name="AgendaListarComponent should create" duration="21"/>
+    <testCase name="AgendaListarComponent Should have a card header element " duration="9"/>
+  </file>
+  <file path="src/app/contacto/contacto-list/contacto-list.component.spec.ts">
+    <testCase name="ContactoListComponent should create" duration="9"/>
+    <testCase name="ContactoListComponent Should have an figcaption element " duration="5"/>
+  </file>
+  <file path="src/app/cliente/cliente-list/cliente-list.component.spec.ts">
+    <testCase name="ClienteListarComponent Should have an list-group-item element " duration="12"/>
+    <testCase name="ClienteListarComponent should create" duration="7"/>
   </file>
 </testExecutions>
