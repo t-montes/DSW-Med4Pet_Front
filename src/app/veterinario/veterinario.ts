@@ -1,6 +1,7 @@
 import { Contacto } from "../contacto/contacto";
 import { RegistroMedico } from "../registroMedico/registroMedico";
 import { Agenda } from "../agenda/agenda";
+import { Calificacion } from "../calificacion/calificacion";
 
 export class Veterinario {
   //Atributos
@@ -23,7 +24,7 @@ export class Veterinario {
     calificacion: number,
     contacto: Contacto,
     registroMedico: RegistroMedico,
-    agenda: Agenda
+    agenda: Agenda,
     ){
       this.id = id;
       this.nombre = nombre;
