@@ -3,11 +3,14 @@
 <div class="container-fluid">
   <div class="row p-5">
       <div class="card" *ngFor="let cal of calificaciones">
-        <ul class = "list-group">
+        <ul class = "list-group" (click)="onSelected(cal)">
           <li class = "list-group-item">Creador: {{cal.creador}}</li>
-          <li class = "list-group-item">Fecha: {{cal.fecha}}</li>
           <li class = "list-group-item">Puntaje: {{cal.puntaje}}</li>
         </ul>
       </div>
   </div>
 </div>
+<div *ngIf = "selected">
+  <app-calificacion-detail [calificacionDetail]="selectedCal"></app-calificacion-detail>
+</div>
+
