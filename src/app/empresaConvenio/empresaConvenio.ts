@@ -12,7 +12,7 @@ export class EmpresaConvenio {
     nombre: String,
     nit: String,
     servicio: String,
-     contacto: Contacto,
+    contacto: Contacto,
   ) {
     this.id = id;
     this.nombre = nombre;
