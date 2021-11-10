@@ -1,0 +1,33 @@
+<div class="container-fluid">
+
+  <p class="h3 p-3">Cita el día {{citaDetail.fecha.getDate()}} a las {{citaDetail.fecha.getTime()}}</p>
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt> Veterinario</dt>
+        <dd>No available information <!--TODO--></dd>
+        <hr>
+        <dt> Disponibilidad</dt>
+        <dd>{{citaDetail.disponible ? "Disponible" : "Reservado"}}</dd>
+        <hr>
+        <!--Si está disponible no tiene sentido mostrar ningún cliente porque ninguno habrá reservado-->
+        <div *ngIf="!citaDetail.disponible">
+          <dt> Cliente</dt>
+          <dd>{{citaDetail.paciente.duenio.nombre}}</dd>
+          <hr>
+          <dt> Mascota</dt>
+          <dd>{{citaDetail.paciente.nombre}}</dd>
+          <hr>
+        </div>
+        <dt>Costo</dt>
+        <dd>${{citaDetail.costo}}</dd>
+        <hr>
+        <dt>Duración</dt>
+        <dd>{{citaDetail.duracion}} minutos</dd>
+        <hr>
+        <dt>Servicios de la Cita</dt>
+        <dd>{{citaDetail.serviciosTomados.join(', ')}}</dd>
+      </dl>
+    </div>
+  </div>
+</div>

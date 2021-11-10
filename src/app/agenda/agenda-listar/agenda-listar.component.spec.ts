@@ -43,14 +43,9 @@ describe('AgendaListarComponent', () => {
       faker.lorem.sentence(),
       faker.lorem.sentence()
     );
-    let serviciosTomados = [new Servicio(
-      faker.random.number(),
-      faker.lorem.sentence(),
-      [],
-      []
-    )];
 
     let citas = [
+      /*Not Detail*/
       new Cita(
         faker.random.number(),
         faker.date.past(),
@@ -59,8 +54,7 @@ describe('AgendaListarComponent', () => {
         faker.random.boolean(),
         faker.random.number(),
         paciente,
-        medioDePago,
-        serviciosTomados
+        medioDePago
       )
     ]
 

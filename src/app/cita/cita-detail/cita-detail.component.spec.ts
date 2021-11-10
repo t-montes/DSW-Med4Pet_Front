@@ -2,29 +2,26 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
-import { CitaListarComponent } from './cita-listar.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import faker from 'faker';
-import { Mascota } from 'src/app/mascota/mascota';
-import { Pse } from 'src/app/pse/pse';
-import { Servicio } from 'src/app/servicio/servicio';
+import { Mascota } from '../../mascota/mascota';
+import { Pse } from '../../pse/pse';
+import { Servicio } from '../../servicio/servicio';
 import { CitaDetail } from '../citaDetail';
+import { CitaDetailComponent } from './cita-detail.component';
 
-describe('CitaListarComponent', () => {
-  let component: CitaListarComponent;
-  let fixture: ComponentFixture<CitaListarComponent>;
-  let debug: DebugElement;
+describe('CitaDetailComponent', () => {
+  let component: CitaDetailComponent;
+  let fixture: ComponentFixture<CitaDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CitaListarComponent ],
-      imports: [HttpClientTestingModule]
-    }).compileComponents();
+      declarations: [ CitaDetailComponent ]
+    })
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CitaListarComponent);
+    fixture = TestBed.createComponent(CitaDetailComponent);
     component = fixture.componentInstance;
 
     let paciente = new Mascota(
@@ -49,8 +46,7 @@ describe('CitaListarComponent', () => {
       []
     )];
 
-    component.citas = [
-      new CitaDetail(
+    component.citaDetail = new CitaDetail(
         faker.random.number(),
         faker.date.past(),
         faker.lorem.sentence(),
@@ -61,19 +57,11 @@ describe('CitaListarComponent', () => {
         medioDePago,
         serviciosTomados
       )
-    ]
 
     fixture.detectChanges();
-    debug = fixture.debugElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it("Should have a card header element", ()=>{
-    expect(debug.query(By.css(".card-header")).nativeElement.innerText).toContain(
-      component.citas[0].id
-    );
   });
 });
