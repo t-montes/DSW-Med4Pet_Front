@@ -47,12 +47,5 @@ describe('EmpresaConvenioListComponent', () => {
      component.empresaConvenio[0].nombre
   );
 
-  expect(debug.queryAll(By.css(".list-group-item"))[1].nativeElement.innerText).toContain(
-    component.empresaConvenio[0].nit
-  );
-
-  expect(debug.queryAll(By.css(".list-group-item"))[2].nativeElement.innerText).toContain(
-    component.empresaConvenio[0].servicio
-  );
  });
 });
