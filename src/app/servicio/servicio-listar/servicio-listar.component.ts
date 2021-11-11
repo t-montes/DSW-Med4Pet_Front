@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Servicio } from "../servicio";
+import { ServicioDetail } from '../servicioDetail';
 import {ServicioService} from "../servicio.service";
 
 @Component({
@@ -8,17 +8,26 @@ import {ServicioService} from "../servicio.service";
   styleUrls: ['./servicio-listar.component.scss']
 })
 export class ServicioListarComponent implements OnInit {
-  servicios: Array<Servicio>
+
+  servicios: Array<ServicioDetail>
+  selected = false;
+  selectedCita: ServicioDetail;
+
   constructor(private servicioService: ServicioService) { }
 
   getServicios(){
     this.servicioService.getServicios().subscribe((servicios)=>{
       this.servicios = servicios;
-      console.log("Servicios", servicios);
     })
   }
+
   ngOnInit() {
     this.getServicios();
+  }
+
+  onSelected(c: ServicioDetail): void {
+    this.selected = true;
+    this.selectedCita = c;
   }
 
 }

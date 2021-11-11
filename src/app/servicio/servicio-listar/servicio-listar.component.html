@@ -3,9 +3,15 @@
 <div class="container-fluid">
   <div class="row p-5">
       <div class="card" *ngFor="let s of servicios">
+        <div class = "card-header">
+          <a (click) = "onSelected(c)">Servicio #{{s.id}}</a>
+        </div>
         <ul class = "list-group">
           <li class = "list-group-item">Nombre: {{s.nombre}}</li>
         </ul>
       </div>
   </div>
+</div>
+<div *ngIf="selected">
+  <app-servicio-detail [servicioDetail]="selectedServicio"></app-servicio-detail>
 </div>
