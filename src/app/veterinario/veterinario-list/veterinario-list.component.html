@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row p-5">
       <div class="card" *ngFor="let v of veterinarios">
-        <div class = "card-header">
+        <div class = "card-header" (click)="onSelected(v)">
           {{v.nombre}}
         </div>
         <ul class = "list-group">
@@ -13,4 +13,7 @@
         </ul>
       </div>
   </div>
+</div>
+<div *ngIf = "selected">
+<app-veterinario-detail [veterinarioDetail]="selectedVeterinario"></app-veterinario-detail>
 </div>

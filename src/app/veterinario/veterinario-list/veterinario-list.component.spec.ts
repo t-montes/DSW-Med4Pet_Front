@@ -12,6 +12,7 @@ import { RegistroMedico } from "src/app/registroMedico/registroMedico";
 import { Agenda } from "src/app/agenda/agenda";
 
 import { HttpClientModule } from '@angular/common/http';
+import { VeterinarioDetail } from '../veterinarioDetail';
 
 describe('VeterinarioListComponent', () => {
   let component: VeterinarioListComponent;
@@ -51,7 +52,7 @@ describe('VeterinarioListComponent', () => {
     );
 
     component.veterinarios = [
-      new Veterinario(
+      new VeterinarioDetail(
         faker.datatype.number(),
         faker.lorem.sentence(),
         faker.lorem.sentence(),

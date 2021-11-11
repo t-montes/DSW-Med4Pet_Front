@@ -19,6 +19,13 @@ export class EmpresaConvenioListComponent implements OnInit {
     })
   }
 
+  selectedEmpresaConvenio: EmpresaConvenio;
+  selected = false;
+
+  onSelected(b: EmpresaConvenio): void {
+    this.selected = true;
+    this.selectedEmpresaConvenio = b;
+  }
   ngOnInit() {
     this.getEmpresaConvenio();
   }
