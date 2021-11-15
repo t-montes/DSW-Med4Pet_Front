@@ -4,6 +4,7 @@ import { Cliente } from "../cliente/cliente";
 export class Mascota {
   id: number;
   nombre: string;
+  tipoMascota: string;
   raza: string;
   ubicacion: string;
   edad: number;
@@ -14,6 +15,7 @@ export class Mascota {
 constructor(
     id: number,
     nombre: string,
+    tipoMascota: string,
     raza: string,
     ubicacion: string,
     edad: number,
@@ -22,6 +24,7 @@ constructor(
   ){
     this.id = id;
     this.nombre = nombre;
+    this.tipoMascota = tipoMascota;
     this.raza = raza;
     this.ubicacion = ubicacion;
     this.edad = edad;

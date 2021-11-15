@@ -33,6 +33,7 @@ describe('AgendaListarComponent', () => {
       faker.lorem.sentence(),
       faker.lorem.sentence(),
       faker.lorem.sentence(),
+      faker.lorem.sentence(),
       faker.random.number(),
       null,
       []

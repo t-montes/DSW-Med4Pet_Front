@@ -39,6 +39,7 @@ describe('CitaDetailComponent', () => {
       faker.lorem.sentence(),
       faker.lorem.sentence(),
       faker.lorem.sentence(),
+      faker.lorem.sentence(),
       faker.random.number(),
       duenio,
       []
