@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Servicio } from './servicio';
+import { ServicioDetail } from './servicioDetail';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 
@@ -11,7 +11,7 @@ export class ServicioService {
 
   private apiUrl:string = environment.baseUrl + 'servicios';
   constructor(private http: HttpClient) { }
-  getServicios(): Observable<Servicio[]> {
-    return this.http.get<Servicio[]>(this.apiUrl);
+  getServicios(): Observable<ServicioDetail[]> {
+    return this.http.get<ServicioDetail[]>(this.apiUrl);
   }
 }

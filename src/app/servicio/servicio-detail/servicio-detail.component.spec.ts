@@ -2,33 +2,28 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
-import { ServicioListarComponent } from './servicio-listar.component';
-import { HttpClientTestingModule } from "@angular/common/http/testing";
-import faker from "faker";
-import { Cita } from 'src/app/cita/cita';
-import { Veterinario } from 'src/app/veterinario/veterinario';
+import faker from 'faker';
+import { Veterinario } from '../../veterinario/veterinario';
+import { Cita } from '../../cita/cita';
 import { ServicioDetail } from '../servicioDetail';
+import { ServicioDetailComponent } from './servicio-detail.component';
 
-
-
-describe('ServicioListarComponent', () => {
-  let component: ServicioListarComponent;
-  let fixture: ComponentFixture<ServicioListarComponent>;
-  let debug: DebugElement;
-
+describe('ServicioDetailComponent', () => {
+  let component: ServicioDetailComponent;
+  let fixture: ComponentFixture<ServicioDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      declarations: [ ServicioListarComponent]
+      declarations: [ ServicioDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ServicioListarComponent);
+    fixture = TestBed.createComponent(ServicioDetailComponent);
     component = fixture.componentInstance;
+
+
 
     let veterinarios = [new Veterinario(
       faker.random.number(),
@@ -41,6 +36,7 @@ describe('ServicioListarComponent', () => {
       null,
       null
     )];
+
     let citas = [new Cita(
       faker.random.number(),
       faker.date.past(),
@@ -51,28 +47,18 @@ describe('ServicioListarComponent', () => {
       null,
       null
     )];
-    component.servicios = [
-      new ServicioDetail(
-        faker.datatype.number(),
+
+    component.servicioDetail = new ServicioDetail(
+        faker.random.number(),
         faker.lorem.sentence(),
         veterinarios,
         citas
       )
-    ];
 
     fixture.detectChanges();
-    debug = fixture.debugElement;
   });
-
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it("Should have an figcaption element ", ()=>{
-    expect(debug.queryAll(By.css(".list-group-item"))[0].nativeElement.innerText).toContain(
-      component.servicios[0].nombre
-    );
-  });
 });
-

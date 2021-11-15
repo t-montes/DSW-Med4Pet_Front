@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{veterinarioDetail.nombre}}</p>
+  <div class="row">
+    <div class="col">
+      <dl>
+        <dt> Calificaciones</dt>
+        <dd *ngFor = "let c of veterinarioDetail.calificaciones">{{c.puntaje}},{{c.descripcion}}</dd>
+        <dt> ID</dt>
+        <dd>{{veterinarioDetail.id}}</dd>
+        <hr>
+        <dt>Calificacion</dt>
+        <dd>{{ veterinarioDetail.calificacion}}</dd>
+        <hr>
+        <dt class="bold">Correo</dt>
+        <dd class="caption">{{veterinarioDetail.contacto.correo}}</dd>
+        <hr>
+        <dt class="bold">Fecha del registro medico</dt>
+        <dd>{{veterinarioDetail.registroMedico.fechaExpedicion}}</dd>
+        <dt class="bold">Id de la agenda</dt>
+        <dd>{{veterinarioDetail.agenda.id}}</dd>
+      </dl>
+    </div>
+  </div>
+</div>
