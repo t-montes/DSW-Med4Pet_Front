@@ -6,6 +6,7 @@ import { DebugElement } from '@angular/core';
 import { CitaListarComponent } from './cita-listar.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import faker from 'faker';
+import { Cliente } from 'src/app/cliente/cliente';
 import { Mascota } from 'src/app/mascota/mascota';
 import { Pse } from 'src/app/pse/pse';
 import { Servicio } from 'src/app/servicio/servicio';
@@ -27,6 +28,20 @@ describe('CitaListarComponent', () => {
     fixture = TestBed.createComponent(CitaListarComponent);
     component = fixture.componentInstance;
 
+    let medioDePago = new Pse(
+      faker.random.number(),
+      faker.random.number(),
+      faker.lorem.sentence(),
+      faker.lorem.sentence()
+    );
+    let duenio = new Cliente(
+      faker.random.number(),
+      faker.lorem.sentence(),
+      faker.random.number(),
+      null,
+      null,
+      medioDePago
+    );
     let paciente = new Mascota(
       faker.random.number(),
       faker.lorem.sentence(),
@@ -34,14 +49,8 @@ describe('CitaListarComponent', () => {
       faker.lorem.sentence(),
       faker.lorem.sentence(),
       faker.random.number(),
-      null,
+      duenio,
       []
-    );
-    let medioDePago = new Pse(
-      faker.random.number(),
-      faker.random.number(),
-      faker.lorem.sentence(),
-      faker.lorem.sentence()
     );
     let serviciosTomados = [new Servicio(
       faker.random.number(),
@@ -72,9 +81,4 @@ describe('CitaListarComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it("Should have a card header element", ()=>{
-    expect(debug.query(By.css(".card-header")).nativeElement.innerText).toContain(
-      component.citas[0].id
-    );
-  });
 });

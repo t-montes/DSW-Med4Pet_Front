@@ -1,0 +1,49 @@
+table {
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid black;
+}
+
+h1 {
+  text-align: center;
+}
+
+.bordercell {
+  text-align: center;
+  border: 0.5px solid black;
+}
+
+.lrbordercell {
+  text-align: center;
+  border-left: 0.5px solid black;
+  border-right: 0.5px solid black;
+}
+
+.todaycol {
+  background-color: #F4E6F7;
+}
+
+.lowcolor {
+  font-weight: normal;
+  color: gray;
+}
+
+.emphasis {
+  font-weight: bold;
+  font-size: large;
+  color: black;
+}
+
+.disponible {
+  background-color: #B5F0F4;
+  cursor: pointer;
+  color: black;
+  text-align: center;
+}
+
+.reservado {
+  background-color: #F4BCB5;
+  cursor: pointer;
+  color: black;
+  text-align: center;
+}
