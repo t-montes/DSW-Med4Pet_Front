@@ -10,6 +10,9 @@ export class CitaDetailComponent implements OnInit {
 
   @Input() citaDetail: CitaDetail;
 
+  days: Array<String> = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+  months: Array<String> = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
   constructor() { }
 
   ngOnInit() {
