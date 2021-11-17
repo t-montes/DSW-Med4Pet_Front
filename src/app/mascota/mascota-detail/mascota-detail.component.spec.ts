@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
+import { Cliente } from '../../cliente/cliente';
 import { MascotaDetailComponent } from './mascota-detail.component';
 import { Mascota } from '../mascota';
 import faker from 'faker';
@@ -22,6 +23,15 @@ describe('MascotaDetailComponent', () => {
     fixture = TestBed.createComponent(MascotaDetailComponent);
     component = fixture.componentInstance;
 
+    let cliente = new Cliente(
+      faker.random.number(),
+      faker.lorem.sentence(),
+      faker.random.number(),
+      null,
+      null,
+      null
+    );
+
     component.mascotaDetail =
       new Mascota( faker.datatype.number(),
       faker.lorem.sentence(),
@@ -29,7 +39,7 @@ describe('MascotaDetailComponent', () => {
       faker.lorem.sentence(),
       faker.lorem.sentence(),
       faker.datatype.number(),
-      null,
+      cliente,
       null);
 
     fixture.detectChanges();

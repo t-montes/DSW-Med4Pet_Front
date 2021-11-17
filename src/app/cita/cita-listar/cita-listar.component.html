@@ -1,18 +1,25 @@
-<h1>Listado de Citas</h1>
-<p>Este es el listado de Citas de la aplicación</p>
-<div class="container-fluid">
-  <div class="row p-5">
-      <div class="card" *ngFor="let c of citas">
-        <div class = "card-header">
-          <a (click) = "onSelected(c)">Cita #{{c.id}}</a>
-        </div>
-        <ul class = "list-group">
-          <li class = "list-group-item">Fecha: {{c.fecha}}</li>
-          <li class = "list-group-item">Disponible: {{c.disponible ? "Disponible" : "Reservado"}}</li>
-        </ul>
-      </div>
-  </div>
-</div>
+<!--Si es Domingo (0) se muestra la siguiente semana-->
+<h1>Agenda <!--{{daysOfWeek[currentWeek[0].getDay()]}} {{currentWeek[0].getDate()}} ---> </h1>
+<table class="cal">
+  <thead>
+    <tr>
+      <th></th>
+      <th *ngFor="let d of currentWeek" class="bordercell">{{days[d.getDay()]}} <br> {{d.getDate()}}-{{months[d.getMonth()].toLowerCase().substring(0,3)}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let h of range(6,20)">
+        <td class="bordercell">{{h%12 ? h%12 : 12}} {{h >= 12 ? "p.m." : "a.m."}}</td>
+        <td *ngFor="let d of weekNotInBetween(h)" [ngClass]="classOfCell(d,h)"
+        [attr.rowspan]="citaInTime(d,h) ? numHours(citaInTime(d,h)) : 1">
+            <a (click)="onSelected(citaInTime(d,h))">
+              {{textOfCell(d,h)}}
+            </a>
+        </td>
+    </tr>
+  </tbody>
+</table>
+
 <div *ngIf="selected">
   <app-cita-detail [citaDetail]="selectedCita"></app-cita-detail>
 </div>

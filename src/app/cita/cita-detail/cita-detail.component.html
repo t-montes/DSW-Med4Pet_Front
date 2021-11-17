@@ -1,6 +1,7 @@
 <div class="container-fluid">
-
-  <p class="h3 p-3">Cita el día {{citaDetail.fecha.getDate}} a las {{citaDetail.fecha.getTime}}</p>
+  <h2>Información de la Cita</h2>
+  <h3>{{days[citaDetail.fecha.getDay()]}} {{citaDetail.fecha.getDate()}} de {{months[citaDetail.fecha.getMonth()]}} -
+    {{citaDetail.fecha.getHours()%12 ? citaDetail.fecha.getHours()%12 : 12}}:00 {{citaDetail.fecha.getHours() >= 12 ? "p.m." : "a.m."}}</h3>
   <div class="row">
     <div class="col">
       <dl>
@@ -13,10 +14,10 @@
         <!--Si está disponible no tiene sentido mostrar ningún cliente porque ninguno habrá reservado-->
         <div *ngIf="!citaDetail.disponible">
           <dt> Cliente</dt>
-          <!--<dd>{{citaDetail.paciente.duenio.nombre}}</dd>-->
+          <dd>{{citaDetail.paciente.duenio.nombre}}</dd>
           <hr>
           <dt> Mascota</dt>
-          <!--<dd>{{citaDetail.paciente.nombre}}</dd>-->
+          <dd>{{citaDetail.paciente.nombre}}</dd>
           <hr>
         </div>
         <dt>Costo</dt>
@@ -26,7 +27,7 @@
         <dd>{{citaDetail.duracion}} minutos</dd>
         <hr>
         <dt>Servicios de la Cita</dt>
-        <!--<dd>{{citaDetail.serviciosTomados.join(', ')}}</dd>-->
+        <dd>{{citaDetail.serviciosTomados.join(', ')}}</dd>
       </dl>
     </div>
   </div>

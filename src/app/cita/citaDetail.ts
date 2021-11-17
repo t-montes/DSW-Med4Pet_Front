@@ -9,7 +9,7 @@ export class CitaDetail extends Cita {
 
   constructor (
     id: number,
-    fecha: Date,
+    fecha: string,
     estado: String,
     costo: number,
     disponible: boolean,

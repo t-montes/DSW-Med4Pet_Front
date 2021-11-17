@@ -1,0 +1,10 @@
+h2 {
+  padding-top: 3px;
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  border: 1.2px solid black;
+  border-radius: 10px;
+}
