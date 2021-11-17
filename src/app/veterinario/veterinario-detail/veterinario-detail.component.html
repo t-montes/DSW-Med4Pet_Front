@@ -1,24 +1,25 @@
 <div class="container-fluid">
-  <p class="h3 p-3">{{veterinarioDetail.nombre}}</p>
-  <div class="row">
-    <div class="col">
-      <dl>
-        <dt> Calificaciones</dt>
-        <dd *ngFor = "let c of veterinarioDetail.calificaciones">{{c.puntaje}},{{c.descripcion}}</dd>
-        <dt> ID</dt>
-        <dd>{{veterinarioDetail.id}}</dd>
-        <hr>
-        <dt>Calificacion</dt>
-        <dd>{{ veterinarioDetail.calificacion}}</dd>
-        <hr>
-        <dt class="bold">Correo</dt>
-        <dd class="caption">{{veterinarioDetail.contacto.correo}}</dd>
-        <hr>
-        <dt class="bold">Fecha del registro medico</dt>
-        <dd>{{veterinarioDetail.registroMedico.fechaExpedicion}}</dd>
-        <dt class="bold">Id de la agenda</dt>
-        <dd>{{veterinarioDetail.agenda.id}}</dd>
-      </dl>
+  <div class = "row">
+    <div class = "col-2">
+      <h1 clas = "centrado">{{veterinarioDetail.nombre}}</h1>
+      <p class = "centrado">{{veterinarioDetail.especialidad}}</p>
+      <p class = "centrado">Calificacion: {{veterinarioDetail.calificacion}}</p>
     </div>
+    <div class = "col-2">
+      <img src ="../../../assets/peepoEjemplo.jpg"  width="200px" height="200px">
+    </div>
+    <div class = "col-8">
+      <p>Certificado de Entrenamiento Numero: {{veterinarioDetail.certificadoEntrenamiento}}</p>
+      <p>Experiencia Previa: {{veterinarioDetail.experienciaPrevia}}</p>
+      <p>Registro Medico: {{veterinarioDetail.registroMedico.imagen}}</p>
+    </div>
+  </div>
+  <div class = "row">
+    <h1>Agenda</h1>
+    <p>No tengo la mas minima idea de como meter una agenda aqui</p>
+  </div>
+  <div class = "row">
+    <h1>Calificaciones</h1>
+      <p *ngFor = "let c of veterinarioDetail.calificaciones">Creador: {{c.creador}}, Puntaje: {{c.puntaje}}, Comentarios: {{c.comentarios}}</p>
   </div>
 </div>
