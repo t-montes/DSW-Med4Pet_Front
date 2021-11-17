@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Veterinario } from '../veterinario';
+import { VeterinarioService } from '../veterinario.service';
 import { VeterinarioDetail } from '../veterinarioDetail';
 
 @Component({
@@ -10,11 +12,24 @@ import { VeterinarioDetail } from '../veterinarioDetail';
 export class VeterinarioDetailComponent implements OnInit {
 
   @Input() veterinarioDetail: VeterinarioDetail;
+  vetId;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private vetService: VeterinarioService) { }
 
-  constructor() { }
-
+  getVeterinarioDetail():void{
+    this.vetService.getVeterinarioDetail(this.vetId)
+      .subscribe(veterinarioDetail => {
+        this.veterinarioDetail = veterinarioDetail;
+      });
+  }
   ngOnInit() {
-    console.log(this.veterinarioDetail.id);
+    if (this.veterinarioDetail === undefined){
+      console.log('routerLink');
+      this.vetId = +this.route.snapshot.paramMap.get('id');
+      this.getVeterinarioDetail();
+    } else {console.log(this.veterinarioDetail.id)}
   }
 
 }

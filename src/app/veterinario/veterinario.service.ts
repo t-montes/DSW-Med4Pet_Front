@@ -16,4 +16,8 @@ constructor( private http: HttpClient) { }
 getVeterinarios(): Observable<VeterinarioDetail[]>{
   return this.http.get<VeterinarioDetail[]>(this.apiUrl);
 }
+
+getVeterinarioDetail(vetId): Observable<VeterinarioDetail> {
+  return this.http.get<VeterinarioDetail>(`${this.apiUrl}/${vetId}`);
+}
 }
