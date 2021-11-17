@@ -19,19 +19,15 @@
 </div>-->
 <div class="container-fluid">
   <div class="row p-5">
-      <div class="card" *ngFor="let s of servicios">
-        <div class = "card-header">
-          {{s.nombre}}
-        </div>
-        <ul class = "list-group"(click)="onSelected(cal)">
-          <li class = "list-group-item">Nombre: {{s.nombre}}</li>
-          <li class = "list-group-item">Id: {{s.id}}</li>
-        </ul>
-      </div>
+    <div class="col-4">
+      <ul class = "list-group">
+        <li class = "list-group-item" *ngFor="let s of servicios" (click)="onSelected(s)">Nombre {{s.nombre}}&nbsp;&nbsp; ID: {{s.id}}</li>
+      </ul>
+    </div>
   </div>
-</div>
-<div *ngIf = "selected">
-<app-servicio-detail [servicioDetail]="selectedServicio"></app-servicio-detail>
+  <div *ngIf = "selected">
+    <app-servicio-detail [servicioDetail]="selectedS"></app-servicio-detail>
+  </div>
 </div>
 
 <div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServicioDetail } from '../servicioDetail';
 import {ServicioService} from "../servicio.service";
+import {Servicio} from "../servicio";
 
 @Component({
   selector: 'app-servicio-listar',
@@ -10,8 +11,8 @@ import {ServicioService} from "../servicio.service";
 export class ServicioListarComponent implements OnInit {
 
   servicios: Array<ServicioDetail>
-  selected = false;
-  selectedS: ServicioDetail;
+  selected:boolean;
+  selectedS: Servicio;
 
   constructor(private servicioService: ServicioService) { }
 
@@ -23,6 +24,8 @@ export class ServicioListarComponent implements OnInit {
 
   ngOnInit() {
     this.getServicios();
+    this.selected = false;
+
   }
 
   callType(event) {
@@ -30,7 +33,7 @@ export class ServicioListarComponent implements OnInit {
     this.onSelected(event);
     console.log("Cambiando....", event);
   }
-  onSelected(c: ServicioDetail): void {
+  onSelected(c: Servicio): void {
 
     this.selected = true;
     this.selectedS = c;

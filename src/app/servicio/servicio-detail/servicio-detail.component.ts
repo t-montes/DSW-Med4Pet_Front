@@ -13,7 +13,6 @@ export class ServicioDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.servicioDetail.id);
   }
 
 }
