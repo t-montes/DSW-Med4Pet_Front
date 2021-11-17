@@ -2,15 +2,13 @@
 <p>Este es el listado de Calificaciones de la aplicación</p>
 <div class="container-fluid">
   <div class="row p-5">
-      <div class="card" *ngFor="let cal of calificaciones">
-        <ul class = "list-group" (click)="onSelected(cal)">
-          <li class = "list-group-item">Creador: {{cal.creador}}</li>
-          <li class = "list-group-item">Puntaje: {{cal.puntaje}}</li>
-        </ul>
-      </div>
+    <div class="col-4">
+      <ul class = "list-group">
+        <li class = "list-group-item" *ngFor="let cal of calificaciones" (click)="onSelected(cal)">Puntaje {{cal.puntaje}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creador: {{cal.creador}}</li>
+      </ul>
+    </div>
+    <div class="col-6" *ngIf = "selected">
+      <app-calificacion-detail [calificacionDetail]="selectedCal"></app-calificacion-detail>
+    </div>
   </div>
 </div>
-<div *ngIf = "selected">
-  <app-calificacion-detail [calificacionDetail]="selectedCal"></app-calificacion-detail>
-</div>
-
