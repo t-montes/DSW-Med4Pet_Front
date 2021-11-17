@@ -1,28 +1,42 @@
 <h1>Listado de Servicios</h1>
 <p> Este es el listado de servicios de la aplicación</p>
-<div class="container-fluid">
+<!--<div class="container-fluid">
   <div class="row p-5">
-    <select name="selected">
-      <option class="card" *ngFor= "let s of servicios">
-        <ul class = "list-group">
-          <li class = "list-group-item" (click)= "onSelected(s)">{{s.nombre}}</li>
-        </ul>
+    <select class="form-control" #t (change)="callType($event)" >
+      <option class="card" *ngFor= "let s of servicios" (click)="onSelected(s)" [ngValue]="s">
+        {{s.nombre}}
       </option>
       </select>
   </div>
 </div>
 <div>
-  <h3>Nuestros veterinarios</h3>
-<div *ngIf= "selected">
-  <app-servicio-detail [servicioDetail]="selectedServicio"></app-servicio-detail>
+
 </div>
-</div>
-<div>
-<button type="button" style="color: white; background-color:#1eabe2">Solicitar cita</button>
-</div>
-<div>
-<img src="./ImagenPerro.jpg" width="80px" height="80px">
-</div>
-<!--<div class = "card-header">
+
+
+<div class = "card-header">
   <a (click) = "onSelected(c)">Servicio #{{s.id}}</a>
 </div>-->
+<div class="container-fluid">
+  <div class="row p-5">
+      <div class="card" *ngFor="let s of servicios">
+        <div class = "card-header">
+          {{s.nombre}}
+        </div>
+        <ul class = "list-group"(click)="onSelected(cal)">
+          <li class = "list-group-item">Nombre: {{s.nombre}}</li>
+          <li class = "list-group-item">Id: {{s.id}}</li>
+        </ul>
+      </div>
+  </div>
+</div>
+<div *ngIf = "selected">
+<app-servicio-detail [servicioDetail]="selectedServicio"></app-servicio-detail>
+</div>
+
+<div>
+  <button type="button" style="color: white; background-color:#1eabe2">Solicitar cita</button>
+  </div>
+<div>
+  <img src="assets/ImagenPerro.jpg" width="500px" height="500px">
+  </div>

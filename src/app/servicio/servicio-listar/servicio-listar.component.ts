@@ -11,7 +11,7 @@ export class ServicioListarComponent implements OnInit {
 
   servicios: Array<ServicioDetail>
   selected = false;
-  selectedCita: ServicioDetail;
+  selectedS: ServicioDetail;
 
   constructor(private servicioService: ServicioService) { }
 
@@ -25,9 +25,18 @@ export class ServicioListarComponent implements OnInit {
     this.getServicios();
   }
 
-  onSelected(c: ServicioDetail): void {
-    this.selected = true;
-    this.selectedCita = c;
+  callType(event) {
+    console.log(event.target.value);
+    this.onSelected(event);
+    console.log("Cambiando....", event);
   }
+  onSelected(c: ServicioDetail): void {
+
+    this.selected = true;
+    this.selectedS = c;
+    console.log("Cambiando2....");
+
+  }
+
 
 }
