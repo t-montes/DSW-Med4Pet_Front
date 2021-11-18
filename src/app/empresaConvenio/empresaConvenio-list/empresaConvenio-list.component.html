@@ -1,15 +1,109 @@
-<h1>Listado de Empesas Convenio</h1>
-<p>Este es el listado de las empresas que tienen convenio con la aplicacion</p>
-<div class="container-fluid">
-  <div class="row p-5">
-    <div class="card" *ngFor="let c of empresaConvenio">
-      <ul class="list-group">
-        <li class="list-group-item" (click) = "onSelected(c)">Nombre: {{c.nombre}}</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<html>
+    <head>
+        <img src="assets/Logo Med.jpeg" class="center">
+    </head>
+    <body>
+        <h1 class="titulo">EMPRESAS CONVENIO</h1>
+        <p class="p">En este espacio se encuentra la lista de las empresas con las que tenemos convenio para cubrir todas las necesidades de tu mascota</p>
+        <div class="cuadrado">
+            <div class= "cuadro1">
+                <img src="assets/Operacion.jpg" class="imag">
+                <h1 class="texEmpre">MEDIDOGS</h1>
+                <p class="pimg">Somos una empresa dedicada a las cirugias profesionales <br>
+                de tus mascotas. Brindamos un servicio de calidad <br>
+                y profesionalismo siempre teniendo en cuenta los valores <br>
+                y cualidades de tus hijos peludos. <br>
+                <br> <br> Contactanos: <br> Telefono: +57 7471288555 <br> Correo: MediDogs@gmail.com </p>
+            </div>
+            <div class= "cuadro2">
+                <img src="assets/Vacunacio.jpg" class="imag">
+                <h1 class="texEmpre">ANIMALS</h1>
+                <p class="pimg"> Contamos con los mejores especialistas y trabajamos <br>
+                con pasión y amor por el cuidado, bienestar y la salud <br>
+                de tu mascota. Nos precupamos de que tu mascota <br>
+                reciba la mejor la atencion.
+                <br> <br> Contactanos: <br> Telefono: +57 7471288666 <br> Correo: Animals@gmail.com </p>
+            </div>
+            <div class= "cuadro3">
+                <img src="assets/analisis.jpeg" class="imag">
+                <h1 class="texEmpre">Dogs & Cats</h1>
+                <p class="pimg">Somos una empresa dedicada a la prestación de servicios <br>
+                veterinarios de calidad, enfocados en e los examenes <br>
+                y analisis para el bienestar de las mascotas y sus familias <br>
+                <br> <br> Contactanos: <br> Telefono: +57 7471287778 <br> Correo: Dogs&Cats@gmail.com </p>
 
+<<<<<<< HEAD
 <div *ngIf="selected">
   <app-empresaConvenio-detail [empresaConvenioDetail]="selectedEmpresaConvenio"></app-empresaConvenio-detail>
 </div>
+=======
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    .titulo{
+        line-height: 1.35em;
+        text-align: center;
+        font-size: 40px;
+    }
+    .p{
+        text-align: center;
+    }
+    .cuadrado {
+        width: 1340px;
+        height: 1150px;
+        background: #74c3e2;
+    }
+    .cuadro1{
+        width: 900px;
+        height: 350px;
+        background: #ffffff;
+        top: 4%;
+        left: 16%;
+        position: relative;
+    }
+    .cuadro2{
+        width: 900px;
+        height: 350px;
+        background: #ffffff;
+        top: 5%;
+        left: 16%;
+        position: relative;
+    }
+    .cuadro3{
+        width: 900px;
+        height: 350px;
+        background: #ffffff;
+        top: 6%;
+        left: 16%;
+        position: relative;
+    }
+    .imag{
+        width: 400px;
+        height: 300px;
+        top: 7%;
+        left: 5%;
+        position: relative;
+    }
+    .texEmpre{
+        top: -75%;
+        left: 65%;
+        position: relative;
+
+    }
+    .pimg{
+        top: -75%;
+        left: 55%;
+        position: relative;
+    }
+
+</style>
+>>>>>>> e50f68c6601519e34e2d5d41f0e23a93b129f820
