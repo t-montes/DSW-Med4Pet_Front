@@ -1,19 +1,22 @@
 <div class="container-fluid">
-  <p class="h3 p-3">{{mascotaDetail.nombre}}</p>
-  <div class="row">
-    <div class="col-2">
-      <div class="thumb">
-        <dl>
-          <dt>Raza</dt>
-          <dd>{{mascotaDetail.raza}}</dd>
-        </dl>
-      </div>
+  <div class = "row">
+    <div class = "col-2">
+      <h1 clas = "centrado">{{mascotaDetail.nombre}}</h1>
+      <p class="h3 p-3" class = "centrado">{{mascotaDetail.tipoMascota}}</p>
+      <p class="h3 p-3" class = "centrado">Raza: {{mascotaDetail.raza}}</p>
+
+
+
     </div>
-    <div class="col">
-      <p class = "h2">{{mascotaDetail.edad}}</p>
+    <div class = "col-8">
+      <p class="h3 p-3" class = "centrado">Ubicación: {{mascotaDetail.ubicacion}}</p>
+      <p class="h3 p-3" class = "centrado"><button type="button" style="color: white; background-color:#1eabe2">Dueño: {{mascotaDetail.duenio.nombre}}</button></p>
+      <p class="h3 p-3" class = "centrado">Edad: {{mascotaDetail.edad}}</p>
     </div>
   </div>
   <div class = "row">
-    <h3>Dueño: {{mascotaDetail.duenio.nombre}}</h3>
+    <h1>Agenda</h1>
+    <p>No tengo la mas minima idea de como meter una agenda aqui</p>
   </div>
+
 </div>
