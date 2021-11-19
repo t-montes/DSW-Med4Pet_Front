@@ -3,16 +3,14 @@ import { Servicio } from '../servicio/servicio'
 import { Veterinario } from '../veterinario/veterinario'
 
 export class ServicioDetail extends Servicio {
-  veterinarios : Array<Veterinario>
+  prestadores : Array<Veterinario>
 
   constructor (
     id: number,
     nombre: string,
-    veterinarios: Array<Veterinario>,
-    citas: Array<Cita>
+    prestadores: Array<Veterinario>
   ){
-    super(id,nombre,veterinarios,citas)
-    this.veterinarios = veterinarios;
-
+    super(id,nombre)
+    this.prestadores = prestadores;
   }
 }

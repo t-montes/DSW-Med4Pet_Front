@@ -9,7 +9,7 @@ import faker from 'faker';
 import { Cliente } from 'src/app/cliente/cliente';
 import { Mascota } from 'src/app/mascota/mascota';
 import { Pse } from 'src/app/pse/pse';
-import { Servicio } from 'src/app/servicio/servicio';
+import { ServicioDetail } from 'src/app/servicio/servicioDetail';
 import { CitaDetail } from '../citaDetail';
 
 describe('CitaListarComponent', () => {
@@ -52,10 +52,9 @@ describe('CitaListarComponent', () => {
       duenio,
       []
     );
-    let serviciosTomados = [new Servicio(
+    let serviciosTomados = [new ServicioDetail(
       faker.random.number(),
       faker.lorem.sentence(),
-      [],
       []
     )];
 

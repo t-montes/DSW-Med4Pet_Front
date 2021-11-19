@@ -1,28 +1,16 @@
-<div class="container-fluid">
-  <p class="h3 p-3">{{empresaConvenioDetail.nombre}}</p>
-  <div class="row">
-    <div class="col">
-      <dl>
-        <dt> Empresa Convenio </dt>
-        <dd>Informacion de la empresa convenio seleccionada </dd>
-        <dt class="bold"> Nombre </dt>
-        <dd>{{empresaConvenioDetail.nombre}}</dd>
-        <hr>
-        <dt class="bold">ID</dt>
-        <dd>{{empresaConvenioDetail.id}}</dd>
+
+
+<h1 class="titulo">EMPRESAS CONVENIO</h1>
+<p class="p">En este espacio se encuentra la lista de las empresas con las que tenemos convenio para cubrir todas las necesidades de tu mascota</p>
+<div class="cuadrado">
+    <div class= "cuadro1">
+        <img src="assets/Operacion.jpg" class="imag">
+        <h1 class="texEmpre">{{empresaConvenioDetail.nombre}}</h1>
         <hr>
         <dt class="bold">Servicio que ofrece</dt>
         <dd>{{empresaConvenioDetail.servicio}}</dd>
         <hr>
-        <dt class="bold"> Nit de la empresa</dt>
-        <dd>{{empresaConvenioDetail.nit}}</dd>
-        <hr>
-        <dt class="bold">Telefono de contacto</dt>
-        <dd>{{empresaConvenioDetail.contacto.telefono}}</dd>
-        <hr>
-        <dt class="bold">Correo de contacto</dt>
-        <dd>{{empresaConvenioDetail.contacto.correo}}</dd>
-      </dl>
+        <p> <br> <br> Contactanos: <br> Telefono: {{empresaConvenioDetail.contacto.telefono}} <br> Correo: {{empresaConvenioDetail.contacto.correo}}</p>
     </div>
-  </div>
 </div>
+

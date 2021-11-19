@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
 
   <p class="h3 p-3">Servicio el nombre {{servicioDetail.nombre}}</p>
@@ -5,10 +6,10 @@
     <div class="col">
       <dl>
         <dt> Veterinarios</dt>
-        <dd>{{servicioDetail.veterinarios[0].nombre}}</dd>-->
-        </dl>
+        <dd *ngFor="let v of servicioDetail.prestadores">
+          <a href="../veterinarios/{{v.id}}">{{v.nombre}}</a>
+        </dd>
+      </dl>
     </div>
   </div>
 </div>
-
-

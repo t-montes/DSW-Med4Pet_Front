@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CitaDetail } from '../citaDetail'
 import { CitaService } from '../cita.service';
 import { Cita } from '../cita';
@@ -10,7 +10,8 @@ import { Cita } from '../cita';
 })
 export class CitaListarComponent implements OnInit {
 
-  citas: Array<CitaDetail> = [];
+  @Input() citas: Array<CitaDetail>;
+
   currentDate: Date;
   currentWeek: Array<Date> = [];
   days: Array<String> = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
@@ -20,7 +21,7 @@ export class CitaListarComponent implements OnInit {
 
   constructor(private citaService: CitaService) { }
 
-  getCitas(): void {
+  /*getCitas(): void {
     this.citaService.getCitas().subscribe(citas => {
       let i = 0;
       while (i < citas.length) {
@@ -29,7 +30,7 @@ export class CitaListarComponent implements OnInit {
       }
       this.citas = citas;
     });
-  }
+  }*/
 
   addDays = (from:Date, days:number=1): Date => new Date(from.getTime() + (days*1000*60*60*24));
   range = (start:number, end:number) => Array.from(Array(end - start + 1).keys()).map(x => x + start);
@@ -97,7 +98,14 @@ export class CitaListarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getCitas();
+    let citas = this.citas;
+    let i = 0;
+    while (i < citas.length) {
+      citas[i].fecha = new Date(citas[i].fecha);
+      i++;
+    }
+    this.citas = citas;
+
     this.currentDate = new Date();
     this.currentDate.setHours(0,0,0,0);
     while (this.currentWeek.length < 6) {

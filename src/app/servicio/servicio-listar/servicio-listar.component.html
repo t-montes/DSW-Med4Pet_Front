@@ -1,6 +1,7 @@
 <h1>Listado de Servicios</h1>
+<!--
 <p> Este es el listado de servicios de la aplicación</p>
-<!--<div class="container-fluid">
+<div class="container-fluid">
   <div class="row p-5">
     <select class="form-control" #t (change)="callType($event)" >
       <option class="card" *ngFor= "let s of servicios" (click)="onSelected(s)" [ngValue]="s">
@@ -13,10 +14,10 @@
 
 </div>
 
-
 <div class = "card-header">
   <a (click) = "onSelected(c)">Servicio #{{s.id}}</a>
-</div>-->
+</div>
+-->
 <div class="container-fluid">
   <div class="row p-5">
     <div class="col-4">
@@ -29,7 +30,6 @@
     <app-servicio-detail [servicioDetail]="selectedS"></app-servicio-detail>
   </div>
 </div>
-
 <div>
   <button type="button" style="color: white; background-color:#1eabe2">Solicitar cita</button>
   </div>

@@ -41,22 +41,11 @@ describe('ServicioListarComponent', () => {
       null,
       null
     )];
-    let citas = [new Cita(
-      faker.random.number(),
-      faker.date.past(),
-      faker.lorem.sentence(),
-      faker.random.number(),
-      faker.random.boolean(),
-      faker.random.number(),
-      null,
-      null
-    )];
     component.servicios = [
       new ServicioDetail(
         faker.datatype.number(),
         faker.lorem.sentence(),
-        veterinarios,
-        citas
+        veterinarios
       )
     ];
 

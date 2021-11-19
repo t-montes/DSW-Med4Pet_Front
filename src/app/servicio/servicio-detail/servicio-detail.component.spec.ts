@@ -37,22 +37,10 @@ describe('ServicioDetailComponent', () => {
       null
     )];
 
-    let citas = [new Cita(
-      faker.random.number(),
-      faker.date.past(),
-      faker.lorem.sentence(),
-      faker.random.number(),
-      faker.random.boolean(),
-      faker.random.number(),
-      null,
-      null
-    )];
-
     component.servicioDetail = new ServicioDetail(
         faker.random.number(),
         faker.lorem.sentence(),
-        veterinarios,
-        citas
+        veterinarios
       )
 
     fixture.detectChanges();

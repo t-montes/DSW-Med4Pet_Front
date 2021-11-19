@@ -15,6 +15,14 @@ export class CitaDetailComponent implements OnInit {
 
   constructor() { }
 
+  nombresServicios() : Array<String>{
+    let servs: Array<String> = [];
+    this.citaDetail.serviciosTomados.forEach((s) => {
+      servs.push(s.nombre);
+    });
+    return servs;
+  }
+
   ngOnInit() {
     console.log(this.citaDetail.id);
   }

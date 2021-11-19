@@ -38,9 +38,7 @@ describe("Service: Servicio", () => {
    for (let i = 1; i < 11; i++) {
      let servicio = new Servicio(
        i,
-       faker.lorem.sentence(),
-       null,
-       null
+       faker.lorem.sentence()
      );
 
      mockPosts.push(servicio);

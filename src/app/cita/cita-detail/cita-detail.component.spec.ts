@@ -5,7 +5,7 @@ import { DebugElement } from '@angular/core';
 import faker from 'faker';
 import { Mascota } from '../../mascota/mascota';
 import { Pse } from '../../pse/pse';
-import { Servicio } from '../../servicio/servicio';
+import { ServicioDetail } from '../../servicio/servicioDetail';
 import { Cliente } from '../../cliente/cliente';
 import { CitaDetail } from '../citaDetail';
 import { CitaDetailComponent } from './cita-detail.component';
@@ -50,10 +50,9 @@ describe('CitaDetailComponent', () => {
       faker.lorem.sentence(),
       faker.lorem.sentence()
     );
-    let serviciosTomados = [new Servicio(
+    let serviciosTomados = [new ServicioDetail(
       faker.random.number(),
       faker.lorem.sentence(),
-      [],
       []
     )];
 
