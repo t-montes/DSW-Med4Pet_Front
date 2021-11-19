@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class = "row">
     <div class = "col-2">
-      <h1 clas = "centrado">{{veterinarioDetail.nombre}}</h1>
+      <h1 class = "centrado">{{veterinarioDetail.nombre}}</h1>
       <p class = "centrado">{{veterinarioDetail.especialidad}}</p>
       <p class = "centrado">Calificacion: {{veterinarioDetail.calificacion}}</p>
     </div>
@@ -18,7 +18,6 @@
     <app-cita-listar [citas]="veterinarioDetail.agenda.citas"></app-cita-listar>
   </div>
   <div class = "row">
-    <h1>Calificaciones</h1>
-      <p *ngFor = "let c of veterinarioDetail.calificaciones">Creador: {{c.creador}}, Puntaje: {{c.puntaje}}, Comentarios: {{c.comentarios}}</p>
+    <app-calificacion-listar [calificaciones]="veterinarioDetail.calificaciones"></app-calificacion-listar>
   </div>
 </div>

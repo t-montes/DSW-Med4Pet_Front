@@ -1,16 +1,72 @@
+<html>
+    <head>
+        <img src="assets/Logo Med.jpeg" class="center">
+    </head>
+    <body>
+        <h1 class="titulo">EMPRESAS CONVENIO</h1>
+        <p class="p">En este espacio se encuentra la lista de las empresas con las que tenemos convenio para cubrir todas las necesidades de tu mascota</p>
+        <div class="cuadrado">
+            <div class= "cuadro1">
+                <img src="assets/Operacion.jpg" class="imag">
+                <h1 class="texEmpre">{{empresaConvenioDetail.nombre}}</h1>
+                <h3 class="titulo2">Servicio que ofrece</h3>
+                <p class="p1"> {{empresaConvenioDetail.servicio}} </p>
+                <h3 class="titulo2"> Contactanos: </h3>
+                <p class="p1"> Telefono: {{empresaConvenioDetail.contacto.telefono}} <br> Correo: {{empresaConvenioDetail.contacto.correo}}</p>
+                </div>
+            </div>
+    </body>
+</html>
 
+<style>
+    .center{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+    .titulo{
+        line-height: 1.35em;
+        text-align: center;
+        font-size: 40px;
+    }
+    .p{
+        text-align: center;
+    }
+    .p1{
+        top: -75%;
+        left: 65%;
+        position: relative;
+    }
+    .texEmpre{
+        top: -75%;
+        left: 65%;
+        position: relative;
+    }
+    .titulo2{
+        top: -75%;
+        left: 58%;
+        position: relative;
+    }
+    .cuadrado {
+        width: 1340px;
+        height: 500px;
+        background: #4875a1;
+    }
+    .cuadro1{
+        width: 900px;
+        height: 350px;
+        background: #ffffff;
+        top: 10%;
+        left: 16%;
+        position: relative;
+    }
+    .imag{
+        width: 400px;
+        height: 300px;
+        top: 7%;
+        left: 5%;
+        position: relative;
+    }
 
-<h1 class="titulo">EMPRESAS CONVENIO</h1>
-<p class="p">En este espacio se encuentra la lista de las empresas con las que tenemos convenio para cubrir todas las necesidades de tu mascota</p>
-<div class="cuadrado">
-    <div class= "cuadro1">
-        <img src="assets/Operacion.jpg" class="imag">
-        <h1 class="texEmpre">{{empresaConvenioDetail.nombre}}</h1>
-        <hr>
-        <dt class="bold">Servicio que ofrece</dt>
-        <dd>{{empresaConvenioDetail.servicio}}</dd>
-        <hr>
-        <p> <br> <br> Contactanos: <br> Telefono: {{empresaConvenioDetail.contacto.telefono}} <br> Correo: {{empresaConvenioDetail.contacto.correo}}</p>
-    </div>
-</div>
-
+</style>

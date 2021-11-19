@@ -14,8 +14,7 @@ export class CalificacionListarComponent implements OnInit {
 
   constructor(private calificacionService: CalificacionService) { }
 
-  @Input () persona:any;
-  calificaciones: Array<Calificacion>;
+  @Input () calificaciones: Array<Calificacion>;
   selected:boolean;
   selectedCal:Calificacion;
 
@@ -28,7 +27,6 @@ export class CalificacionListarComponent implements OnInit {
   }
   ngOnInit() {
     this.selected = false;
-    this.getCalificaciones();
   }
   onSelected(cal: Calificacion): void {
     this.selected = true;
