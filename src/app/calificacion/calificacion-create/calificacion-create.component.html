@@ -1,0 +1,107 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Calificacion creation</div>
+    <form
+      [formGroup]="calificacionForm"
+      (ngSubmit)="!calificacionForm.invalid && createCalificacion(calificacionForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="creador"> Creador* </label>
+        <input
+          novalidate
+          id="creador"
+          class="form-control"
+          formControlName="creador"
+          placeholder="Your Full Name"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            calificacionForm.get('creador').hasError('required') &&
+            calificacionForm.get('creador').touched
+          "
+        >
+          Creador requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            calificacionForm.get('creador').hasError('minlength') &&
+            calificacionForm.get('creador').touched
+          "
+        >
+        El creador es muy corto, debe ser de por lo menos 2 caracteres
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="puntaje"> Puntaje* </label>
+        <input
+          id="puntaje"
+          type="number"
+          class="form-control"
+          formControlName="puntaje"
+          placeholder="El puntaje del calificado"
+        />
+
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            calificacionForm.get('puntaje').hasError('required') &&
+            calificacionForm.get('puntaje').touched
+          "
+        >
+          Puntaje requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="descripcion"> Descripcion </label>
+        <input
+          id="descripcion"
+          type="text"
+          class="form-control"
+          formControlName="descripcion"
+          placeholder="La descripcion de la calificacion"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            calificacionForm.get('descripcion').hasError('required') &&
+            calificacionForm.get('descripcion').touched
+          "
+        >
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            calificacionForm.get('descripcion').touched &&
+            calificacionForm.get('descripcion').hasError('email')
+          "
+        >
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Required fields</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!calificacionForm.valid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+ </div>

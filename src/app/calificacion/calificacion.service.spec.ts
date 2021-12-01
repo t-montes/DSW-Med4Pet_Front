@@ -40,7 +40,9 @@ describe("Service: Calificacion", () => {
        faker.lorem.sentence(),
        faker.date.past(),
        faker.datatype.number(),
-       faker.lorem.sentence()
+       faker.lorem.sentence(),
+       null,
+       null
      );
 
      mockPosts.push(calificacion);
