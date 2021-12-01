@@ -15,4 +15,8 @@ export class CitaService {
     return this.http.get<CitaDetail[]>(this.apiUrl);
   }
 
+  createCita(cita:CitaDetail): Observable<CitaDetail> {
+    return this.http.post<CitaDetail>(this.apiUrl, cita);
+  }
+
 }
