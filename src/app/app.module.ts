@@ -18,7 +18,9 @@ import { CitaModule } from './cita/cita.module';
 import { AgendaModule } from './agenda/agenda.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { EmpresaConvenioModule } from './empresaConvenio/empresaConvenio.module';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -40,8 +42,10 @@ import { EmpresaConvenioModule } from './empresaConvenio/empresaConvenio.module'
     CitaModule,           //Tony
     AgendaModule,         //Tony
     ClienteModule,        //Shadith
-    EmpresaConvenioModule //Shadith
-
+    EmpresaConvenioModule, //Shadith
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

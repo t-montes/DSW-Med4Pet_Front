@@ -14,4 +14,5 @@ export class ServicioService {
   getServicios(): Observable<ServicioDetail[]> {
     return this.http.get<ServicioDetail[]>(this.apiUrl);
   }
+
 }

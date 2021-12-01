@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Creación del servicio</div>
+    <form
+      [formGroup]="servicioForm"
+      (ngSubmit)="!servicioForm.invalid && createServicio(servicioForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="nombre"> Nombre* </label>
+        <input
+          novalidate
+          id="nombre"
+          class="form-control"
+          formControlName="nombre"
+          placeholder="Nombre"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          servicioForm.get('nombre').hasError('required') &&
+          servicioForm.get('nombre').touched
+          "
+        >
+          Nombre requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          servicioForm.get('nombre').hasError('minlength') &&
+          servicioForm.get('nombre').touched
+          "
+        >
+          Nombre muy corto. Debería tener al menos dos caracteres.
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Campos requeridos</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!servicioForm.valid"
+        >
+          Crear
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

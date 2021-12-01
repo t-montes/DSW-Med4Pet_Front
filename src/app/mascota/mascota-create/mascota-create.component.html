@@ -1,0 +1,148 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Creación de la mascota</div>
+    <form
+      [formGroup]="mascotaForm"
+      (ngSubmit)="!mascotaForm.invalid && createMascota(mascotaForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="nombre"> Nombre* </label>
+        <input
+          novalidate
+          id="nombre"
+          class="form-control"
+          formControlName="nombre"
+          placeholder="Nombre"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          mascotaForm.get('nombre').hasError('required') &&
+          mascotaForm.get('nombre').touched
+          "
+        >
+          Nombre requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          mascotaForm.get('nombre').hasError('minlength') &&
+          mascotaForm.get('nombre').touched
+          "
+        >
+          Nombre muy corto. Debería tener al menos dos caracteres.
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="raza"> Raza* </label>
+        <input
+          novalidate
+          id="raza"
+          class="form-control"
+          formControlName="raza"
+          placeholder="Raza"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          mascotaForm.get('raza').hasError('required') &&
+          mascotaForm.get('raza').touched
+          "
+        >
+        Raza requerida
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          mascotaForm.get('raza').hasError('minlength') &&
+          mascotaForm.get('raza').touched
+          "
+        >
+        Texto muy corto. Debería tener al menos dos caracteres.
+        </div>
+      </div>
+
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="edad"> Edad* </label>
+        <input
+          novalidate
+          id="edad"
+          class="form-control"
+          formControlName="edad"
+          placeholder="Edad"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          mascotaForm.get('edad').hasError('required') &&
+          mascotaForm.get('edad').touched
+          "
+        >
+        Edad requerida
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          mascotaForm.get('edad').hasError('minlength') &&
+          mascotaForm.get('edad').touched
+          "
+        >
+        Texto muy corto. Debería tener al menos dos caracteres.
+        </div>
+      </div>
+
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="edad"> Ubicacion* </label>
+        <input
+          novalidate
+          id="ubicacion"
+          class="form-control"
+          formControlName="ubicacion"
+          placeholder="Ubicacion"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          mascotaForm.get('ubicacion').hasError('required') &&
+          mascotaForm.get('ubicacion').touched
+          "
+        >
+        Edad requerida
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          mascotaForm.get('ubicacion').hasError('minlength') &&
+          mascotaForm.get('ubicacion').touched
+          "
+        >
+        Texto muy corto. Debería tener al menos dos caracteres.
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Campos requeridos</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!mascotaForm.valid"
+        >
+          Crear
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
