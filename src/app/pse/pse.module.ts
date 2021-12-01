@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PseListarComponent } from './pse-listar/pse-listar.component';
+import { PseCreateComponent } from './pse-create/pse-create.component'
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
-  declarations: [PseListarComponent],
-  exports: [PseListarComponent],
+  declarations: [PseListarComponent, PseCreateComponent],
+  exports: [PseListarComponent, PseCreateComponent],
 })
 export class PseModule { }
