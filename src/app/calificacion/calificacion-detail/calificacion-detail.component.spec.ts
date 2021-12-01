@@ -26,7 +26,9 @@ describe('CalificacionDetailComponent', () => {
        faker.lorem.sentence(),
         faker.date.past(),
         faker.datatype.number(),
-        faker.lorem.sentence()
+        faker.lorem.sentence(),
+        null,
+        null
       );
     fixture.detectChanges();
   });

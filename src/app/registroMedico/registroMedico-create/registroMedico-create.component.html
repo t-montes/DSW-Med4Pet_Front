@@ -1,0 +1,109 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Registro Medico creation</div>
+    <form
+      [formGroup]="registroForm"
+      (ngSubmit)="!registroForm.invalid && createCalificacion(registroForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="id"> Id* </label>
+        <input
+          novalidate
+          id="id"
+          class="form-control"
+          formControlName="id"
+          placeholder="El id del registro"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            registroForm.get('creador').hasError('required') &&
+            registroForm.get('creador').touched
+          "
+        >
+          Id requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            registroForm.get('creador').hasError('minlength') &&
+            registroForm.get('creador').touched
+          "
+        >
+        El id es invalido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+
+
+        <label for="puntaje"> Puntaje* </label>
+        <input
+          id="puntaje"
+          type="number"
+          class="form-control"
+          formControlName="puntaje"
+          placeholder="El puntaje del calificado"
+        />
+
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            registroForm.get('puntaje').hasError('required') &&
+            registroForm.get('puntaje').touched
+          "
+        >
+          Puntaje requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="descripcion"> Descripcion </label>
+        <input
+          id="descripcion"
+          type="text"
+          class="form-control"
+          formControlName="descripcion"
+          placeholder="La descripcion de la calificacion"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            registroForm.get('descripcion').hasError('required') &&
+            registroForm.get('descripcion').touched
+          "
+        >
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            registroForm.get('descripcion').touched &&
+            registroForm.get('descripcion').hasError('email')
+          "
+        >
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Required fields</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!registroForm.valid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+ </div>
