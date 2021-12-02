@@ -4,15 +4,18 @@ import { VeterinarioListComponent} from './veterinario-list/veterinario-list.com
 import { VeterinarioDetailComponent} from './veterinario-detail/veterinario-detail.component';
 import { CitaModule } from '../cita/cita.module';
 import { CalificacionModule } from '../calificacion/calificacion.module';
+import { VeterinarioCreateComponent } from './veterinario-create/veterinario-create.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CalificacionModule,
+    ReactiveFormsModule,
     CommonModule,
     CitaModule
   ],
-  exports: [VeterinarioListComponent],
-  declarations: [VeterinarioListComponent, VeterinarioDetailComponent],
+  exports: [VeterinarioListComponent, VeterinarioCreateComponent ],
+  declarations: [VeterinarioListComponent, VeterinarioDetailComponent, VeterinarioCreateComponent],
   providers: []
 })
 export class VeterinarioModule { }
