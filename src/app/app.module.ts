@@ -22,6 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MedioDePagoModule } from './medioDePago/medioDePago.module';
 
 
 @NgModule({
@@ -44,6 +45,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ContactoModule,       //Juan
     CitaModule,           //Tony
     AgendaModule,         //Tony
+    MedioDePagoModule,    //Tony
     ClienteModule,        //Shadith
     EmpresaConvenioModule,//Shadith
     NgbModule

@@ -1,0 +1,12 @@
+<div class="centerdiv">
+  <button type="button" (click)="onClick(true)">PSE</button>
+  <button type="button" (click)="onClick(false)">Tarjeta de Credito</button>
+</div>
+
+<div *ngIf="showPse">
+  <app-pse-create></app-pse-create>
+</div>
+
+<div *ngIf="!showPse">
+  <app-tarjetaCredito-create></app-tarjetaCredito-create>
+</div>

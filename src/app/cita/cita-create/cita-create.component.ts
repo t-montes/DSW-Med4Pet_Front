@@ -1,7 +1,7 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr/toastr/toastr.service';
+import { ToastrService } from 'ngx-toastr';
 import { Cita } from '../cita'
 import { CitaService } from '../cita.service';
 import { CitaDetail } from '../citaDetail';
@@ -37,7 +37,7 @@ export class CitaCreateComponent implements OnInit {
     //TODO - Service form adding
     //TODO - MedioDePago form adding
     this.citaService.createCita(newCita).subscribe(c => {
-      this.toastr.success(newCita.fecha.toDateString());
+      this.toastr.success(`Duración:${newCita.duracion}`);
       this.citaForm.reset();
     });
   }

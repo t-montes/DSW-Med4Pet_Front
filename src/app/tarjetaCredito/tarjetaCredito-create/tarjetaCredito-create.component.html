@@ -1,17 +1,17 @@
 <div class="container-fluid">
   <div class="col-4 p-3">
-    <div class="h4" i18n>Tarjeta de credito Creation</div>
+    <div class="h4">Crear tarjeta de credito</div>
     <form
       [formGroup]="tarjetaForm"
       (ngSubmit)="!tarjetaForm.invalid && createTarjeta(tarjetaForm.value)"
     >
       <div class="form-group mx-sm-3 mb-2">
-        <label for="numeroTarjeta"> Banco* </label>
+        <label for="numeroTarjeta"> Numero de la Tarjeta* </label>
         <input
           novalidate
           id="numeroTarjeta"
           class="form-control"
-          formControlName="banco"
+          formControlName="numeroTarjeta"
           placeholder="Ingrese el número de la tarjeta"
         />
         <div
@@ -68,7 +68,7 @@
         <label for="fechaVencimiento"> Fecha de vencimiento* </label>
         <input
           id="fechaVencimiento"
-          type="text"
+          type="date"
           class="form-control"
           formControlName="fechaVencimiento"
           placeholder="Ingrese la fecha de vencimiento"
