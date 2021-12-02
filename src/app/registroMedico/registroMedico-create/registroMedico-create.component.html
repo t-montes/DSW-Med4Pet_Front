@@ -6,81 +6,79 @@
       (ngSubmit)="!registroForm.invalid && createCalificacion(registroForm.value)"
     >
       <div class="form-group mx-sm-3 mb-2">
-        <label for="id"> Id* </label>
+        <label for="identificacion"> Identificacion* </label>
         <input
           novalidate
-          id="id"
+          id="identificacion"
           class="form-control"
-          formControlName="id"
+          formControlName="identificacion"
           placeholder="El id del registro"
         />
         <div
           class="alert alert-danger alert-dismissible fade show"
-          *ngIf="
-            registroForm.get('creador').hasError('required') &&
-            registroForm.get('creador').touched
-          "
+          *ngIf="registroForm.get('identificacion').hasError('required') && registroForm.get('identificacion').touched"
         >
           Id requerido
         </div>
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
-            registroForm.get('creador').hasError('minlength') &&
-            registroForm.get('creador').touched
+            registroForm.get('identificacion').hasError('minlength') &&
+            registroForm.get('identificacion').touched
           "
         >
-        El id es invalido
+        La identificacion es invalida
         </div>
       </div>
 
       <div class="form-group mx-sm-3 mb-2">
 
 
-        <label for="puntaje"> Puntaje* </label>
+        <label for="fechaExpedicion"> Fecha de Expedicion* </label>
         <input
-          id="puntaje"
-          type="number"
+          id="fechaExpedicion"
+          type="date"
           class="form-control"
-          formControlName="puntaje"
-          placeholder="El puntaje del calificado"
+          formControlName="fechaExpedicion"
+          placeholder="La fecha de expedicion del registro medico"
         />
 
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
-            registroForm.get('puntaje').hasError('required') &&
-            registroForm.get('puntaje').touched
+            registroForm.get('fechaExpedicion').hasError('required') &&
+            registroForm.get('fechaExpedicion').touched
           "
         >
-          Puntaje requerido
+          Fecha de expedicion requerida
         </div>
       </div>
 
       <div class="form-group mx-sm-3 mb-2">
-        <label for="descripcion"> Descripcion </label>
+        <label for="imagen"> Imagen </label>
         <input
-          id="descripcion"
+          id="imagen"
           type="text"
           class="form-control"
-          formControlName="descripcion"
-          placeholder="La descripcion de la calificacion"
+          formControlName="imagen"
+          placeholder="La imagen del registro medico"
         />
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
-            registroForm.get('descripcion').hasError('required') &&
-            registroForm.get('descripcion').touched
+            registroForm.get('imagen').hasError('required') &&
+            registroForm.get('imagen').touched
           "
         >
         </div>
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
-            registroForm.get('descripcion').touched &&
-            registroForm.get('descripcion').hasError('email')
+            registroForm.get('imagen').touched &&
+            registroForm.get('imagen').hasError('imagen')
           "
         >
+        Imagen del registro medico requerida
         </div>
       </div>
 
