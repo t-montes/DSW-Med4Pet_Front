@@ -16,7 +16,8 @@ export class ServicioCreateComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private servicio: ServicioService
   ) {
 
   }
@@ -24,13 +25,11 @@ export class ServicioCreateComponent implements OnInit {
   createServicio(newServicio: Servicio) {
     // Process checkout data here
     console.warn("el servicio fue creado", newServicio);
+    this.servicio.createServicio(newServicio).subscribe(serv => {
+      this.toastr.success(serv.nombre);
+      this.servicioForm.reset();
+       });
     this.showSuccess(newServicio);
-
-    //this.servicioService.createServicio(newServicio).subscribe(servicio => {
-      //this.servicios.push(servicio);
-      //this.showSuccess(newServicio);
-    //});
-
     this.servicioForm.reset();
 
   }

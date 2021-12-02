@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 import { Mascota } from '../mascota';
@@ -10,28 +10,32 @@ import {MascotaService} from "../mascota.service";
   styleUrls: ['./mascota-create.component.scss']
 })
 export class MascotaCreateComponent implements OnInit {
-
+  @Input () duenioId:number
   mascotaForm: FormGroup;
- mascotas: Mascota[];
+  mascotas: Mascota[];
 
   constructor(
     private formBuilder: FormBuilder,
-    private toastr: ToastrService
-  ) {
+    private toastr: ToastrService,
+    private mascotaService:MascotaService
+  ) {}
 
+
+  ngOnInit() {
+    this.mascotaForm = this.formBuilder.group({
+      nombre: ["", [Validators.required, Validators.minLength(2)]],
+      raza: ["", [Validators.required, Validators.minLength(2)]],
+      edad: ["", [Validators.required]],
+      ubicacion: ["", [Validators.required, Validators.minLength(2)]]
+    });
   }
-
   createMascota(newMascota: Mascota) {
     // Process checkout data here
-    console.warn("la mascota fue creada", newMascota);
-    this.showSuccess(newMascota);
-
-    //this.servicioService.createServicio(newServicio).subscribe(servicio => {
-      //this.servicios.push(servicio);
-      //this.showSuccess(newServicio);
-    //});
-
-    this.mascotaForm.reset();
+    console.warn("el servicio fue creado", newMascota);
+    this.mascotaService.createMascota(newMascota).subscribe(masc => {
+      this.toastr.success(masc.nombre);
+      this.mascotaForm.reset();
+       });
 
   }
 
@@ -44,9 +48,5 @@ export class MascotaCreateComponent implements OnInit {
     this.mascotaForm.reset();
   }
 
-  ngOnInit() {
-    this.mascotaForm = this.formBuilder.group({
-      nombre: ["", [Validators.required, Validators.minLength(2)]]
-    });
-  }
+
 }

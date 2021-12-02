@@ -7,7 +7,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule, ReactiveFormsModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   declarations: [ServicioListarComponent, ServicioDetailComponent, ServicioCreateComponent],
   exports: [ServicioListarComponent,ServicioCreateComponent],

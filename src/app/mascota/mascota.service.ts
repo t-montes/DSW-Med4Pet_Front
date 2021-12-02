@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import { Mascota } from './mascota';
@@ -14,8 +14,7 @@ export class MascotaService {
   getMascotas(): Observable<Array<MascotaDetail>> {
     return this.http.get<Array<MascotaDetail>>(this.apiUrl);
   }
-  //createServicio(newServicio): {
-    //  push(servicio);
-      //showSuccess(newServicio);
-    //};
+  createMascota(mascota:Mascota): Observable<Mascota> {
+    return this.http.post<Mascota>(this.apiUrl,mascota);
+  }
 }

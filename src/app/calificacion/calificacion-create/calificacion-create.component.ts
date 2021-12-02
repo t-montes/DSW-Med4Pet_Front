@@ -41,7 +41,7 @@ createCalificacion(newCalificacion: Calificacion) {
   this.toastrService.success(calif.creador);
   this.calificacionForm.reset();
    });
-  this.calificacionForm.reset();
+
 
 
 }

@@ -20,11 +20,8 @@ import { ClienteModule } from './cliente/cliente.module';
 import { EmpresaConvenioModule } from './empresaConvenio/empresaConvenio.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-<<<<<<< HEAD
 import { ReactiveFormsModule } from '@angular/forms';
-=======
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
->>>>>>> 7ad4b956b7badcc378bc288dffc1d70a3a212c32
 
 
 @NgModule({
@@ -48,16 +45,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CitaModule,           //Tony
     AgendaModule,         //Tony
     ClienteModule,        //Shadith
-<<<<<<< HEAD
-    EmpresaConvenioModule, //Shadith
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
-    ReactiveFormsModule
-=======
     EmpresaConvenioModule,//Shadith
     NgbModule
 
->>>>>>> 7ad4b956b7badcc378bc288dffc1d70a3a212c32
   ],
   providers: [],
   bootstrap: [AppComponent]
