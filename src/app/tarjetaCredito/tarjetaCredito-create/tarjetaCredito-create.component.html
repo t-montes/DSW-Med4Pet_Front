@@ -1,0 +1,110 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4" i18n>Tarjeta de credito Creation</div>
+    <form
+      [formGroup]="tarjetaForm"
+      (ngSubmit)="!tarjetaForm.invalid && createTarjeta(tarjetaForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="numeroTarjeta"> Banco* </label>
+        <input
+          novalidate
+          id="numeroTarjeta"
+          class="form-control"
+          formControlName="banco"
+          placeholder="Ingrese el número de la tarjeta"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          tarjetaForm.get('numeroTarjeta').hasError('required') &&
+          tarjetaForm.get('numeroTarjeta').touched
+          "
+        >
+          El campo del número de la tarjeta es requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          tarjetaForm.get('numeroTarjeta').hasError('minlength') &&
+          tarjetaForm.get('numeroTarjeta').touched
+          "
+        >
+          Ingrese correctamente el número de la tarjeta
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          tarjetaForm.get('numeroTarjeta').hasError('maxlength') &&
+          tarjetaForm.get('numeroTarjeta').touched
+          "
+        >
+          Ingrese correctamente el número de la tarjeta
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="codigoSeguridad"> Codigo seguridad* </label>
+        <input
+          id="codigoSeguridad"
+          type="text"
+          class="form-control"
+          formControlName="codigoSeguridad"
+          placeholder="Ingrese el código de seguridad"
+        />
+
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          tarjetaForm.get('codigoSeguridad').hasError('required') &&
+          tarjetaForm.get('codigoSeguridad').touched
+          "
+        >
+          El campo del código de seguridad es requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="fechaVencimiento"> Fecha de vencimiento* </label>
+        <input
+          id="fechaVencimiento"
+          type="text"
+          class="form-control"
+          formControlName="fechaVencimiento"
+          placeholder="Ingrese la fecha de vencimiento"
+        />
+
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          tarjetaForm.get('fechaVencimiento').hasError('required') &&
+          tarjetaForm.get('fechaVencimiento').touched
+          "
+        >
+          El campo de la fecha de vencimiento es requerido
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Required fields</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!tarjetaForm.valid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+ </div>

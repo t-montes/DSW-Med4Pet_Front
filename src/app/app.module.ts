@@ -20,6 +20,7 @@ import { ClienteModule } from './cliente/cliente.module';
 import { EmpresaConvenioModule } from './empresaConvenio/empresaConvenio.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
