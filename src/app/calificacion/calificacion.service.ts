@@ -13,4 +13,7 @@ export class CalificacionService {
   getCalificaciones(): Observable<Calificacion[]> {
     return this.http.get<Calificacion[]>(this.apiUrl);
   }
+  createCalificacion(calificacion:Calificacion): Observable<Calificacion> {
+    return this.http.post<Calificacion>(this.apiUrl,calificacion);
+  }
 }
