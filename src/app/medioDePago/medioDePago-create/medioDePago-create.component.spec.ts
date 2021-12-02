@@ -3,27 +3,26 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { CalificacionCreateComponent } from './calificacion-create.component';
+import { MedioDePagoCreateComponent } from './medioDePago-create.component';
 
-describe('CalificacionCreateComponent', () => {
-  let component: CalificacionCreateComponent;
-  let fixture: ComponentFixture<CalificacionCreateComponent>;
+describe('MedioDePagoCreateComponent', () => {
+  let component: MedioDePagoCreateComponent;
+  let fixture: ComponentFixture<MedioDePagoCreateComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CalificacionCreateComponent ]
+      declarations: [ MedioDePagoCreateComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CalificacionCreateComponent);
+    fixture = TestBed.createComponent(MedioDePagoCreateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
-  /*
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  */
 });

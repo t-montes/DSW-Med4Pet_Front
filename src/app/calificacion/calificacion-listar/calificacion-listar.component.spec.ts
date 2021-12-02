@@ -27,12 +27,11 @@ describe("CalificacionListarComponent", () => {
 
    component.calificaciones = [
      new Calificacion(
-      faker.lorem.sentence(),
+       faker.random.number(),
+       faker.lorem.sentence(),
        faker.date.past(),
        faker.datatype.number(),
-       faker.lorem.sentence(),
-       null,
-       null
+       faker.lorem.sentence()
      ),
    ];
    fixture.detectChanges();

@@ -18,6 +18,9 @@
     <app-cita-listar [citas]="veterinarioDetail.agenda.citas"></app-cita-listar>
   </div>
   <div class = "row">
+    <app-cita-create [veterinarioId]="veterinarioDetail.id"></app-cita-create>
+  </div>
+  <div class = "row">
     <app-calificacion-listar [calificaciones]="veterinarioDetail.calificaciones"></app-calificacion-listar>
   </div>
 </div>
