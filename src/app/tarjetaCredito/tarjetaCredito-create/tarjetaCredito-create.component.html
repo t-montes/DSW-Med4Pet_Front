@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="col-4 p-3">
-    <div class="h4" i18n>Pse Creation</div>
+    <div class="h4" i18n>Tarjeta de credito Creation</div>
     <form
       [formGroup]="tarjetaForm"
       (ngSubmit)="!tarjetaForm.invalid && createTarjeta(tarjetaForm.value)"
@@ -26,8 +26,8 @@
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
-            pseForm.get('numeroTarjeta').hasError('minlength') &&
-            pseForm.get('numeroTarjeta').touched
+          tarjetaForm.get('numeroTarjeta').hasError('minlength') &&
+          tarjetaForm.get('numeroTarjeta').touched
           "
         >
           Ingrese correctamente el número de la tarjeta
@@ -35,8 +35,8 @@
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
-            pseForm.get('numeroTarjeta').hasError('maxlength') &&
-            pseForm.get('numeroTarjeta').touched
+          tarjetaForm.get('numeroTarjeta').hasError('maxlength') &&
+          tarjetaForm.get('numeroTarjeta').touched
           "
         >
           Ingrese correctamente el número de la tarjeta
