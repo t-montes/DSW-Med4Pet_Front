@@ -13,4 +13,7 @@ export class RegistroMedicoService {
   getRegistrosMedicos(): Observable<RegistroMedico[]> {
     return this.http.get<RegistroMedico[]>(this.apiUrl);
   }
+  createRegistroMedico(registro:RegistroMedico): Observable<RegistroMedico> {
+    return this.http.post<RegistroMedico>(this.apiUrl,registro);
+  }
 }
