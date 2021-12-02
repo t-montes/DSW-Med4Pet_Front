@@ -37,6 +37,7 @@ describe("Service: RegistroMedico", () => {
 
    for (let i = 1; i < 11; i++) {
      let registroMedico = new RegistroMedico(
+      faker.random.number(),
        faker.lorem.sentence(),
        faker.date.past(),
        faker.image.imageUrl()
