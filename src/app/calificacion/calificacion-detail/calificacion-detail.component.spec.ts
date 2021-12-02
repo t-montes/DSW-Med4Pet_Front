@@ -23,12 +23,11 @@ describe('CalificacionDetailComponent', () => {
     component = fixture.componentInstance;
     component.calificacionDetail =
       new Calificacion(
-       faker.lorem.sentence(),
+        faker.lorem.number(),
+        faker.lorem.sentence(),
         faker.date.past(),
         faker.datatype.number(),
-        faker.lorem.sentence(),
-        null,
-        null
+        faker.lorem.sentence()
       );
     fixture.detectChanges();
   });
