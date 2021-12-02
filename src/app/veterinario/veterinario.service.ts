@@ -20,4 +20,8 @@ getVeterinarios(): Observable<VeterinarioDetail[]>{
 getVeterinarioDetail(vetId): Observable<VeterinarioDetail> {
   return this.http.get<VeterinarioDetail>(`${this.apiUrl}/${vetId}`);
 }
+
+createVeterinario(veterinario:Veterinario): Observable<VeterinarioDetail>{
+  return this.http.post<VeterinarioDetail>(this.apiUrl, veterinario);
+}
 }

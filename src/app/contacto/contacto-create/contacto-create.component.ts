@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from "ngx-toastr";
 import { Contacto } from '../contacto';
+import { ContactoService } from '../contacto.service';
 @Component({
   selector: 'app-contacto-create',
   templateUrl: './contacto-create.component.html',
@@ -10,12 +11,17 @@ import { Contacto } from '../contacto';
 export class ContactoCreateComponent implements OnInit {
 
   contactoForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService) { }
+  constructor(private formBuilder: FormBuilder, private toastr: ToastrService, private contactoService: ContactoService) { }
 
   createContacto(newContacto: Contacto){
     console.warn("el cliente fue creado", newContacto);
-    this.showSuccess(newContacto);
-    this.contactoForm.reset();
+    this.contactoService.createContacto(newContacto)
+      .subscribe(newContacto => {
+        this.toastr.success('The author was created successfully');
+        this.contactoForm.reset()
+      }, err => {
+        this.toastr.error(err, 'Error');
+      });
   }
 
   showSuccess(c: Contacto){
