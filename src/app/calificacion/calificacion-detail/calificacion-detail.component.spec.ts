@@ -23,7 +23,7 @@ describe('CalificacionDetailComponent', () => {
     component = fixture.componentInstance;
     component.calificacionDetail =
       new Calificacion(
-        faker.lorem.number(),
+        faker.datatype.number(),
         faker.lorem.sentence(),
         faker.date.past(),
         faker.datatype.number(),

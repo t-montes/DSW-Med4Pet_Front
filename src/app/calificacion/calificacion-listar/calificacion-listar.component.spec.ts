@@ -27,7 +27,7 @@ describe("CalificacionListarComponent", () => {
 
    component.calificaciones = [
      new Calificacion(
-       faker.lorem.number(),
+       faker.random.number(),
        faker.lorem.sentence(),
        faker.date.past(),
        faker.datatype.number(),
