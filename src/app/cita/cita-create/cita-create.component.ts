@@ -14,6 +14,7 @@ import { CitaDetail } from '../citaDetail';
 export class CitaCreateComponent implements OnInit {
 
   @Input() veterinarioId: number;
+  @Input() agendaId: number;
 
   citaForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
@@ -38,6 +39,7 @@ export class CitaCreateComponent implements OnInit {
     //TODO - MedioDePago form adding
     this.citaService.createCita(newCita).subscribe(c => {
       this.toastr.success(`Duración:${newCita.duracion}`);
+      //this.citaService.createCitaAgenda(c.id, );
       this.citaForm.reset();
     });
   }
