@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Calificacion } from '../calificacion';
 import { CalificacionService } from '../calificacion.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-calificacion-create',
@@ -13,7 +14,8 @@ export class CalificacionCreateComponent implements OnInit {
   @Input () veterinarioId: number
   @Input () clienteId:number
   calificacionForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private toastrService: ToastrService, private calificacionService:CalificacionService) { }
+  constructor(private formBuilder: FormBuilder, private toastrService: ToastrService, private calificacionService:CalificacionService,
+    private router: Router) { }
 
 ngOnInit() {
   this.calificacionForm = this.formBuilder.group({
@@ -28,21 +30,26 @@ createCalificacion(newCalificacion: Calificacion) {
   newCalificacion.fecha = new Date()
   if (this.veterinarioId ==null)
   {
-    newCalificacion.veterinario = null;
-    newCalificacion.cliente = this.clienteId;
+    this.calificacionService.createCalificacion(newCalificacion).subscribe(calif => {
+      this.toastrService.success(calif.creador);
+      this.calificacionService.createCalificacionCliente(calif.id, this.clienteId).subscribe(calif2 => {
+        this.toastrService.success('El cliente ha sido asignado correctamente');
+        this.router.navigate(['/clientes/'+this.clienteId]);
+      });
+      this.calificacionForm.reset();
+    });
   }
   if (this.clienteId ==null)
   {
-    newCalificacion.veterinario = this.veterinarioId;
-    newCalificacion.cliente = null;
+    this.calificacionService.createCalificacion(newCalificacion).subscribe(calif => {
+      this.toastrService.success(calif.creador);
+      this.calificacionService.createCalificacionVeterinario(calif.id, this.veterinarioId).subscribe(calif2 => {
+        this.toastrService.success('El veterinario ha sido asignado correctamente');
+        this.router.navigate(['/veterinarios/'+this.veterinarioId]);
+      });
+      this.calificacionForm.reset();
+    });
   }
-
-  this.calificacionService.createCalificacion(newCalificacion).subscribe(calif => {
-  this.toastrService.success(calif.creador);
-  this.calificacionForm.reset();
-   });
-
-
 
 }
 cancelCreation() {

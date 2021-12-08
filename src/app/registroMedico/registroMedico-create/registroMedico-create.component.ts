@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { RegistroMedico } from '../registroMedico';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
+import { RegistroMedicoService } from '../registroMedico.service';
 
 
 export class DatepickerOverviewExample {}
@@ -16,13 +17,13 @@ export class RegistroMedicoCreateComponent implements OnInit {
   registroForm: FormGroup;
   model: NgbDateStruct;
   date: {year: number, month: number};
-  constructor(private formBuilder: FormBuilder,private toastr: ToastrService,private calendar: NgbCalendar) { }
+  constructor(private formBuilder: FormBuilder,private toastr: ToastrService,private calendar: NgbCalendar,private registroService:RegistroMedicoService) { }
   selectToday() {
     this.model = this.calendar.getToday();
   }
 ngOnInit() {
   this.registroForm = this.formBuilder.group({
-    id: ["", [Validators.required, Validators.minLength(2)]],
+    identificacion: ["", [Validators.required, Validators.minLength(2)]],
     fechaExpedicion: ["", [Validators.required]],
     imagen:["", [Validators.required]]
   });
@@ -30,12 +31,10 @@ ngOnInit() {
 createCalificacion(newRegistro: RegistroMedico) {
   // Process checkout data here
   console.warn("el registro medico fue creado", newRegistro);
-  //-----------------------------------------------------------------
-  // this.clientService.createClient(newClient).subscribe(client => {
-  //   this.clientes.push(client);
-  //  this.showSuccess(newClient);
-  // });
-  //------------------------------------------------------------------
+  this.registroService.createRegistroMedico(newRegistro).subscribe(calif => {
+    this.toastr.success(calif.identificacion);
+    this.registroForm.reset();
+     });
   this.registroForm.reset();
 
 }

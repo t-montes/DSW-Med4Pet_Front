@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Crear Cita</div>
+    <form
+      [formGroup]="citaForm"
+      (ngSubmit)="!citaForm.invalid && createCita(citaForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="fecha"> Fecha* </label>
+        <input
+          type="datetime-local"
+          novalidate
+          id="fecha"
+          class="form-control"
+          formControlName="fecha"
+          placeholder="YYYY-MM-DDTHH:MM:ss"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            citaForm.get('fecha').hasError('required') &&
+            citaForm.get('fecha').touched
+          "
+        >
+          Fecha requerida
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="duracion"> Duracion* </label>
+        <input
+          id="duracion"
+          type="text"
+          class="form-control"
+          formControlName="duracion"
+          placeholder="Duración de la cita en minutos"
+        />
+
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            citaForm.get('duracion').hasError('required') &&
+            citaForm.get('duracion').touched
+          "
+        >
+          Duración requerida
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="costo"> Precio* </label>
+        <input
+          id="costo"
+          type="text"
+          class="form-control"
+          formControlName="costo"
+          placeholder="Precio de la cita"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            citaForm.get('costo').hasError('required') &&
+            citaForm.get('costo').touched
+          "
+        >
+          Precio requerido
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Campos requeridos</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!citaForm.valid"
+        >
+          Crear
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+ </div>
+
+
+ <app-medioDePago-create></app-medioDePago-create>

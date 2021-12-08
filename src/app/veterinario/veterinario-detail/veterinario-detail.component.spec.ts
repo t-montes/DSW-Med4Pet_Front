@@ -33,6 +33,7 @@ describe('VeterinarioDetailComponent', () => {
 
     let registroMedico = new RegistroMedico(
       faker.datatype.number(),
+      faker.lorem.sentence(),
       faker.date.past(),
       faker.lorem.sentence()
     );
