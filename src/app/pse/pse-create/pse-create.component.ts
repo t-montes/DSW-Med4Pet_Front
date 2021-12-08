@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from "ngx-toastr";
+import { PseService } from '../pse.service';
 
 @Component({
   selector: 'app-pse-create',
@@ -10,7 +11,8 @@ import { ToastrService } from "ngx-toastr";
 export class PseCreateComponent implements OnInit {
 
   pseForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService) { }
+  constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
+    private pseService:PseService) { }
 
   ngOnInit() {
 
@@ -27,6 +29,9 @@ export class PseCreateComponent implements OnInit {
 
   createPse(newPse: any){
     console.warn("El pse fue creado", newPse);
+    this.pseService.createPse(newPse).subscribe(p => {
+      this.toastr.success('PSE creado exitosamente');
+    });
     this.pseForm.reset();
   }
 

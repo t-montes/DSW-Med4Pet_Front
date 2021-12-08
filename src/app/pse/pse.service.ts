@@ -11,8 +11,11 @@ export class PseService {
 private apiUrl: string = environment.baseUrl + 'pses';
 constructor(private http: HttpClient) { }
 
-getPses(): Observable<Pse[]>{
-  return this.http.get<Pse[]>(this.apiUrl);
-}
+  getPses(): Observable<Pse[]>{
+    return this.http.get<Pse[]>(this.apiUrl);
+  }
 
+  createPse(pse:Pse): Observable<Pse> {
+    return this.http.post<Pse>(this.apiUrl, pse);
+  }
 }
