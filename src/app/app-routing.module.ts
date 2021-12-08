@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
 import { EmpresaConvenioListComponent } from './empresaConvenio/empresaConvenio-list/empresaConvenio-list.component';
 import { ServicioListarComponent } from './servicio/servicio-listar/servicio-listar.component';
 import { VeterinarioDetailComponent } from './veterinario/veterinario-detail/veterinario-detail.component';
@@ -26,6 +27,19 @@ const routes: Routes = [
   {
     path:"**",
     component:ServicioListarComponent
+  },
+  {
+    path: "clientes",
+    children: [
+      {
+        path: "list",
+        component: ClienteListComponent
+      },
+      {
+        path: ":id",
+        component: ClienteListComponent
+      }
+    ]
   }
 ];
 

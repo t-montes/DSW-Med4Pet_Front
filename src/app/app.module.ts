@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -29,6 +31,8 @@ import { EmpresaConvenioModule } from './empresaConvenio/empresaConvenio.module'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
     ServicioModule,       //Daniel
     MascotaModule,        //Daniel
     CalificacionModule ,  //Luccas
