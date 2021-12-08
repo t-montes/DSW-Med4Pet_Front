@@ -7,9 +7,11 @@
   <thead class="thead-dark">
       <tr style="color: rgb(11, 87, 138); text-align: center; font-weight: bold; background-color:#74c3e2;">
           <th><button type="button" style="color: white; background-color:#1eabe2" routerLink="servicios">Nuestros Servicios</button></th>
+          <th><button type="button" style="color: white; background-color:#1eabe2" routerLink="/empresasconvenio">Empresas Convenio</button></th>
+          <th><button type="button" style="color: white; background-color:#1eabe2" routerLink="/clientes">Clientes</button></th>
           <th><button type="button" style="color: white; background-color:#1eabe2" routerLink="/masinformacion" >Más información</button></th>
           <th><button type="button" style="color: white; background-color:#1eabe2" routerLink="/conocenos">Conócenos</button></th>
-          <th><button type="button" style="color: white; background-color:#1eabe2" routerLink="/empresasconvenio">Empresas Convenio</button></th>
+          <th><button type="button" style="color: white; background-color:#1eabe2" routerLink="/registrarse">Registrarse</button></th>
       </tr>
   </thead>
   <tbody id="courses">
@@ -20,12 +22,13 @@
   </div>
 </table>
 <router-outlet></router-outlet>
+<!--
 <app-servicio-create></app-servicio-create>
 <app-mascota-create></app-mascota-create>
 <app-registroMedico-create></app-registroMedico-create>
 <app-veterinario-create></app-veterinario-create>
 <app-contacto-create></app-contacto-create>
-<!--
+
 <app-servicio-listar></app-servicio-listar>
 
 <app-mascota-listar></app-mascota-listar>

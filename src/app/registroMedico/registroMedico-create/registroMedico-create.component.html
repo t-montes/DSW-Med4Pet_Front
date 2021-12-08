@@ -1,9 +1,9 @@
 <div class="container-fluid">
   <div class="col-4 p-3">
-    <div class="h4">Registro Medico creation</div>
+    <div class="h4">Creacion del registro médico</div>
     <form
       [formGroup]="registroForm"
-      (ngSubmit)="!registroForm.invalid && createCalificacion(registroForm.value)"
+      (ngSubmit)="!registroForm.invalid && createRegistroMedico(registroForm.value)"
     >
       <div class="form-group mx-sm-3 mb-2">
         <label for="identificacion"> Identificacion* </label>
