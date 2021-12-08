@@ -23,13 +23,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MedioDePagoModule } from './medioDePago/medioDePago.module';
-
+import {InformacionModule} from './informacion/informacion.module'
 
 @NgModule({
   declarations: [
     AppComponent
    ],
   imports: [
+    InformacionModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     BrowserModule,
