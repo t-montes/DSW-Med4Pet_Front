@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from "ngx-toastr";
+import { Agenda } from 'src/app/agenda/agenda';
+import { AgendaService } from 'src/app/agenda/agenda.service';
 import { Veterinario } from '../veterinario';
 import { VeterinarioService } from '../veterinario.service';
 import { VeterinarioDetail } from '../veterinarioDetail';
@@ -12,14 +15,25 @@ import { VeterinarioDetail } from '../veterinarioDetail';
 })
 export class VeterinarioCreateComponent implements OnInit {
   veterinarioForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService, private veterinarioService: VeterinarioService) { }
+  constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
+    private veterinarioService: VeterinarioService,
+    private agendaService: AgendaService,
+    private router: Router) { }
 
   createVeterinario(newVeterinario: VeterinarioDetail){
     newVeterinario.calificacion = 0.0;
     console.warn("el veterinario fue creado", newVeterinario);
-    this.veterinarioService.createVeterinario(newVeterinario)
-      .subscribe(newVeterinario=>{
-        this.showSuccess(newVeterinario);
+    this.veterinarioService.createVeterinario(newVeterinario).subscribe(v =>{
+        this.showSuccess(v);
+        //Se le asigna una agenda nueva al veterinario apenas se crea
+        let newAgenda:Agenda = new Agenda(null,0,0,0,[]);
+        this.agendaService.createAgenda(newAgenda).subscribe(ag => {
+          this.toastr.success('Agenda creada exitosamente');
+          this.agendaService.createAgendaVeterinario(ag.id, v.id).subscribe(ag2 => {
+            this.toastr.success('La agenda ha sido asignada correctamente');
+            this.router.navigate(['/veterinarios/'+v.id])
+          });
+        });
         this.veterinarioForm.reset();
       });
 

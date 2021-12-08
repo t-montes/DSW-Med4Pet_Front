@@ -1,0 +1,117 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Creacion de Empresa Convenio</div>
+    <form
+      [formGroup]="empresaConvenioForm"
+      (ngSubmit)="!empresaConvenioForm.invalid && createEmpresaConvenio(empresaConvenioForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="nombre"> Nombre* </label>
+        <input
+          novalidate
+          id="nombre"
+          class="form-control"
+          formControlNombre="nombre"
+          placeholder="Your Full nombre"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          empresaConvenioForm.get('nombre').hasError('required') &&
+          empresaConvenioForm.get('nombre').touched
+          "
+        >
+        Nombre required
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          empresaConvenioForm.get('nombre').hasError('minlength') &&
+          empresaConvenioForm.get('nombre').touched
+          "
+        >
+        Nombre too short. It should be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="nit"> Nit* </label>
+        <input
+          novalidate
+          id="nit"
+          class="form-control"
+          formControlNit="nit"
+          placeholder="Your Full nit"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          empresaConvenioForm.get('nit').hasError('required') &&
+          empresaConvenioForm.get('nit').touched
+          "
+        >
+        Nit required
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          empresaConvenioForm.get('nit').hasError('minlength') &&
+          empresaConvenioForm.get('nit').touched
+          "
+        >
+        Nit too short. It should be at least 2 characters
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="servicio"> Servicio* </label>
+        <input
+          novalidate
+          id="servicio"
+          class="form-control"
+          formControlServicio="servicio"
+          placeholder="Your Full servicio"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          empresaConvenioForm.get('servicio').hasError('required') &&
+          empresaConvenioForm.get('servicio').touched
+          "
+        >
+        Servicio required
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          empresaConvenioForm.get('servicio').hasError('minlength') &&
+          empresaConvenioForm.get('servicio').touched
+          "
+        >
+        Servicio too short. It should be at least 2 characters
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Required fields</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!empresaConvenioForm.valid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+ </div>

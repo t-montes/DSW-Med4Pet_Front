@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Creacion de Cliente</div>
+    <form
+      [formGroup]="clienteForm"
+      (ngSubmit)="!clienteForm.invalid && createCliente(clienteForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="nombre"> Nombre* </label>
+        <input
+          novalidate
+          id="nombre"
+          class="form-control"
+          formControlNombre="nombre"
+          placeholder="Your Full nombre"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            clienteForm.get('nombre').hasError('required') &&
+            clienteForm.get('nombre').touched
+          "
+        >
+        Nombre required
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            clienteForm.get('nombre').hasError('minlength') &&
+            clienteForm.get('nombre').touched
+          "
+        >
+        Nombre too short. It should be at least 2 characters
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Required fields</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!clienteForm.valid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+ </div>
