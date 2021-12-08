@@ -13,6 +13,7 @@ export class ContactoService {
   getContactos(): Observable<Contacto[]>{
     return this.http.get<Contacto[]>(this.apiUrl);
   }
-
-
+  createContacto(contacto: Contacto): Observable<Contacto> {
+    return this.http.post<Contacto>(this.apiUrl, contacto);
+  }
 }

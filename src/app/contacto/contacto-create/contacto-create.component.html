@@ -1,0 +1,79 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Informacion de Contacto</div>
+    <form
+      [formGroup]="contactoForm"
+      (ngSubmit)="!contactoForm.invalid && createContacto(contactoForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="telefono"> Telefono* </label>
+        <input
+          novalidate
+          id="telefono"
+          class="form-control"
+          formControlName="telefono"
+          placeholder="Telefono"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          contactoForm.get('telefono').hasError('required') &&
+          contactoForm.get('telefono').touched
+          "
+        >
+          Telefono Requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="correo"> Correo Electronico* </label>
+        <input
+          id="correo"
+          type="text"
+          class="form-control"
+          formControlName="correo"
+          placeholder="example@gmail.com"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            contactoForm.get('correo').hasError('required') &&
+            contactoForm.get('correo').touched
+          "
+        >
+          Correo Requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            contactoForm.get('correo').touched &&
+            contactoForm.get('correo').hasError('email')
+          "
+        >
+          Incorrect email format. It must include @
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Required fields</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!contactoForm.valid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+ </div>

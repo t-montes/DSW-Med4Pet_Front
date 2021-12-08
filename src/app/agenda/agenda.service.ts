@@ -14,4 +14,12 @@ export class AgendaService {
   getAgendas(): Observable<Agenda[]> {
     return this.http.get<Agenda[]>(this.apiUrl);
   }
+
+  createAgenda(agenda:Agenda): Observable<Agenda> {
+    return this.http.post<Agenda>(this.apiUrl,agenda);
+  }
+
+  createAgendaVeterinario(agendaId:number, veterinarioId:number): Observable<Agenda> {
+    return this.http.post<Agenda>(environment.baseUrl+`veterinarios/${veterinarioId}/agendas/${agendaId}`, undefined);
+  }
 }

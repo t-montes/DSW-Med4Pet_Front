@@ -37,6 +37,7 @@ describe("Service: Calificacion", () => {
 
    for (let i = 1; i < 11; i++) {
      let calificacion = new Calificacion(
+       faker.random.number(),
        faker.lorem.sentence(),
        faker.date.past(),
        faker.datatype.number(),

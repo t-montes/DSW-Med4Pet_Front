@@ -13,4 +13,18 @@ export class CalificacionService {
   getCalificaciones(): Observable<Calificacion[]> {
     return this.http.get<Calificacion[]>(this.apiUrl);
   }
+
+  createCalificacion(calificacion:Calificacion): Observable<Calificacion> {
+    return this.http.post<Calificacion>(this.apiUrl,calificacion);
+  }
+
+  createCalificacionVeterinario(calificacionId:number, veterinarioId:number): Observable<Calificacion> {
+    console.log(environment.baseUrl+`veterinarios/${veterinarioId}/calificaciones/${calificacionId}`);
+    return this.http.post<Calificacion>(environment.baseUrl+`veterinarios/${veterinarioId}/calificaciones/${calificacionId}`, undefined);
+  }
+
+  createCalificacionCliente(calificacionId:number, clienteId:number): Observable<Calificacion> {
+    return this.http.post<Calificacion>(environment.baseUrl+`clientes/${clienteId}/calificaciones/${calificacionId}`, undefined);
+  }
+
 }

@@ -1,0 +1,89 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Crear PSE</div>
+    <form
+      [formGroup]="pseForm"
+      (ngSubmit)="!pseForm.invalid && createPse(pseForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="banco"> Banco* </label>
+        <input
+          novalidate
+          id="banco"
+          class="form-control"
+          formControlName="banco"
+          placeholder="Ingrese el banco"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            pseForm.get('banco').hasError('required') &&
+            pseForm.get('banco').touched
+          "
+        >
+          El campo del banco es requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="numeroTarjeta"> Número de la tarjeta* </label>
+        <input
+          id="numeroTarjeta"
+          type="text"
+          class="form-control"
+          formControlName="numeroTarjeta"
+          placeholder="Ingrese el número de la tarjeta"
+        />
+
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            pseForm.get('numeroTarjeta').hasError('required') &&
+            pseForm.get('numeroTarjeta').touched
+          "
+        >
+          El campo del número de la tarjeta es requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            pseForm.get('numeroTarjeta').hasError('minlength') &&
+            pseForm.get('numeroTarjeta').touched
+          "
+        >
+          Ingrese correctamente el número de la tarjeta
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            pseForm.get('numeroTarjeta').hasError('maxlength') &&
+            pseForm.get('numeroTarjeta').touched
+          "
+        >
+          Ingrese correctamente el número de la tarjeta
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Required fields</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!pseForm.valid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+ </div>

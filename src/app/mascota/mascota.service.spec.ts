@@ -11,7 +11,6 @@ import {
 import faker from "faker";
 import { Mascota } from "./mascota";
 import { environment } from "../../environments/environment";
-import { HttpClientModule } from '@angular/common/http';
 
 describe("Service: Mascota", () => {
  let injector: TestBed;

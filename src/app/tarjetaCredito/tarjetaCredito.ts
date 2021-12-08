@@ -1,7 +1,6 @@
 import { MedioDePago } from '../medioDePago/medioDePago';
 
 export class TarjetaCredito extends MedioDePago{
-  id: number;
   numeroTarjeta: string;
   codigoSeguridad: string;
   fechaVencimiento: Date;
@@ -13,8 +12,7 @@ export class TarjetaCredito extends MedioDePago{
     codigoSeguridad: string,
     fechaVencimiento: Date
   ){
-    super(nombre);
-    this.id = id;
+    super(id,nombre);
     this.numeroTarjeta = numeroTarjeta;
     this.codigoSeguridad = codigoSeguridad;
     this.fechaVencimiento = fechaVencimiento;

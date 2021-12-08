@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ClienteListComponent } from './cliente/cliente-list/cliente-list.component';
 import { EmpresaConvenioListComponent } from './empresaConvenio/empresaConvenio-list/empresaConvenio-list.component';
+import { ConocenosComponent } from './informacion/conocenos/conocenos.component';
+import { MasInformacionComponent } from './informacion/masInformacion/masInformacion.component';
 import { ServicioListarComponent } from './servicio/servicio-listar/servicio-listar.component';
 import { VeterinarioDetailComponent } from './veterinario/veterinario-detail/veterinario-detail.component';
 import { VeterinarioListComponent } from './veterinario/veterinario-list/veterinario-list.component';
@@ -25,6 +27,14 @@ const routes: Routes = [
     component: EmpresaConvenioListComponent
   },
   {
+    path:"masinformacion",
+    component: MasInformacionComponent
+  },
+  {
+    path:"conocenos",
+    component: ConocenosComponent
+  },
+  {
     path:"**",
     component:ServicioListarComponent
   },
@@ -41,6 +51,7 @@ const routes: Routes = [
       }
     ]
   }
+
 ];
 
 @NgModule({

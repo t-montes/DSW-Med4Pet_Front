@@ -28,6 +28,7 @@ describe("RegistroMedicoListarComponent", () => {
 
    component.registrosMedicos = [
     new RegistroMedico(
+      faker.random.number(),
       faker.lorem.sentence(),
       faker.date.past(),
       faker.image.imageUrl()

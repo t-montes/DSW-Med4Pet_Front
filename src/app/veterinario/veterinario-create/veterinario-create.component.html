@@ -1,0 +1,122 @@
+<div class="container-fluid">
+  <div class="col-4 p-3">
+    <div class="h4">Creacion del Veterinario</div>
+    <form
+      [formGroup]="veterinarioForm"
+      (ngSubmit)="!veterinarioForm.invalid && createVeterinario(veterinarioForm.value)"
+    >
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="nombre"> Nombre* </label>
+        <input
+          novalidate
+          id="nombre"
+          class="form-control"
+          formControlName="nombre"
+          placeholder="Nombre Completo"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            veterinarioForm.get('nombre').hasError('required') &&
+            veterinarioForm.get('nombre').touched
+          "
+        >
+          Nombre Requerido
+        </div>
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+            veterinarioForm.get('nombre').hasError('minlength') &&
+            veterinarioForm.get('nombre').touched
+          "
+        >
+          Nombre muy corto, debe ser de almenos 2 caracteres
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="especialidad"> Especialidad* </label>
+        <input
+          id="especialidad"
+          type="text"
+          class="form-control"
+          formControlName="especialidad"
+          placeholder="Especialidad"
+        />
+
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          veterinarioForm.get('especialidad').hasError('required') &&
+          veterinarioForm.get('especialidad').touched
+          "
+        >
+          Especialidad requerida
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="certificadoEntrenamiento"> Certificado de Entrenamieno* </label>
+        <input
+          id="certificadoEntrenamiento"
+          type="text"
+          class="form-control"
+          formControlName="certificadoEntrenamiento"
+          placeholder="Codigo del certificado de entrenamiento"
+        />
+
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          veterinarioForm.get('certificadoEntrenamiento').hasError('required') &&
+          veterinarioForm.get('certificadoEntrenamiento').touched
+          "
+        >
+          Certificado de Entrenamiento requerido
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="experienciaPrevia"> Experiencia Previa* </label>
+        <input
+          id="experienciaPrevia"
+          type="text"
+          class="form-control"
+          formControlName="experienciaPrevia"
+          placeholder="Experiencia Previa"
+        />
+
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          veterinarioForm.get('experienciaPrevia').hasError('required') &&
+          veterinarioForm.get('experienciaPrevia').touched
+          "
+        >
+          Experiencia Previa Requerida
+        </div>
+      </div>
+
+      <div class="row m-3 small">
+        <p>* Required fields</p>
+      </div>
+
+      <div class="row m-3">
+        <button
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!veterinarioForm.valid"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger ml-3"
+          (click)="cancelCreation()"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+ </div>
