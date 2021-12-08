@@ -15,4 +15,8 @@ export class TarjetaCreditoService {
   getTarjetas(): Observable<TarjetaCredito[]>{
     return this.http.get<TarjetaCredito[]>(this.apiUrl);
   }
+
+  createTarjetaCredito(tarjetaCredito:TarjetaCredito): Observable<TarjetaCredito> {
+    return this.http.post<TarjetaCredito>(this.apiUrl, tarjetaCredito);
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
+import { TarjetaCreditoService } from 'src/app/tarjetaCredito/tarjetaCredito.service';
 
 @Component({
   selector: 'app-tarjetaCredito-create',
@@ -10,7 +11,8 @@ import { ToastrService } from "ngx-toastr";
 export class TarjetaCreditoCreateComponent implements OnInit {
   tarjetaForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService,
+    private tarjetaCreditoService: TarjetaCreditoService) { }
 
 
     ngOnInit() {
@@ -28,6 +30,9 @@ export class TarjetaCreditoCreateComponent implements OnInit {
 
     createTarjeta(newTarjeta: any){
       console.warn("La tarjeta fue creada", newTarjeta);
+      this.tarjetaCreditoService.createTarjetaCredito(newTarjeta).subscribe(t => {
+        this.toastr.success('Tarjeta de Crédito creada exitosamente');
+      });
       this.tarjetaForm.reset();
     }
 
