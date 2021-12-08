@@ -1,6 +1,7 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Cita } from '../cita'
 import { CitaService } from '../cita.service';
@@ -19,7 +20,8 @@ export class CitaCreateComponent implements OnInit {
   citaForm: FormGroup;
   constructor(private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private citaService: CitaService) { }
+    private citaService: CitaService,
+    private router: Router) { }
 
   ngOnInit() {
     this.citaForm = this.formBuilder.group({
@@ -39,7 +41,10 @@ export class CitaCreateComponent implements OnInit {
     //TODO - MedioDePago form adding
     this.citaService.createCita(newCita).subscribe(c => {
       this.toastr.success(`Duración:${newCita.duracion}`);
-      //this.citaService.createCitaAgenda(c.id, );
+      this.citaService.createCitaAgenda(c.id, this.agendaId).subscribe(c2 => {
+        this.toastr.success('La agenda ha sido asignada correctamente');
+        this.router.navigate(['/veterinarios/'+this.veterinarioId]);
+      });
       this.citaForm.reset();
     });
   }
