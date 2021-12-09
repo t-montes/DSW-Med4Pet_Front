@@ -1,115 +1,20 @@
-<html>
-    <head>
-        <img src="imagenes/Logo Med.jpeg" class="center" >
-    </head>
-    <body>
-        <h1 class="titulo">CLIENTE</h1>
-        <p class="p">En este espacio se encuentra la informacion del cliente seleccionado</p>
-        <div class="cuadrado">
-            <div class= "cuadro">
-                <p class="titulo">{{clienteDetail.nombre}}</p>
-            </div>
-            <div class= "cuadro1">
-                <img src="Imagenes/Tony.jpg" class="imag">
-                <p class="titulo">3.8<img src="Imagenes/estrella.jpeg" class="imag1"></p>
-                <h1 class="h1">Contacto</h1>
-                <p class="p1">Telefono: {{clienteDetail.contacto.telefono}} <br> Correo: {{clienteDetail.contacto.correo}}</p>
-            </div>
-            <div class= "cuadro2">
-                <p class="titulo2"> <u> Mis Mascotas</u></p>
-                <p class= "p1"><img src="Imagenes/gato.jpeg" class="imag1"> Nombre: {{clienteDetail.mascota.nombre}} <br> <br>
-                    Tipo de Mascota: {{clienteDetail.mascota.tipoMascota}}  <br> <br>
-                    Raza: {{clienteDetail.mascota.raza}} <br> <br> Edad: {{clienteDetail.mascota.edad}}  </p>
-            </div>
-        </div>
-    </body>
-</html>
 
-<style>
-    .cuadrado {
-        width: 1340px;
-        height: 800px;
-        background: #4875a1;
-        position: relative;
-    }
-    .center{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;
-    }
-    .titulo{
-        line-height: 1.35em;
-        text-align: center;
-        font-size: 40px;
-    }
-    .p{
-        text-align: center;
-        font-size: 20px;
-    }
-    .h1{
-        text-align: center;
-        top: -9%;
-        left: 10;
-        position: relative;
-    }
-    .p1{
-        text-align: center;
-        font-size: 20px;
-        top: -11%;
-        left: 10;
-        position: relative;
-    }
-    .cali{
-        line-height: 1.35em;
-        font-size: 20px;
-        top: -8%;
-        left: 180;
-        color: blue;
-        position: relative;
-    }
-    .cuadro{
-        width: 600px;
-        height: 60px;
-        background: #ffffff;
-        top: 8%;
-        left: 6%;
-        position: relative;
-    }
-    .cuadro1{
-        width: 500px;
-        height: 550px;
-        background: #ffffff;
-        top: 9%;
-        left: 10%;
-        position: relative;
-    }
-    .imag{
-        width: 200px;
-        height: 300px;
-        top: 6%;
-        left: 30%;
-        position: relative;
-    }
-    .imag1{
-        width: 40px;
-        height: 40px;
-        position: relative;
-    }
-    .cuadro2{
-        width: 500px;
-        height: 300px;
-        background: #ffffff;
-        top: -60%;
-        left: 56%;
-        position: relative;
-    }
-    .titulo2{
-        line-height: 1.35em;
-        text-align: center;
-        font-size: 40px;
-        top: 5%;
-        left: 10;
-        position: relative;
-    }
-</style>
+<h1 class="titulo">CLIENTE</h1>
+<p class="p">En este espacio se encuentra la informacion del cliente seleccionado</p>
+<div class="cuadrado">
+    <div class= "cuadro">
+        <p class="titulo">{{clienteDetail.nombre}}</p>
+    </div>
+    <div class= "cuadro1">
+        <img src="assets/usuario.jpeg" class="imag"> <br> <br> <br>
+        <p class="titulo">3.8<img src="assets/estrella.jpeg" class="imag1"></p> <br>
+        <h1 class="h1">Contacto</h1>
+        <p class="p1">Telefono: {{clienteDetail.contacto.telefono}} <br> Correo: {{clienteDetail.contacto.correo}}</p>
+    </div>
+    <div class= "cuadro2">
+        <p class="titulo2"> <u> Mis Mascotas</u></p>
+        <p class= "p1"> Nombre: {{clienteDetail.mascota.nombre}} <br> <br>
+            Tipo de Mascota: {{clienteDetail.mascota.tipoMascota}}  <br> <br>
+            Raza: {{clienteDetail.mascota.raza}} <br> <br> Edad: {{clienteDetail.mascota.edad}}  </p>
+    </div>
+</div>

@@ -45,7 +45,8 @@ describe('ClienteDetailComponent', () => {
       faker.random.number(),
       faker.lorem.sentence(),
       faker.random.number(),
-      contacto
+      contacto,
+      mascota
       );
 
     fixture.detectChanges();

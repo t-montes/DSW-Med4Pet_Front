@@ -14,7 +14,7 @@ constructor(
   nombre: string,
   calificacion: number,
   contacto: Contacto,
-  mascota: Mascota,
+  mascota: Mascota
 
 ) {
   this.id = id;

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -19,8 +20,6 @@ import { CitaModule } from './cita/cita.module';
 import { AgendaModule } from './agenda/agenda.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { EmpresaConvenioModule } from './empresaConvenio/empresaConvenio.module';
-import { ToastrModule } from 'ngx-toastr';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MedioDePagoModule } from './medioDePago/medioDePago.module';
@@ -37,8 +36,6 @@ import {InformacionModule} from './informacion/informacion.module'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
     ServicioModule,       //Daniel
     MascotaModule,        //Daniel
     CalificacionModule ,  //Luccas

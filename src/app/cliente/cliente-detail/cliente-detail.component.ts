@@ -5,7 +5,7 @@ import { Cliente } from '../cliente';
 @Component({
   selector: 'app-cliente-detail',
   templateUrl: './cliente-detail.component.html',
-  styleUrls: ['./cliente-detail.component.css']
+  styleUrls: ['./cliente-detail.component.scss']
 })
 export class ClienteDetailComponent implements OnInit {
 

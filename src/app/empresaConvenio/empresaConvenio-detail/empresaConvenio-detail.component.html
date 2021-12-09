@@ -1,37 +1,24 @@
 <html>
     <head>
-        <img src="imagenes/Logo Med.jpeg" class="center" >
+        <img src="assets/Logo Med.jpeg" class="center">
     </head>
     <body>
-        <h1 class="titulo">CLIENTE</h1>
-        <p class="p">En este espacio se encuentra la informacion del cliente seleccionado</p>
+        <h1 class="titulo">EMPRESAS CONVENIO</h1>
+        <p class="p">En este espacio se encuentra la lista de las empresas con las que tenemos convenio para cubrir todas las necesidades de tu mascota</p>
         <div class="cuadrado">
-            <div class= "cuadro">
-                <p class="titulo">Tony Santiago Montes</p>
-            </div>
             <div class= "cuadro1">
-                <img src="Imagenes/Tony.jpg" class="imag">
-                <p class="titulo">3.8<img src="Imagenes/estrella.jpeg" class="imag1"></p>
-                <p class="cali"> <u>Ver calificaciones</u></p>
-                <h1 class="h1">Contacto</h1>
-                <p class="p1">Telefono: +57 977865378 <br> Correo: Tony@gmail.com </p>
+                <img src="assets/Operacion.jpg" class="imag">
+                <h1 class="texEmpre">{{empresaConvenioDetail.nombre}}</h1>
+                <h3 class="titulo2">Servicio que ofrece</h3>
+                <p class="p1"> {{empresaConvenioDetail.servicio}} </p>
+                <h3 class="titulo2"> Contactanos: </h3>
+                <p class="p1"> Telefono: {{empresaConvenioDetail.contacto.telefono}} <br> Correo: {{empresaConvenioDetail.contacto.correo}}</p>
+                </div>
             </div>
-            <div class= "cuadro2">
-                <p class="titulo2"> <u> Mis Mascotas</u></p>
-                <p class="titulo"><img src="Imagenes/gato.jpeg" class="imag1"> Michi </p>
-                <p class="titulo"><img src="Imagenes/perro.jpeg" class="imag1"> Peppo </p>
-            </div>
-        </div>
     </body>
 </html>
 
 <style>
-    .cuadrado {
-        width: 1340px;
-        height: 800px;
-        background: #4875a1;
-        position: relative;
-    }
     .center{
         display: block;
         margin-left: auto;
@@ -45,71 +32,41 @@
     }
     .p{
         text-align: center;
-        font-size: 20px;
-    }
-    .h1{
-        text-align: center;
-        top: -9%;
-        left: 10;
-        position: relative;
     }
     .p1{
-        text-align: center;
-        font-size: 20px;
-        top: -11%;
-        left: 10;
+        top: -75%;
+        left: 65%;
         position: relative;
     }
-    .cali{
-        line-height: 1.35em;
-        font-size: 20px;
-        top: -8%;
-        left: 180;
-        color: blue;
-        position: relative;
-    }
-    .cuadro{
-        width: 600px;
-        height: 60px;
-        background: #ffffff;
-        top: 8%;
-        left: 6%;
-        position: relative;
-    }
-    .cuadro1{
-        width: 500px;
-        height: 550px;
-        background: #ffffff;
-        top: 9%;
-        left: 10%;
-        position: relative;
-    }
-    .imag{
-        width: 200px;
-        height: 300px;
-        top: 6%;
-        left: 30%;
-        position: relative;
-    }
-    .imag1{
-        width: 40px;
-        height: 40px;
-        position: relative;
-    }
-    .cuadro2{
-        width: 500px;
-        height: 300px;
-        background: #ffffff;
-        top: -60%;
-        left: 56%;
+    .texEmpre{
+        top: -75%;
+        left: 65%;
         position: relative;
     }
     .titulo2{
-        line-height: 1.35em;
-        text-align: center;
-        font-size: 40px;
-        top: 5%;
-        left: 10;
+        top: -75%;
+        left: 58%;
         position: relative;
     }
+    .cuadrado {
+        width: 1340px;
+        height: 500px;
+        background: #4875a1;
+    }
+    .cuadro1{
+        width: 900px;
+        height: 350px;
+        background: #ffffff;
+        top: 10%;
+        left: 16%;
+        position: relative;
+    }
+    .imag{
+        width: 400px;
+        height: 300px;
+        top: 7%;
+        left: 5%;
+        position: relative;
+    }
+
 </style>
