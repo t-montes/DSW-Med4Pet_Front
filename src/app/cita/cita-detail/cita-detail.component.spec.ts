@@ -30,7 +30,6 @@ describe('CitaDetailComponent', () => {
       faker.lorem.sentence(),
       faker.random.number(),
       null,
-      null,
       null
     );
 

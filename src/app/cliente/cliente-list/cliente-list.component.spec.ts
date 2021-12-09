@@ -33,10 +33,9 @@ describe("ClienteListarComponent", () => {
       faker.lorem.sentence(),
       faker.random.number(),
       null,
-      null,
       null
-     ),
-   ];
+      )];
+
    fixture.detectChanges();
    debug = fixture.debugElement;
  });
