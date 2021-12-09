@@ -4,11 +4,12 @@ import { EmpresaConvenioListComponent } from './empresaConvenio-list/empresaConv
 import { EmpresaConvenioDetailComponent } from './empresaConvenio-detail/empresaConvenio-detail.component';
 import { EmpresaConvenioCreateComponent } from './empresaConvenio-create/empresaConvenio-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {ContactoModule} from '../contacto/contacto.module'
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ContactoModule
   ],
   exports: [EmpresaConvenioListComponent, EmpresaConvenioCreateComponent],
   declarations: [EmpresaConvenioListComponent, EmpresaConvenioDetailComponent, EmpresaConvenioCreateComponent]

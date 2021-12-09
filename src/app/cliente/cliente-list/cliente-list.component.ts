@@ -19,6 +19,15 @@ export class ClienteListComponent implements OnInit {
     })
   }
 
+  selectedCliente: Cliente;
+  selected = false;
+
+  onSelected(b: Cliente): void {
+    this.selected = true;
+    this.selectedCliente = b;
+    console.log(b.id)
+  }
+
   ngOnInit() {
     this.getCliente();
   }

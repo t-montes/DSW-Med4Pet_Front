@@ -36,8 +36,6 @@ import {InformacionModule} from './informacion/informacion.module'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
     ServicioModule,       //Daniel
     MascotaModule,        //Daniel
     CalificacionModule ,  //Luccas
