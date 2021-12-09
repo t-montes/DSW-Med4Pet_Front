@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { RegistroMedico } from '../registroMedico';
@@ -17,7 +17,12 @@ export class RegistroMedicoCreateComponent implements OnInit {
   registroForm: FormGroup;
   model: NgbDateStruct;
   date: {year: number, month: number};
+  @Output() newItemEvent = new EventEmitter<number>();
   constructor(private formBuilder: FormBuilder,private toastr: ToastrService,private calendar: NgbCalendar,private registroService:RegistroMedicoService) { }
+
+    addNewItem(value: number) {
+      this.newItemEvent.emit(value);
+    }
   selectToday() {
     this.model = this.calendar.getToday();
   }
@@ -28,11 +33,12 @@ ngOnInit() {
     imagen:["", [Validators.required]]
   });
 }
-createCalificacion(newRegistro: RegistroMedico) {
+createRegistroMedico(newRegistro: RegistroMedico) {
   // Process checkout data here
   console.warn("el registro medico fue creado", newRegistro);
   this.registroService.createRegistroMedico(newRegistro).subscribe(calif => {
     this.toastr.success(calif.identificacion);
+    this.addNewItem(calif.id);
     this.registroForm.reset();
      });
   this.registroForm.reset();
