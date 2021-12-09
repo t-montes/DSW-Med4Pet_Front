@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 import { EmpresaConvenio } from '../empresaConvenio';
+import { EmpresaConvenioService } from '../empresaConvenio.service';
 
 @Component({
   selector: 'app-empresaConvenio-create',
@@ -14,7 +15,8 @@ export class EmpresaConvenioCreateComponent implements OnInit {
   yac:boolean=false;
 
   constructor(private formBuilder: FormBuilder,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private empresaConvenioService: EmpresaConvenioService
   ) { }
   addContacto(contacto:number)
     {
@@ -34,12 +36,14 @@ export class EmpresaConvenioCreateComponent implements OnInit {
     // Process checkout data here
     console.warn("la EmpresaConvenio fue creada", newEmpresaConvenio);
 
-    //-----------------------------------------------------------------
-    // this.clientService.createClient(newClient).subscribe(client => {
-    //   this.empresaConvenio.push(client);
-    //  this.showSuccess(newClient);
-    // });
-    //------------------------------------------------------------------
+    this.empresaConvenioService.createEmpresaConvenio(newEmpresaConvenio).subscribe(ec => {
+      this.toastr.success('Empresa Convenio creada exitosamente');
+      this.empresaConvenioService.createContactoEmpresaConvenio(ec.id,this.idContacto).subscribe(c => {
+        this.toastr.success('El contacto ha sido asignado correctamente');
+      });
+      this.empresaConvenioForm.reset();
+    });
+
     this.empresaConvenioForm.reset();
 
   }

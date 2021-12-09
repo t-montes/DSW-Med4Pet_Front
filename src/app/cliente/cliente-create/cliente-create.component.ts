@@ -34,12 +34,9 @@ export class ClienteCreateComponent implements OnInit {
     // Process checkout data here
     console.warn("el cliente fue creado", newCliente);
 
-    //-----------------------------------------------------------------
-    // this.clientService.createClient(newClient).subscribe(client => {
-    //   this.clientes.push(client);
-    //  this.showSuccess(newClient);
-    // });
-    //------------------------------------------------------------------
+    this.clienteService.createCliente(newCliente).subscribe(client => {
+      this.toastr.success('Cliente creado correctamente');
+     });
     this.clienteForm.reset();
 
   }

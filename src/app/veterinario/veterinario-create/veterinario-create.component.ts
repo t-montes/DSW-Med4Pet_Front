@@ -70,6 +70,17 @@ export class VeterinarioCreateComponent implements OnInit {
         let newAgenda:Agenda = new Agenda(null,0,0,0,[]);
         this.agendaService.createAgenda(newAgenda).subscribe(ag => {
           this.toastr.success('Agenda creada exitosamente');
+          this.veterinarioService.createRegistroMedicoVeterinario(v.id,this.idRegistro).subscribe(rm => {
+            this.toastr.success('El registro médico ha sido asignado correctamente');
+          });
+          this.veterinarioService.createContactoVeterinario(v.id,this.idContacto).subscribe(co => {
+            this.toastr.success('El contacto ha sido asignado correctamente');
+          });
+          for (let s of listServ) {
+            this.veterinarioService.createServicioVeterinario(v.id,s.id).subscribe(s2 => {
+              this.toastr.success('El servicio fue creado correctamente');
+            });
+          }
           this.agendaService.createAgendaVeterinario(ag.id, v.id).subscribe(ag2 => {
             this.toastr.success('La agenda ha sido asignada correctamente');
             this.router.navigate(['/veterinarios/'+v.id])
@@ -87,6 +98,7 @@ export class VeterinarioCreateComponent implements OnInit {
     console.log("Cancelando ...");
     this.veterinarioForm.reset();
   }
+
   ngOnInit() {
     this.veterinarioForm = this.formBuilder.group({
       nombre: ["", [Validators.required, Validators.minLength(2)]],
