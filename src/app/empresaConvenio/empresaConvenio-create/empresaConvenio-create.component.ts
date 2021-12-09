@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
+import { EmpresaConvenio } from '../empresaConvenio';
 
 @Component({
   selector: 'app-empresaConvenio-create',
@@ -29,7 +30,7 @@ export class EmpresaConvenioCreateComponent implements OnInit {
     });
   }
 
-  createEmpresaConvenio(newEmpresaConvenio: any ) {
+  createEmpresaConvenio(newEmpresaConvenio: EmpresaConvenio ) {
     // Process checkout data here
     console.warn("la EmpresaConvenio fue creada", newEmpresaConvenio);
 
