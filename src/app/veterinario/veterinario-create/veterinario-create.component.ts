@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { ToastrService } from "ngx-toastr";
 import { Agenda } from 'src/app/agenda/agenda';
 import { AgendaService } from 'src/app/agenda/agenda.service';
+import { Servicio } from 'src/app/servicio/servicio';
+import { ServicioService } from 'src/app/servicio/servicio.service';
+import { ServicioDetail } from 'src/app/servicio/servicioDetail';
 import { Veterinario } from '../veterinario';
 import { VeterinarioService } from '../veterinario.service';
 import { VeterinarioDetail } from '../veterinarioDetail';
@@ -15,16 +18,28 @@ import { VeterinarioDetail } from '../veterinarioDetail';
 })
 export class VeterinarioCreateComponent implements OnInit {
   veterinarioForm: FormGroup;
+
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
     private veterinarioService: VeterinarioService,
     private agendaService: AgendaService,
-    private router: Router) { }
-    private idRegistro:number;
+    private router: Router, private servicioService:ServicioService) { }
+
+    servicios:ServicioDetail[];
+    idRegistro:number;
+    idContacto:number;
+    yar:boolean = false;
+    yac:boolean= false;
 
     addRegistro(registro:number)
     {
       this.idRegistro=registro;
-      console.log(this.idRegistro);
+      this.yar = true;
+    }
+    addContacto(contacto:number)
+    {
+      this.idContacto=contacto;
+      this.yac = true;
+      console.log(this.idContacto);
     }
   createVeterinario(newVeterinario: VeterinarioDetail){
     newVeterinario.calificacion = 0.0;
@@ -59,6 +74,10 @@ export class VeterinarioCreateComponent implements OnInit {
       certificadoEntrenamiento: ["", Validators.required],
       experienciaPrevia: ["", Validators.required]
     })
+    this.servicioService.getServicios().subscribe((servicios)=>{
+      this.servicios = servicios;
+    })
+    console.log(this.servicios);
   }
 
 }

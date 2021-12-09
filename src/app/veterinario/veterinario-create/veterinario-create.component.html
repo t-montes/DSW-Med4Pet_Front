@@ -1,4 +1,13 @@
-<app-registroMedico-create (newItemEvent)="addRegistro($event)"></app-registroMedico-create>
+<div *ngIf = "!yar">
+  <app-registroMedico-create (newItemEvent)="addRegistro($event)"></app-registroMedico-create>
+</div>
+<div *ngIf = "!yac">
+  <app-contacto-create (newItemEvent)="addContacto($event)"></app-contacto-create>
+</div>
+<tr *ngFor ="let s of servicios">
+  {{s.nombre}}
+</tr>
+<p>De los servicios desplegados anteriormente escriba los servicios que maneja separados por coma en el siguiente espacio</p>
 <div class="container-fluid">
   <div class="col-4 p-3">
     <div class="h4">Creacion del Veterinario</div>

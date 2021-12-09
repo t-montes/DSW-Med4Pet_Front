@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from "ngx-toastr";
 import { Contacto } from '../contacto';
@@ -11,13 +11,18 @@ import { ContactoService } from '../contacto.service';
 export class ContactoCreateComponent implements OnInit {
 
   contactoForm: FormGroup;
+  @Output() newItemEvent = new EventEmitter<number>();
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService, private contactoService: ContactoService) { }
 
+  addNewItem(value: number) {
+    this.newItemEvent.emit(value);
+  }
   createContacto(newContacto: Contacto){
     console.warn("el cliente fue creado", newContacto);
     this.contactoService.createContacto(newContacto)
-      .subscribe(newContacto => {
-        this.toastr.success('The author was created successfully');
+      .subscribe(c => {
+        this.toastr.success('The contacto was created successfully',c.correo);
+        this.addNewItem(c.id);
         this.contactoForm.reset()
       }, err => {
         this.toastr.error(err, 'Error');
