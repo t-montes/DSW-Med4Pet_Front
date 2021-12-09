@@ -4,6 +4,7 @@ import { ClienteListComponent } from './cliente/cliente-list/cliente-list.compon
 import { EmpresaConvenioListComponent } from './empresaConvenio/empresaConvenio-list/empresaConvenio-list.component';
 import { ConocenosComponent } from './informacion/conocenos/conocenos.component';
 import { MasInformacionComponent } from './informacion/masInformacion/masInformacion.component';
+import { RegistrarseComponent } from './informacion/registrarse/registrarse.component';
 import { ServicioListarComponent } from './servicio/servicio-listar/servicio-listar.component';
 import { VeterinarioDetailComponent } from './veterinario/veterinario-detail/veterinario-detail.component';
 import { VeterinarioListComponent } from './veterinario/veterinario-list/veterinario-list.component';
@@ -35,8 +36,12 @@ const routes: Routes = [
     component: ConocenosComponent
   },
   {
-    path:"**",
-    component:ServicioListarComponent
+    path:"registrarse",
+    component: RegistrarseComponent
+  },
+  {
+    path:"clientes",
+    component: ClienteListComponent
   },
   {
     path: "clientes",
@@ -48,9 +53,14 @@ const routes: Routes = [
       {
         path: ":id",
         component: ClienteListComponent
-      }
+      },
     ]
+  },
+  {
+    path:"**",
+    component:ServicioListarComponent
   }
+
 
 ];
 
