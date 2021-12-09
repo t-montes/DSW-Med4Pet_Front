@@ -9,11 +9,18 @@ import { ToastrService } from "ngx-toastr";
 })
 export class ClienteCreateComponent implements OnInit {
   clienteForm: FormGroup;
-
+  idContacto:number;
+  yac:boolean= false;
   constructor(private formBuilder: FormBuilder,
     private toastr: ToastrService
   ) { }
 
+  addContacto(contacto:number)
+    {
+      this.idContacto=contacto;
+      this.yac = true;
+      console.log(this.idContacto);
+    }
   ngOnInit() {
     this.clienteForm = this.formBuilder.group({
       nombre: ["", [Validators.required, Validators.minLength(2)]]

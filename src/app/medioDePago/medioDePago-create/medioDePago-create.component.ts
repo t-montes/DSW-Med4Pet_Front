@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MedioDePago } from '../medioDePago';
 
 @Component({
@@ -7,7 +7,6 @@ import { MedioDePago } from '../medioDePago';
   styleUrls: ['./medioDePago-create.component.scss']
 })
 export class MedioDePagoCreateComponent implements OnInit {
-
   //TODO @Input() citaId: number;
   showPse:boolean = true;
 
