@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
+import { Cliente } from '../cliente';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-cliente-create',
@@ -12,7 +14,7 @@ export class ClienteCreateComponent implements OnInit {
   idContacto:number;
   yac:boolean= false;
   constructor(private formBuilder: FormBuilder,
-    private toastr: ToastrService
+    private toastr: ToastrService, private clienteService:ClienteService
   ) { }
 
   addContacto(contacto:number)
@@ -21,13 +23,14 @@ export class ClienteCreateComponent implements OnInit {
       this.yac = true;
       console.log(this.idContacto);
     }
+
   ngOnInit() {
     this.clienteForm = this.formBuilder.group({
       nombre: ["", [Validators.required, Validators.minLength(2)]]
     });
   }
 
-  createCliente(newCliente: any ) {
+  createCliente(newCliente: Cliente ) {
     // Process checkout data here
     console.warn("el cliente fue creado", newCliente);
 
