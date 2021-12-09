@@ -7,19 +7,19 @@
         <p class="p">En este espacio se encuentra la informacion del cliente seleccionado</p>
         <div class="cuadrado">
             <div class= "cuadro">
-                <p class="titulo">Tony Santiago Montes</p>
+                <p class="titulo">{{clienteDetail.nombre}}</p>
             </div>
             <div class= "cuadro1">
                 <img src="Imagenes/Tony.jpg" class="imag">
                 <p class="titulo">3.8<img src="Imagenes/estrella.jpeg" class="imag1"></p>
-                <p class="cali"> <u>Ver calificaciones</u></p>
                 <h1 class="h1">Contacto</h1>
-                <p class="p1">Telefono: +57 977865378 <br> Correo: Tony@gmail.com </p>
+                <p class="p1">Telefono: {{clienteDetail.contacto.telefono}} <br> Correo: {{clienteDetail.contacto.correo}}</p>
             </div>
             <div class= "cuadro2">
                 <p class="titulo2"> <u> Mis Mascotas</u></p>
-                <p class="titulo"><img src="Imagenes/gato.jpeg" class="imag1"> Michi </p>
-                <p class="titulo"><img src="Imagenes/perro.jpeg" class="imag1"> Peppo </p>
+                <p class= "p1"><img src="Imagenes/gato.jpeg" class="imag1"> Nombre: {{clienteDetail.mascota.nombre}} <br> <br>
+                    Tipo de Mascota: {{clienteDetail.mascota.tipoMascota}}  <br> <br>
+                    Raza: {{clienteDetail.mascota.raza}} <br> <br> Edad: {{clienteDetail.mascota.edad}}  </p>
             </div>
         </div>
     </body>
