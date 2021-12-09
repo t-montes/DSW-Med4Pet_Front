@@ -21,8 +21,9 @@ export class VeterinarioCreateComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
     private veterinarioService: VeterinarioService,
+    private servicioService:ServicioService,
     private agendaService: AgendaService,
-    private router: Router, private servicioService:ServicioService) { }
+    private router: Router) { }
 
     servicios:ServicioDetail[];
     idRegistro:number;
@@ -41,7 +42,26 @@ export class VeterinarioCreateComponent implements OnInit {
       this.yac = true;
       console.log(this.idContacto);
     }
+
   createVeterinario(newVeterinario: VeterinarioDetail){
+    let lSstr:String[] = ((newVeterinario.serviciosOfrecidos as unknown) as String).split(',');
+    let listServ:Servicio[] = [];
+    for (let sstr of lSstr){
+      let found:boolean = false;
+      for (let s of this.servicios){
+        if (s.nombre == sstr) {
+          listServ.push(s);
+          found=true;
+          break;
+        }
+      }
+      if (!found) {
+        console.log("Servicio '"+sstr+"' no existe");
+        return null;
+      }
+    }
+    console.log(listServ);
+
     newVeterinario.calificacion = 0.0;
     console.warn("el veterinario fue creado", newVeterinario);
     this.veterinarioService.createVeterinario(newVeterinario).subscribe(v =>{
@@ -57,8 +77,8 @@ export class VeterinarioCreateComponent implements OnInit {
         });
         this.veterinarioForm.reset();
       });
-
   }
+
   showSuccess(v: Veterinario){
     this.toastr.success('Creado exitosamente!', 'Veterinario ${{v.nombre}}', {"progressBar": true, timeOut: 4000});
   }
@@ -72,12 +92,12 @@ export class VeterinarioCreateComponent implements OnInit {
       nombre: ["", [Validators.required, Validators.minLength(2)]],
       especialidad: ["", Validators.required],
       certificadoEntrenamiento: ["", Validators.required],
-      experienciaPrevia: ["", Validators.required]
+      experienciaPrevia: ["", Validators.required],
+      serviciosOfrecidos: ["", Validators.required]
     })
     this.servicioService.getServicios().subscribe((servicios)=>{
       this.servicios = servicios;
     })
-    console.log(this.servicios);
   }
 
 }
