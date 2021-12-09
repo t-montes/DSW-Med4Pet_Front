@@ -6,9 +6,12 @@ import { CitaModule } from '../cita/cita.module';
 import { CalificacionModule } from '../calificacion/calificacion.module';
 import { VeterinarioCreateComponent } from './veterinario-create/veterinario-create.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {RegistroMedicoModule} from '../registroMedico/registroMedico.module'
+import {ContactoModule} from '../contacto/contacto.module'
 @NgModule({
   imports: [
+    ContactoModule,
+    RegistroMedicoModule,
     CalificacionModule,
     ReactiveFormsModule,
     CommonModule,

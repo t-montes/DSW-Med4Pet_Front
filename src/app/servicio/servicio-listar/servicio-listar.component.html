@@ -19,20 +19,21 @@
 </div>
 -->
 <div class="container-fluid">
-  <div class="row p-5">
-    <div class="col-4">
+  <div class="row">
+    <div class="col-sm">
       <ul class = "list-group">
         <li class = "list-group-item" *ngFor="let s of servicios" (click)="onSelected(s)">Nombre {{s.nombre}}&nbsp;&nbsp; ID: {{s.id}}</li>
       </ul>
+      <button type="button" style="color: white; background-color:#1eabe2">Solicitar cita</button>
     </div>
-  </div>
-  <div *ngIf = "selected">
+  <div class="col-sm" *ngIf = "selected">
     <app-servicio-detail [servicioDetail]="selectedS"></app-servicio-detail>
   </div>
-</div>
-<div>
-  <button type="button" style="color: white; background-color:#1eabe2">Solicitar cita</button>
+
+
+  <div class="col-sm">
+    <img src="assets/ImagenPerro.jpg" width="500px" height="500px">
+    </div>
   </div>
-<div>
-  <img src="assets/ImagenPerro.jpg" width="500px" height="500px">
-  </div>
+
+

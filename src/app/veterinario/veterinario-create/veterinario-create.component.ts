@@ -19,7 +19,13 @@ export class VeterinarioCreateComponent implements OnInit {
     private veterinarioService: VeterinarioService,
     private agendaService: AgendaService,
     private router: Router) { }
+    private idRegistro:number;
 
+    addRegistro(registro:number)
+    {
+      this.idRegistro=registro;
+      console.log(this.idRegistro);
+    }
   createVeterinario(newVeterinario: VeterinarioDetail){
     newVeterinario.calificacion = 0.0;
     console.warn("el veterinario fue creado", newVeterinario);

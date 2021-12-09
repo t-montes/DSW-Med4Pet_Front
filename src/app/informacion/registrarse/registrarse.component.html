@@ -1,0 +1,12 @@
+<div class="centerdiv">
+  <button type="button" (click)="onClick(true)">Registrarse como cliente</button>
+  <button type="button" (click)="onClick(false)">Registrarse como veterinario</button>
+</div>
+
+<div *ngIf="esCliente">
+  <app-cliente-create></app-cliente-create>
+</div>
+
+<div *ngIf="!esCliente">
+  <app-veterinario-create></app-veterinario-create>
+</div>
