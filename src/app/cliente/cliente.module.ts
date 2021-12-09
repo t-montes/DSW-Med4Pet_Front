@@ -6,7 +6,6 @@ import { ClienteDetailComponent } from './cliente-detail/cliente-detail.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import {ContactoModule} from '../contacto/contacto.module'
 import {MascotaModule} from '../mascota/mascota.module'
-import { ContactoModule } from '../contacto/contacto.module';
 
 @NgModule({
   imports: [
