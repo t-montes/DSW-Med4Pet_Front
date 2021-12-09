@@ -8,6 +8,7 @@ import { Cliente } from '../cliente';
 import faker from "faker";
 import { Contacto } from 'src/app/contacto/contacto';
 import { Mascota } from 'src/app/mascota/mascota';
+import { ClienteDetail } from '../clienteDetail';
 
 describe('ClienteDetailComponent', () => {
   let component: ClienteDetailComponent;
@@ -41,12 +42,11 @@ describe('ClienteDetailComponent', () => {
       null
       )
 
-    component.clienteDetail = new Cliente(
+    component.clienteDetail = new ClienteDetail(
       faker.random.number(),
       faker.lorem.sentence(),
       faker.random.number(),
-      contacto,
-      mascota
+      contacto
       );
 
     fixture.detectChanges();

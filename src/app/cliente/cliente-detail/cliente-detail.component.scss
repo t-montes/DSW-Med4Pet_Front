@@ -1,3 +1,20 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+td, th {
+  border: 0.5px solid rgb(184, 184, 184);
+  text-align: center;
+  padding: 8px;
+}
+
+th {
+  background-color: rgb(226, 226, 226);
+}
 
 .cuadrado {
     width: 1340px;
@@ -76,6 +93,8 @@
     top: -60%;
     left: 56%;
     position: relative;
+    align-items: center;
+    text-align: center;
 }
 .titulo2{
     line-height: 1.35em;

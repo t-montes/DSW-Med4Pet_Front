@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="col-4 p-3">
-    <div class="h4">Creación de la mascota</div>
+    <div class="h4">Crear una nueva mascota</div>
     <form
       [formGroup]="mascotaForm"
       (ngSubmit)="!mascotaForm.invalid && createMascota(mascotaForm.value)"
@@ -31,6 +31,26 @@
           "
         >
           Nombre muy corto. Debería tener al menos dos caracteres.
+        </div>
+      </div>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="tipoMascota"> Animal(PERRO, GATO o HAMSTER)* </label>
+        <input
+          novalidate
+          id="tipoMascota"
+          class="form-control"
+          formControlName="tipoMascota"
+          placeholder="Animal"
+        />
+        <div
+          class="alert alert-danger alert-dismissible fade show"
+          *ngIf="
+          mascotaForm.get('tipoMascota').hasError('required') &&
+          mascotaForm.get('tipoMascota').touched
+          "
+        >
+          Animal requerido
         </div>
       </div>
 

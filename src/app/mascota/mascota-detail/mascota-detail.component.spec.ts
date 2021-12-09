@@ -27,7 +27,6 @@ describe('MascotaDetailComponent', () => {
       faker.random.number(),
       faker.lorem.sentence(),
       faker.random.number(),
-      null,
       null
     );
 

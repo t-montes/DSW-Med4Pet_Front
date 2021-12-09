@@ -1,9 +1,11 @@
 <div *ngIf = "!yac">
   <app-contacto-create (newItemEvent)="addContacto($event)" ></app-contacto-create>
 </div>
+
+
 <div class="container-fluid">
   <div class="col-4 p-3">
-    <div class="h4">Creacion de Cliente</div>
+    <div class="h4">Creacion del Cliente</div>
     <form
       [formGroup]="clienteForm"
       (ngSubmit)="!clienteForm.invalid && createCliente(clienteForm.value)"
@@ -14,8 +16,8 @@
           novalidate
           id="nombre"
           class="form-control"
-          formControlNombre="nombre"
-          placeholder="Your Full nombre"
+          formControlName="nombre"
+          placeholder="Nombre Completo"
         />
         <div
           class="alert alert-danger alert-dismissible fade show"
@@ -24,7 +26,7 @@
             clienteForm.get('nombre').touched
           "
         >
-        Nombre required
+          Nombre Requerido
         </div>
         <div
           class="alert alert-danger alert-dismissible fade show"
@@ -33,7 +35,7 @@
             clienteForm.get('nombre').touched
           "
         >
-        Nombre too short. It should be at least 2 characters
+          Nombre muy corto, debe ser de almenos 2 caracteres
         </div>
       </div>
 

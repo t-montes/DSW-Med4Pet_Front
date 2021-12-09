@@ -6,13 +6,15 @@ import { ClienteDetailComponent } from './cliente-detail/cliente-detail.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import {ContactoModule} from '../contacto/contacto.module'
 import {MascotaModule} from '../mascota/mascota.module'
+import { CalificacionModule } from '../calificacion/calificacion.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
     MascotaModule,
-    ContactoModule
+    ContactoModule,
+    CalificacionModule
   ],
   declarations: [ClienteListComponent, ClienteCreateComponent, ClienteDetailComponent],
   exports: [ClienteListComponent, ClienteCreateComponent],

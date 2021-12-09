@@ -28,7 +28,7 @@ export class EmpresaConvenioCreateComponent implements OnInit {
     this.empresaConvenioForm = this.formBuilder.group({
       nombre: ["", [Validators.required, Validators.minLength(2)]],
       nit: ["", Validators.required],
-      servicio: ["", Validators.required, Validators.minLength(2)]
+      servicio: ["", Validators.required]
     });
   }
 

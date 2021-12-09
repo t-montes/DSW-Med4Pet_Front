@@ -38,7 +38,6 @@ describe('CitaListarComponent', () => {
       faker.random.number(),
       faker.lorem.sentence(),
       faker.random.number(),
-      null,
       null
     );
     let paciente = new Mascota(

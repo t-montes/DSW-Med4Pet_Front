@@ -4,9 +4,11 @@
 </div>
 
 <div *ngIf="esCliente">
+  <h1>Registrar Cliente</h1>
   <app-cliente-create></app-cliente-create>
 </div>
 
 <div *ngIf="!esCliente">
+  <h1>Registrar Veterinario</h1>
   <app-veterinario-create></app-veterinario-create>
 </div>

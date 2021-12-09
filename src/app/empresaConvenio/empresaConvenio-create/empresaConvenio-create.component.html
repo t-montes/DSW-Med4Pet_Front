@@ -1,9 +1,10 @@
 <div *ngIf = "!yac">
   <app-contacto-create (newItemEvent)="addContacto($event)" ></app-contacto-create>
 </div>
+
 <div class="container-fluid">
   <div class="col-4 p-3">
-    <div class="h4">Creacion de Empresa Convenio</div>
+    <div class="h4">Creacion de la Empresa Convenio</div>
     <form
       [formGroup]="empresaConvenioForm"
       (ngSubmit)="!empresaConvenioForm.invalid && createEmpresaConvenio(empresaConvenioForm.value)"
@@ -14,38 +15,39 @@
           novalidate
           id="nombre"
           class="form-control"
-          formControlNombre="nombre"
+          formControlName="nombre"
           placeholder="Nombre Completo"
         />
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
-          empresaConvenioForm.get('nombre').hasError('required') &&
-          empresaConvenioForm.get('nombre').touched
+            empresaConvenioForm.get('nombre').hasError('required') &&
+            empresaConvenioForm.get('nombre').touched
           "
         >
-        Nombre required
+          Nombre Requerido
         </div>
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
-          empresaConvenioForm.get('nombre').hasError('minlength') &&
-          empresaConvenioForm.get('nombre').touched
+            empresaConvenioForm.get('nombre').hasError('minlength') &&
+            empresaConvenioForm.get('nombre').touched
           "
         >
-        Nombre too short. It should be at least 2 characters
+          Nombre muy corto, debe ser de almenos 2 caracteres
         </div>
       </div>
 
       <div class="form-group mx-sm-3 mb-2">
         <label for="nit"> Nit* </label>
         <input
-          novalidate
           id="nit"
+          type="text"
           class="form-control"
-          formControlNit="nit"
-          placeholder="Your Full nit"
+          formControlName="nit"
+          placeholder="Nit de la empresa"
         />
+
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
@@ -53,28 +55,20 @@
           empresaConvenioForm.get('nit').touched
           "
         >
-        Nit required
-        </div>
-        <div
-          class="alert alert-danger alert-dismissible fade show"
-          *ngIf="
-          empresaConvenioForm.get('nit').hasError('minlength') &&
-          empresaConvenioForm.get('nit').touched
-          "
-        >
-        Nit too short. It should be at least 2 characters
+          Nit requerido
         </div>
       </div>
 
       <div class="form-group mx-sm-3 mb-2">
         <label for="servicio"> Servicio* </label>
         <input
-          novalidate
           id="servicio"
+          type="text"
           class="form-control"
-          formControlServicio="servicio"
-          placeholder="Your Full servicio"
+          formControlName="servicio"
+          placeholder="Servicio que ofrece"
         />
+
         <div
           class="alert alert-danger alert-dismissible fade show"
           *ngIf="
@@ -82,16 +76,7 @@
           empresaConvenioForm.get('servicio').touched
           "
         >
-        Servicio required
-        </div>
-        <div
-          class="alert alert-danger alert-dismissible fade show"
-          *ngIf="
-          empresaConvenioForm.get('servicio').hasError('minlength') &&
-          empresaConvenioForm.get('servicio').touched
-          "
-        >
-        Servicio too short. It should be at least 2 characters
+          Servicio requerido
         </div>
       </div>
 
@@ -103,6 +88,7 @@
         <button
           type="submit"
           class="btn btn-success"
+          [disabled]="!empresaConvenioForm.valid"
         >
           Create
         </button>
@@ -117,3 +103,4 @@
     </form>
   </div>
  </div>
+

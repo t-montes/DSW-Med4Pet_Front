@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 import { ToastrService } from "ngx-toastr";
 import { Cliente } from '../cliente';
 import { ClienteService } from '../cliente.service';
@@ -14,7 +15,8 @@ export class ClienteCreateComponent implements OnInit {
   idContacto:number;
   yac:boolean= false;
   constructor(private formBuilder: FormBuilder,
-    private toastr: ToastrService, private clienteService:ClienteService
+    private toastr: ToastrService, private clienteService:ClienteService,
+    private router:Router
   ) { }
 
   addContacto(contacto:number)
@@ -33,9 +35,13 @@ export class ClienteCreateComponent implements OnInit {
   createCliente(newCliente: Cliente ) {
     // Process checkout data here
     console.warn("el cliente fue creado", newCliente);
-
+    newCliente.calificacion = 0.0;
     this.clienteService.createCliente(newCliente).subscribe(client => {
       this.toastr.success('Cliente creado correctamente');
+      this.clienteService.createContactoCliente(client.id, this.idContacto).subscribe(co => {
+        this.toastr.success('El contacto ha sido asignado correctamente')
+        this.router.navigate(['/clientes']);
+      });
      });
     this.clienteForm.reset();
 

@@ -12,7 +12,7 @@ export class ClienteListComponent implements OnInit {
   clientes: Array<Cliente>;
   constructor(private clienteService: ClienteService ) { }
 
-  getCliente(): void {
+  getClientes(): void {
     this.clienteService.getClientes().subscribe((clientes)=>{
       this.clientes = clientes;
       console.log("Clientes", clientes)
@@ -29,7 +29,7 @@ export class ClienteListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getCliente();
+    this.getClientes();
   }
 
 }

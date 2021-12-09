@@ -1,6 +1,7 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
+import { ClienteService } from 'src/app/cliente/cliente.service';
 import { Mascota } from '../mascota';
 import {MascotaService} from "../mascota.service";
 
@@ -17,13 +18,15 @@ export class MascotaCreateComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
-    private mascotaService:MascotaService
+    private mascotaService:MascotaService,
+    private clienteService:ClienteService
   ) {}
 
 
   ngOnInit() {
     this.mascotaForm = this.formBuilder.group({
       nombre: ["", [Validators.required, Validators.minLength(2)]],
+      tipoMascota: ["", Validators.required],
       raza: ["", [Validators.required, Validators.minLength(2)]],
       edad: ["", [Validators.required]],
       ubicacion: ["", [Validators.required, Validators.minLength(2)]]
@@ -34,6 +37,9 @@ export class MascotaCreateComponent implements OnInit {
     console.warn("el servicio fue creado", newMascota);
     this.mascotaService.createMascota(newMascota).subscribe(masc => {
       this.toastr.success(masc.nombre);
+      this.clienteService.createMascotaCliente(this.duenioId, masc.id).subscribe(cl => {
+        this.toastr.success("Mascota asignada exitosamente")
+      });
       this.mascotaForm.reset();
        });
 

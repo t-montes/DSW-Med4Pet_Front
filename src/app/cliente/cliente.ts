@@ -7,21 +7,18 @@ export class Cliente {
   nombre: string;
   calificacion: number;
   contacto: Contacto;
-  mascota: Mascota;
 
 constructor(
   id: number,
   nombre: string,
   calificacion: number,
-  contacto: Contacto,
-  mascota: Mascota
+  contacto: Contacto
 
 ) {
   this.id = id;
   this.nombre = nombre;
   this.calificacion = calificacion;
   this.contacto = contacto;
-  this.mascota = mascota;
 
 }
 }

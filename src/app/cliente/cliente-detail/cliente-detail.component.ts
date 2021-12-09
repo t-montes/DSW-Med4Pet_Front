@@ -1,6 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../cliente';
+import { ClienteDetail } from '../clienteDetail';
 
 @Component({
   selector: 'app-cliente-detail',
@@ -11,7 +11,7 @@ export class ClienteDetailComponent implements OnInit {
 
   selected = true;
 
-  @Input() clienteDetail: Cliente;
+  @Input() clienteDetail: ClienteDetail;
 
 
   constructor() { }
