@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
+import { EmpresaConvenio } from '../empresaConvenio';
 
 @Component({
   selector: 'app-empresaConvenio-create',
@@ -9,11 +10,18 @@ import { ToastrService } from "ngx-toastr";
 })
 export class EmpresaConvenioCreateComponent implements OnInit {
   empresaConvenioForm: FormGroup;
+  idContacto:number;
+  yac:boolean=false;
 
   constructor(private formBuilder: FormBuilder,
     private toastr: ToastrService
   ) { }
-
+  addContacto(contacto:number)
+    {
+      this.idContacto=contacto;
+      this.yac = true;
+      console.log(this.idContacto);
+    }
   ngOnInit() {
     this.empresaConvenioForm = this.formBuilder.group({
       nombre: ["", [Validators.required, Validators.minLength(2)]],
@@ -22,7 +30,7 @@ export class EmpresaConvenioCreateComponent implements OnInit {
     });
   }
 
-  createEmpresaConvenio(newEmpresaConvenio: any ) {
+  createEmpresaConvenio(newEmpresaConvenio: EmpresaConvenio ) {
     // Process checkout data here
     console.warn("la EmpresaConvenio fue creada", newEmpresaConvenio);
 

@@ -6,7 +6,8 @@
       (ngSubmit)="!contactoForm.invalid && createContacto(contactoForm.value)"
     >
       <div class="form-group mx-sm-3 mb-2">
-        <label for="telefono"> Telefono* </label>
+        <label for="telefono"> Telefono
+          (Formato: "+00 1234567890")* </label>
         <input
           novalidate
           id="telefono"

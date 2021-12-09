@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registrarse.component.css']
 })
 export class RegistrarseComponent implements OnInit {
-  esCliente:boolean = true;
+  esCliente:boolean = false;
   constructor() { }
 
   ngOnInit() {
