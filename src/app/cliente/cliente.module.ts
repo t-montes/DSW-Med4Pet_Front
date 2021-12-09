@@ -5,12 +5,14 @@ import { ClienteCreateComponent } from './cliente-create/cliente-create.componen
 import { ClienteDetailComponent } from './cliente-detail/cliente-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MascotaModule} from '../mascota/mascota.module'
+import { ContactoModule } from '../contacto/contacto.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    MascotaModule
+    MascotaModule,
+    ContactoModule
   ],
   declarations: [ClienteListComponent, ClienteCreateComponent, ClienteDetailComponent],
   exports: [ClienteListComponent, ClienteCreateComponent],
