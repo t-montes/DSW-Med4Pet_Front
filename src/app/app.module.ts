@@ -21,7 +21,6 @@ import { AgendaModule } from './agenda/agenda.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { EmpresaConvenioModule } from './empresaConvenio/empresaConvenio.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MedioDePagoModule } from './medioDePago/medioDePago.module';
 import {InformacionModule} from './informacion/informacion.module'
 
@@ -49,8 +48,6 @@ import {InformacionModule} from './informacion/informacion.module'
     MedioDePagoModule,    //Tony
     ClienteModule,        //Shadith
     EmpresaConvenioModule,//Shadith
-    NgbModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
