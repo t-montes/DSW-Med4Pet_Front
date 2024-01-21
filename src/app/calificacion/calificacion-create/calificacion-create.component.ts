@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Calificacion } from '../calificacion';
 import { CalificacionService } from '../calificacion.service';
@@ -13,8 +13,8 @@ import { Router } from '@angular/router';
 export class CalificacionCreateComponent implements OnInit {
   @Input () veterinarioId: number
   @Input () clienteId:number
-  calificacionForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private toastrService: ToastrService, private calificacionService:CalificacionService,
+  calificacionForm: UntypedFormGroup;
+  constructor(private formBuilder: UntypedFormBuilder, private toastrService: ToastrService, private calificacionService:CalificacionService,
     private router: Router) { }
 
 ngOnInit() {

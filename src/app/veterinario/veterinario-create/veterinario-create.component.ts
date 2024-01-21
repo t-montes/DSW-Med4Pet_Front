@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from "ngx-toastr";
 import { Agenda } from 'src/app/agenda/agenda';
@@ -17,9 +17,9 @@ import { VeterinarioDetail } from '../veterinarioDetail';
   styleUrls: ['./veterinario-create.component.scss']
 })
 export class VeterinarioCreateComponent implements OnInit {
-  veterinarioForm: FormGroup;
+  veterinarioForm: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
+  constructor(private formBuilder: UntypedFormBuilder, private toastr: ToastrService,
     private veterinarioService: VeterinarioService,
     private servicioService:ServicioService,
     private agendaService: AgendaService,

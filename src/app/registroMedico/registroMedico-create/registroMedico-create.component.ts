@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { RegistroMedico } from '../registroMedico';
 import {NgbDateStruct, NgbCalendar} from '@ng-bootstrap/ng-bootstrap';
@@ -14,11 +14,11 @@ export class DatepickerOverviewExample {}
 })
 export class RegistroMedicoCreateComponent implements OnInit {
   picker:Date
-  registroForm: FormGroup;
+  registroForm: UntypedFormGroup;
   model: NgbDateStruct;
   date: {year: number, month: number};
   @Output() newItemEvent = new EventEmitter<number>();
-  constructor(private formBuilder: FormBuilder,private toastr: ToastrService,private calendar: NgbCalendar,private registroService:RegistroMedicoService) { }
+  constructor(private formBuilder: UntypedFormBuilder,private toastr: ToastrService,private calendar: NgbCalendar,private registroService:RegistroMedicoService) { }
 
     addNewItem(value: number) {
       this.newItemEvent.emit(value);

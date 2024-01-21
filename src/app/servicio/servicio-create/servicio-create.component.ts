@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 import { Servicio } from '../servicio';
 import {ServicioService} from "../servicio.service";
@@ -11,11 +11,11 @@ import {ServicioService} from "../servicio.service";
 })
 export class ServicioCreateComponent implements OnInit {
 
- servicioForm: FormGroup;
+ servicioForm: UntypedFormGroup;
   servicios: Servicio[];
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private toastr: ToastrService,
     private servicio: ServicioService
   ) {

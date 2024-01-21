@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 import { TarjetaCreditoService } from 'src/app/tarjetaCredito/tarjetaCredito.service';
 
@@ -9,8 +9,8 @@ import { TarjetaCreditoService } from 'src/app/tarjetaCredito/tarjetaCredito.ser
   styleUrls: ['./tarjetaCredito-create.component.css']
 })
 export class TarjetaCreditoCreateComponent implements OnInit {
-  tarjetaForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,
+  tarjetaForm: UntypedFormGroup;
+  constructor(private formBuilder: UntypedFormBuilder,
     private toastr: ToastrService,
     private tarjetaCreditoService: TarjetaCreditoService) { }
 

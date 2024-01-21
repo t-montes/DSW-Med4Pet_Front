@@ -1,5 +1,5 @@
 import { Component,Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 import { ClienteService } from 'src/app/cliente/cliente.service';
 import { Mascota } from '../mascota';
@@ -12,11 +12,11 @@ import {MascotaService} from "../mascota.service";
 })
 export class MascotaCreateComponent implements OnInit {
   @Input () duenioId:number
-  mascotaForm: FormGroup;
+  mascotaForm: UntypedFormGroup;
   mascotas: Mascota[];
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private toastr: ToastrService,
     private mascotaService:MascotaService,
     private clienteService:ClienteService

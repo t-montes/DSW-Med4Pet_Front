@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToastrService } from "ngx-toastr";
 import { PseService } from '../pse.service';
 
@@ -10,8 +10,8 @@ import { PseService } from '../pse.service';
 })
 export class PseCreateComponent implements OnInit {
 
-  pseForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService,
+  pseForm: UntypedFormGroup;
+  constructor(private formBuilder: UntypedFormBuilder, private toastr: ToastrService,
     private pseService:PseService) { }
 
   ngOnInit() {

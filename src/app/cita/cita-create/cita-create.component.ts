@@ -1,6 +1,6 @@
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Cita } from '../cita'
@@ -17,8 +17,8 @@ export class CitaCreateComponent implements OnInit {
   @Input() veterinarioId: number;
   @Input() agendaId: number;
 
-  citaForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,
+  citaForm: UntypedFormGroup;
+  constructor(private formBuilder: UntypedFormBuilder,
     private toastr: ToastrService,
     private citaService: CitaService,
     private router: Router) { }

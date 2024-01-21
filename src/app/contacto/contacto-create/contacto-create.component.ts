@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToastrService } from "ngx-toastr";
 import { Contacto } from '../contacto';
 import { ContactoService } from '../contacto.service';
@@ -10,9 +10,9 @@ import { ContactoService } from '../contacto.service';
 })
 export class ContactoCreateComponent implements OnInit {
 
-  contactoForm: FormGroup;
+  contactoForm: UntypedFormGroup;
   @Output() newItemEvent = new EventEmitter<number>();
-  constructor(private formBuilder: FormBuilder, private toastr: ToastrService, private contactoService: ContactoService) { }
+  constructor(private formBuilder: UntypedFormBuilder, private toastr: ToastrService, private contactoService: ContactoService) { }
 
   addNewItem(value: number) {
     this.newItemEvent.emit(value);

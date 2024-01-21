@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { ToastrService } from "ngx-toastr";
 import { Cliente } from '../cliente';
@@ -11,10 +11,10 @@ import { ClienteService } from '../cliente.service';
   styleUrls: ['./cliente-create.component.css']
 })
 export class ClienteCreateComponent implements OnInit {
-  clienteForm: FormGroup;
+  clienteForm: UntypedFormGroup;
   idContacto:number;
   yac:boolean= false;
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
     private toastr: ToastrService, private clienteService:ClienteService,
     private router:Router
   ) { }

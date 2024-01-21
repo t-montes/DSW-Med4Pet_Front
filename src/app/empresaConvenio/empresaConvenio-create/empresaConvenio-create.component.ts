@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 import { EmpresaConvenio } from '../empresaConvenio';
 import { EmpresaConvenioService } from '../empresaConvenio.service';
@@ -10,11 +10,11 @@ import { EmpresaConvenioService } from '../empresaConvenio.service';
   styleUrls: ['./empresaConvenio-create.component.css']
 })
 export class EmpresaConvenioCreateComponent implements OnInit {
-  empresaConvenioForm: FormGroup;
+  empresaConvenioForm: UntypedFormGroup;
   idContacto:number;
   yac:boolean=false;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
     private toastr: ToastrService,
     private empresaConvenioService: EmpresaConvenioService
   ) { }
